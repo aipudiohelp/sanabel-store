@@ -7,7 +7,7 @@
   <!-- خط كوفي وأنيق للقراءة السريعة -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -16,14 +16,14 @@
           fontFamily: { sans: ['Cairo', 'sans-serif'] },
           colors: {
             brand: {
-              dark: '#17181A',     // أسود ملكي فخم مستوحى من لون الخمار والبانر
+              dark: '#17181A',     // أسود ملكي فخم
               medium: '#232528',   // فحم داكن فاخر
               light: '#F5F3ED',    // سكري دافئ مريح
-              cream: '#FAF8F5',    // عاجي ناعم للخلفية العامة
-              accent: '#D4AF37',   // ذهبي ملكي متطابق مع إضاءات وأقواس ولوجو البانر
-              gold: '#C5A059',     // لمسة ذهبية دافئة
-              btn: '#17181A',      // أزرار الشراء الفاخرة
-              highlight: '#EFE9DD' // لون التمييز
+              cream: '#FAF8F5',    // عاجي ناعم للخلفية
+              accent: '#D4AF37',   // ذهبي ملكي مستوحى من البانر
+              gold: '#C5A059',
+              btn: '#17181A',
+              highlight: '#EFE9DD'
             }
           }
         }
@@ -33,222 +33,265 @@
   <style>
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-    .thumb-safe-area { padding-bottom: calc(75px + env(safe-area-inset-bottom)); }
+    /* مساحة أمان سفلية للموبايل لضمان عدم حجب أي منتج خلف شريط الشراء */
+    .thumb-safe-area { padding-bottom: calc(90px + env(safe-area-inset-bottom)); }
+    @media (min-width: 768px) {
+      .thumb-safe-area { padding-bottom: 2rem; }
+    }
   </style>
 </head>
 <body class="bg-brand-cream text-neutral-800 font-sans antialiased selection:bg-brand-accent selection:text-neutral-900 thumb-safe-area">
 
-  <!-- 1. شريط الثقة والشحن بلون أسود ملكي ولمسات ذهبية -->
-  <div class="bg-brand-dark text-white text-xs py-2 px-3 text-center tracking-wide font-medium flex justify-center items-center gap-2 border-b border-neutral-800">
+  <!-- 1. شريط الثقة والشحن -->
+  <div class="bg-brand-dark text-white text-xs py-2.5 px-4 text-center tracking-wide font-medium flex justify-center items-center gap-2 sm:gap-4 border-b border-neutral-800">
     <span>🚚 شحن سريع لجميع المحافظات</span>
     <span class="text-brand-accent">•</span>
     <span>💵 الدفع عند الاستلام</span>
     <span class="text-brand-accent">•</span>
-    <span>✨ معاينة قبل الاستلام</span>
+    <span>✨ معاينة وفحص قبل الاستلام</span>
   </div>
 
-  <!-- 2. الهيدر المدمج -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-neutral-200/70 px-4 py-3 flex items-center justify-between shadow-xs">
-    <div class="flex items-center gap-3">
-      <button aria-label="القائمة" class="p-1 text-brand-dark">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-      </button>
-      <div class="text-xl font-extrabold text-brand-dark tracking-tight flex items-center gap-1.5">
-        <span class="text-brand-accent text-lg">🌾</span>
-        <span>سنابل</span>
-        <span class="text-xs font-normal text-neutral-500 mr-1">للمحجبات</span>
+  <!-- 2. الهيدر المتجاوب (شاشات الموبايل وسطح المكتب) -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-neutral-200/80 px-4 lg:px-8 py-3.5 shadow-xs">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- اللوجو والقائمة -->
+      <div class="flex items-center gap-4">
+        <button aria-label="القائمة" class="p-1 text-brand-dark md:hidden">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <a href="index.html" class="text-xl sm:text-2xl font-black text-brand-dark tracking-tight flex items-center gap-1.5">
+          <span class="text-brand-accent text-xl">🌾</span>
+          <span>سنابل</span>
+          <span class="text-xs sm:text-sm font-normal text-neutral-500 mr-1">للمحجبات</span>
+        </a>
       </div>
-    </div>
 
-    <div class="flex items-center gap-3">
-      <button aria-label="البحث" class="p-1 text-neutral-700">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-      </button>
-      <button onclick="toggleCheckoutDrawer()" aria-label="السلة" class="relative p-1 text-brand-dark">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
-        <span id="cartBadge" class="absolute -top-1 -right-1 bg-brand-accent text-neutral-900 text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-black">1</span>
-      </button>
+      <!-- روابط التصفح لسطح المكتب (Desktop Navigation) -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-bold text-neutral-700">
+        <a href="#quick-catalog" class="hover:text-brand-accent transition">الأكثر طلباً</a>
+        <a href="#choice-paths" class="hover:text-brand-accent transition">الخمار والنقاب</a>
+        <a href="#bundle-section" class="hover:text-brand-accent transition">الإطلالات المتكاملة</a>
+        <a href="#guarantees" class="hover:text-brand-accent transition">الضمان والمعاينة</a>
+      </nav>
+
+      <!-- الأيقونات والسلة السريعة -->
+      <div class="flex items-center gap-3 sm:gap-4">
+        <a href="https://wa.me/201124574341" target="_blank" class="hidden sm:flex items-center gap-1.5 text-xs font-bold bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-full border border-emerald-200 hover:bg-emerald-100 transition">
+          <span>واتساب المتجر</span>
+        </a>
+        <button onclick="toggleCheckoutDrawer()" aria-label="السلة" class="relative p-2 bg-brand-light text-brand-dark rounded-xl hover:bg-neutral-200 transition flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          <span class="hidden md:inline text-xs font-bold">السلة</span>
+          <span id="cartBadge" class="bg-brand-accent text-neutral-900 text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-black">1</span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main class="max-w-md mx-auto">
-    <!-- 3. الهيرو: كارت البانر بحواف دائرية أنيقة وزر تسوقي الآن المدمج -->
-    <section class="px-4 pt-3.5 pb-1">
-      <div class="relative rounded-2xl overflow-hidden shadow-md border border-neutral-300/60 bg-[#161713]">
+  <!-- الحاوية المتجاوبة لكامل محتوى المتجر -->
+  <main class="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 space-y-4 sm:space-y-8 pt-3 sm:pt-6">
+    
+    <!-- 3. الهيرو: كارت البانر بعرض الشاشة مع زر تسوقي الآن المدمج -->
+    <section class="w-full">
+      <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-neutral-300/60 bg-[#161713] transition hover:shadow-xl">
         <a href="#quick-catalog" class="block w-full">
-          <img src="assets/images/banners/hero-banner.png" alt="تشكيلة الموسم الجديدة - سنابل للمحجبات" class="w-full h-auto object-cover block">
+          <img src="assets/images/banners/hero-banner.png" alt="تشكيلة الموسم الجديدة - سنابل للمحجبات" class="w-full h-auto object-cover block max-h-[480px]">
         </a>
         <!-- زر تسوقي الآن المدمج على كارت البانر -->
-        <div class="absolute bottom-3 left-3 z-10">
-          <a href="#quick-catalog" class="inline-flex items-center gap-1.5 bg-brand-accent hover:bg-amber-400 text-neutral-950 text-[11px] font-black px-3.5 py-1.5 rounded-lg shadow-lg active:scale-95 transition">
-            <span>تسوقي الآن</span>
-            <svg class="w-3 h-3 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        <div class="absolute bottom-3 sm:bottom-6 left-3 sm:left-6 z-10">
+          <a href="#quick-catalog" class="inline-flex items-center gap-2 bg-brand-accent hover:bg-amber-400 text-neutral-950 text-xs sm:text-sm font-black px-4 sm:px-6 py-2 sm:py-3 rounded-xl shadow-xl active:scale-95 transition">
+            <span>تسوقي التشكيلة الآن</span>
+            <svg class="w-3.5 h-3.5 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- 4. قسم الإطلالة الكاملة (بألوان الأسود الملكي والذهبي لرفع معدل الشراء) -->
-    <section class="px-4 pt-3.5 pb-1">
-      <div class="bg-gradient-to-br from-brand-medium to-brand-dark text-white p-4 rounded-2xl shadow-md relative overflow-hidden border border-brand-accent/20">
-        <div class="flex items-center justify-between mb-2">
-          <span class="bg-brand-accent text-neutral-950 text-[10px] font-black px-2 py-0.5 rounded-full">وفرّي 150 ج.م عند الطلب معاً</span>
-          <span class="text-[11px] text-amber-200/90 font-semibold">عرض الإطلالة المتناسقة</span>
-        </div>
-        <h3 class="text-base font-bold mb-1">طقم الاحتشام المتكامل (دريس ساتر + خمار فرنسي)</h3>
-        <p class="text-xs text-neutral-300 mb-3">تنسيق مريح بلون موحد وخامة صيفية ناعمة لا تحتاج كوي متكرر.</p>
-        
-        <div class="bg-white/10 p-3 rounded-xl backdrop-blur-sm flex items-center justify-between border border-white/15">
-          <div>
-            <div class="text-[11px] text-neutral-400 line-through">بدلاً من 1,249 ج.م</div>
-            <div class="text-lg font-black text-brand-accent">1,099 ج.م فقط</div>
+    <!-- 4. قسم الإطلالة الكاملة (AOV Booster Bundle) -->
+    <section id="bundle-section" class="w-full">
+      <div class="bg-gradient-to-br from-brand-medium to-brand-dark text-white p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-md relative overflow-hidden border border-brand-accent/25">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div class="space-y-1 sm:space-y-2">
+            <div class="flex items-center gap-2">
+              <span class="bg-brand-accent text-neutral-950 text-[10px] sm:text-xs font-black px-2.5 py-0.5 rounded-full">وفرّي 150 ج.م عند الطلب معاً</span>
+              <span class="text-xs text-amber-200/90 font-bold">عرض الإطلالة المتناسقة</span>
+            </div>
+            <h2 class="text-base sm:text-xl font-black">طقم الاحتشام المتكامل (دريس ساتر + خمار فرنسي)</h2>
+            <p class="text-xs sm:text-sm text-neutral-300">تنسيق مريح بلون موحد وخامة كريب صيفية ناعمة لا تحتاج كوي متكرر ولا تشف.</p>
           </div>
-          <button onclick="addBundleToCart()" class="bg-brand-accent hover:bg-amber-400 text-neutral-950 text-xs font-black px-4 py-2.5 rounded-lg shadow transition active:scale-95">
-            أضيفي الإطلالة للسلة
-          </button>
+
+          <!-- تفاصيل السعر والزر -->
+          <div class="bg-white/10 p-3 sm:p-4 rounded-xl sm:rounded-2xl backdrop-blur-sm flex items-center justify-between md:justify-end gap-4 sm:gap-6 border border-white/15 min-w-[280px]">
+            <div>
+              <div class="text-[11px] sm:text-xs text-neutral-400 line-through">بدلاً من 1,249 ج.م</div>
+              <div class="text-lg sm:text-2xl font-black text-brand-accent">1,099 ج.م فقط</div>
+            </div>
+            <button onclick="addBundleToCart()" class="bg-brand-accent hover:bg-amber-400 text-neutral-950 text-xs sm:text-sm font-black px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl shadow-md transition active:scale-95 whitespace-nowrap">
+              أضيفي الإطلالة للسلة
+            </button>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 5. مسارا الشراء الرئيسيان -->
-    <section class="px-4 py-4">
-      <div class="text-center mb-3">
-        <h2 class="text-sm font-bold text-brand-dark">تسوقي حسب اختيارك</h2>
+    <!-- 5. مسارا الشراء الرئيسيان (تم حل مشكلة قص الصور باعتماد نسبة الطول الطبيعية) -->
+    <section id="choice-paths" class="w-full">
+      <div class="text-center mb-3 sm:mb-5">
+        <h2 class="text-base sm:text-xl font-black text-brand-dark">تسوقي حسب احتياجك</h2>
+        <p class="text-xs sm:text-sm text-neutral-500 mt-0.5">اختاري بين القطع المنفصلة أو الأطقم المنسقة الجاهزة</p>
       </div>
-      <div class="grid grid-cols-2 gap-3">
-        <div class="bg-white p-3 rounded-xl border border-neutral-200/70 shadow-sm flex flex-col justify-between active:border-brand-dark transition">
+
+      <div class="grid grid-cols-2 gap-3 sm:gap-6">
+        <!-- المسار 1: الخمار والنقاب -->
+        <div class="bg-white p-3 sm:p-5 rounded-2xl border border-neutral-200/90 shadow-sm flex flex-col justify-between hover:border-brand-dark transition">
           <div>
-            <div class="h-28 rounded-lg bg-neutral-100 overflow-hidden mb-2.5">
-              <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=300&q=80" alt="الخمار والنقاب" class="w-full h-full object-cover">
+            <!-- إطار الصورة بنسبة 4/5 مع التركيز على الجزء العلوي لمنع أي قص غريب -->
+            <div class="aspect-[4/5] rounded-xl bg-neutral-100 overflow-hidden mb-3">
+              <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=600&q=80" alt="الخمار والنقاب" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
             </div>
-            <h3 class="font-bold text-xs text-brand-dark">الخمار والطرح والنقاب</h3>
-            <p class="text-[11px] text-neutral-500 mt-0.5">خامات كريب وسيلك ناعمة</p>
+            <h3 class="font-bold text-xs sm:text-base text-brand-dark">الخمار والطرح والنقاب</h3>
+            <p class="text-[11px] sm:text-xs text-neutral-500 mt-1">خامات كريب كوري وسيلك خفيفة وباردة</p>
           </div>
-          <button class="mt-3 w-full py-1.5 bg-brand-light text-brand-dark text-[11px] font-bold rounded-md hover:bg-neutral-200 transition">
+          <button class="mt-3 w-full py-2 bg-brand-light text-brand-dark text-xs sm:text-sm font-bold rounded-xl hover:bg-neutral-200 transition">
             تصفحي القطع
           </button>
         </div>
 
-        <div class="bg-white p-3 rounded-xl border-2 border-brand-accent/40 bg-gradient-to-b from-[#FBF8F1] to-white shadow-sm flex flex-col justify-between relative overflow-hidden">
-          <span class="absolute top-1.5 left-1.5 bg-brand-dark text-brand-accent text-[9px] px-1.5 py-0.5 rounded font-bold">الأوفر ٪</span>
+        <!-- المسار 2: الإطلالات المتكاملة -->
+        <div class="bg-white p-3 sm:p-5 rounded-2xl border-2 border-brand-accent/40 bg-gradient-to-b from-[#FBF8F1] to-white shadow-sm flex flex-col justify-between relative overflow-hidden">
+          <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-brand-dark text-brand-accent text-[9px] sm:text-xs px-2 py-0.5 rounded-md font-bold">الأوفر ٪</span>
           <div>
-            <div class="h-28 rounded-lg bg-neutral-100 overflow-hidden mb-2.5">
-              <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=300&q=80" alt="الإطلالات المتكاملة" class="w-full h-full object-cover">
+            <!-- إطار الصورة بنسبة 4/5 لظهور الدريس والخمار بالكامل -->
+            <div class="aspect-[4/5] rounded-xl bg-neutral-100 overflow-hidden mb-3">
+              <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=600&q=80" alt="الإطلالات المتكاملة" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
             </div>
-            <h3 class="font-bold text-xs text-brand-dark">الإطلالات المتكاملة</h3>
-            <p class="text-[11px] text-neutral-500 mt-0.5">دريس + خمار + نقاب منسق</p>
+            <h3 class="font-bold text-xs sm:text-base text-brand-dark">الإطلالات المتكاملة</h3>
+            <p class="text-[11px] sm:text-xs text-neutral-500 mt-1">دريس + خمار + نقاب بتنسيق متناغم</p>
           </div>
-          <button class="mt-3 w-full py-1.5 bg-brand-dark text-white text-[11px] font-bold rounded-md active:scale-95 transition">
+          <button class="mt-3 w-full py-2 bg-brand-dark text-white text-xs sm:text-sm font-bold rounded-xl active:scale-95 hover:bg-neutral-900 transition">
             اكتشفي الأطقم
           </button>
         </div>
       </div>
     </section>
 
-    <!-- 6. الأكثر طلباً -->
-    <section id="quick-catalog" class="py-2">
-      <div class="px-4 flex items-center justify-between mb-3">
+    <!-- 6. الأكثر طلباً (كاروسيل على الموبايل وشبكة أعمدة كاملة على الكمبيوتر) -->
+    <section id="quick-catalog" class="w-full py-2">
+      <div class="flex items-center justify-between mb-3 sm:mb-6">
         <div>
-          <h2 class="text-base font-extrabold text-brand-dark flex items-center gap-1.5">
-            <span>الأكثر طلباً</span>
-            <span class="text-sm">🔥</span>
+          <h2 class="text-base sm:text-xl font-black text-brand-dark flex items-center gap-1.5">
+            <span>الأكثر طلباً ومبيعاً</span>
+            <span class="text-sm sm:text-base">🔥</span>
           </h2>
-          <p class="text-xs text-neutral-500">اختيارات مريحة أجمعت عليها عميلاتنا</p>
+          <p class="text-xs sm:text-sm text-neutral-500">قطع أجمعت عميلات سنابل على خامتها وانسيابيتها</p>
         </div>
-        <span class="text-xs font-bold text-brand-accent">سحب أفقي ←</span>
+        <span class="text-xs font-bold text-brand-accent md:hidden">سحب أفقي ←</span>
       </div>
 
-      <div class="flex gap-3 overflow-x-auto px-4 no-scrollbar pb-2 snap-x snap-mandatory">
-        <!-- كارت 1 -->
-        <div class="min-w-[195px] max-w-[200px] snap-start bg-white rounded-xl border border-neutral-200/80 shadow-sm p-2.5 flex flex-col justify-between">
+      <!-- الحاوية: أفقية للموبايل، وشبكة من 3 أعمدة على الكمبيوتر -->
+      <div class="flex gap-3 overflow-x-auto no-scrollbar pb-3 snap-x snap-mandatory md:grid md:grid-cols-3 md:gap-6 md:overflow-visible">
+        
+        <!-- كارت منتج 1 -->
+        <div class="min-w-[210px] max-w-[220px] md:min-w-0 md:max-w-none snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
           <div>
-            <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-neutral-100 mb-2">
-              <span class="absolute top-1.5 right-1.5 bg-neutral-900/85 text-brand-accent text-[10px] px-1.5 py-0.5 rounded font-semibold backdrop-blur-sm">شيفون كريب</span>
-              <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=400&q=80" alt="خمار فرنسي 3 طبقات" class="w-full h-full object-cover">
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
+              <span class="absolute top-2 right-2 bg-neutral-900/85 text-brand-accent text-[10px] px-2 py-0.5 rounded-md font-semibold backdrop-blur-sm">شيفون كريب</span>
+              <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=500&q=80" alt="خمار فرنسي 3 طبقات" class="w-full h-full object-cover object-top">
             </div>
-            <h3 class="font-bold text-xs text-brand-dark line-clamp-1">خمار فرنسي 3 طبقات مثلث</h3>
-            <p class="text-[11px] text-neutral-500 mt-0.5">مستورد ناعم غير شفاف</p>
-            <div class="flex items-baseline gap-2 mt-1.5">
-              <span class="text-sm font-extrabold text-brand-dark">500 ج.م</span>
-              <span class="text-[11px] text-neutral-400 line-through">650 ج.م</span>
+            <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">خمار فرنسي 3 طبقات مثلث</h3>
+            <p class="text-[11px] text-neutral-500 mt-0.5">مستورد ناعم غير شفاف ساتر</p>
+            <div class="flex items-baseline gap-2 mt-2">
+              <span class="text-sm sm:text-base font-black text-brand-dark">500 ج.م</span>
+              <span class="text-xs text-neutral-400 line-through">650 ج.م</span>
             </div>
           </div>
-          <button onclick="openProductQuickView('خمار فرنسي 3 طبقات مثلث', 500)" class="mt-2.5 w-full py-2 bg-brand-dark active:bg-neutral-900 text-white text-xs font-bold rounded-lg flex items-center justify-center gap-1.5 shadow-sm">
+          <button onclick="openProductQuickView('خمار فرنسي 3 طبقات مثلث', 500)" class="mt-3 w-full py-2.5 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 shadow-sm transition">
             <span>أضيفي للسلة</span>
           </button>
         </div>
 
-        <!-- كارت 2 -->
-        <div class="min-w-[195px] max-w-[200px] snap-start bg-white rounded-xl border border-neutral-200/80 shadow-sm p-2.5 flex flex-col justify-between">
+        <!-- كارت منتج 2 -->
+        <div class="min-w-[210px] max-w-[220px] md:min-w-0 md:max-w-none snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
           <div>
-            <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-neutral-100 mb-2">
-              <span class="absolute top-1.5 right-1.5 bg-brand-medium text-amber-300 text-[10px] px-1.5 py-0.5 rounded font-semibold">طبي مريح</span>
-              <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=400&q=80" alt="نقاب طبي مقوى" class="w-full h-full object-cover">
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
+              <span class="absolute top-2 right-2 bg-brand-medium text-amber-300 text-[10px] px-2 py-0.5 rounded-md font-semibold">طبي مريح</span>
+              <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=500&q=80" alt="نقاب طبي مقوى" class="w-full h-full object-cover object-top">
             </div>
-            <h3 class="font-bold text-xs text-brand-dark line-clamp-1">نقاب طبي مقوى خليجي</h3>
-            <p class="text-[11px] text-neutral-500 mt-0.5">شيفون ناعم لا يسبب تحسس</p>
-            <div class="flex items-baseline gap-2 mt-1.5">
-              <span class="text-sm font-extrabold text-brand-dark">160 ج.م</span>
-              <span class="text-[11px] text-neutral-400 line-through">200 ج.م</span>
+            <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">نقاب طبي مقوى خليجي</h3>
+            <p class="text-[11px] text-neutral-500 mt-0.5">شيفون لا يسبب حساسية وبارد</p>
+            <div class="flex items-baseline gap-2 mt-2">
+              <span class="text-sm sm:text-base font-black text-brand-dark">160 ج.م</span>
+              <span class="text-xs text-neutral-400 line-through">200 ج.م</span>
             </div>
           </div>
-          <button onclick="openProductQuickView('نقاب طبي مقوى خليجي', 160)" class="mt-2.5 w-full py-2 bg-brand-dark active:bg-neutral-900 text-white text-xs font-bold rounded-lg flex items-center justify-center gap-1.5 shadow-sm">
+          <button onclick="openProductQuickView('نقاب طبي مقوى خليجي', 160)" class="mt-3 w-full py-2.5 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 shadow-sm transition">
             <span>أضيفي للسلة</span>
           </button>
         </div>
 
-        <!-- كارت 3 -->
-        <div class="min-w-[195px] max-w-[200px] snap-start bg-white rounded-xl border border-neutral-200/80 shadow-sm p-2.5 flex flex-col justify-between">
+        <!-- كارت منتج 3 -->
+        <div class="min-w-[210px] max-w-[220px] md:min-w-0 md:max-w-none snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
           <div>
-            <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-neutral-100 mb-2">
-              <span class="absolute top-1.5 right-1.5 bg-neutral-900/85 text-white text-[10px] px-1.5 py-0.5 rounded font-semibold">طقم 3 قطع</span>
-              <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=400&q=80" alt="خمار إندونيسي 3 قطع" class="w-full h-full object-cover">
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
+              <span class="absolute top-2 right-2 bg-neutral-900/85 text-brand-accent text-[10px] px-2 py-0.5 rounded-md font-semibold">طقم 3 قطع</span>
+              <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=80" alt="خمار إندونيسي 3 قطع" class="w-full h-full object-cover object-top">
             </div>
-            <h3 class="font-bold text-xs text-brand-dark line-clamp-1">خمار إندونيسي 3 قطع مع غشوة</h3>
-            <p class="text-[11px] text-neutral-500 mt-0.5">ساتر وخفيف للخرجات الطويلة</p>
-            <div class="flex items-baseline gap-2 mt-1.5">
-              <span class="text-sm font-extrabold text-brand-dark">550 ج.م</span>
-              <span class="text-[11px] text-neutral-400 line-through">700 ج.م</span>
+            <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">خمار إندونيسي 3 قطع مع غشوة</h3>
+            <p class="text-[11px] text-neutral-500 mt-0.5">ساتر وخفيف للخرجات والدوام</p>
+            <div class="flex items-baseline gap-2 mt-2">
+              <span class="text-sm sm:text-base font-black text-brand-dark">550 ج.م</span>
+              <span class="text-xs text-neutral-400 line-through">700 ج.م</span>
             </div>
           </div>
-          <button onclick="openProductQuickView('خمار إندونيسي 3 قطع مع غشوة', 550)" class="mt-2.5 w-full py-2 bg-brand-dark active:bg-neutral-900 text-white text-xs font-bold rounded-lg flex items-center justify-center gap-1.5 shadow-sm">
+          <button onclick="openProductQuickView('خمار إندونيسي 3 قطع مع غشوة', 550)" class="mt-3 w-full py-2.5 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 shadow-sm transition">
             <span>أضيفي للسلة</span>
           </button>
         </div>
       </div>
     </section>
 
-    <!-- 7. عوامل الطمأنينة -->
-    <section class="px-4 py-3">
-      <div class="grid grid-cols-2 gap-2.5 text-center">
-        <div class="bg-white p-3 rounded-xl border border-neutral-200/60 shadow-xs">
-          <span class="text-lg">🤝</span>
-          <h4 class="text-xs font-bold text-brand-dark mt-1">الدفع عند الاستلام</h4>
-          <p class="text-[10px] text-neutral-500">افحصي المنتج وعاينيه أولاً</p>
+    <!-- 7. عوامل الطمأنينة (4 أعمدة على سطح المكتب) -->
+    <section id="guarantees" class="w-full py-3">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 text-center">
+        <div class="bg-white p-3.5 sm:p-5 rounded-2xl border border-neutral-200/70 shadow-xs">
+          <span class="text-2xl">🤝</span>
+          <h4 class="text-xs sm:text-sm font-bold text-brand-dark mt-1.5">الدفع عند الاستلام</h4>
+          <p class="text-[10px] sm:text-xs text-neutral-500">افحصي المنتج وعاينيه أولاً</p>
         </div>
-        <div class="bg-white p-3 rounded-xl border border-neutral-200/60 shadow-xs">
-          <span class="text-lg">🔄</span>
-          <h4 class="text-xs font-bold text-brand-dark mt-1">استبدال واسترجاع سهل</h4>
-          <p class="text-[10px] text-neutral-500">خلال 14 يوم بكل مرونة</p>
+        <div class="bg-white p-3.5 sm:p-5 rounded-2xl border border-neutral-200/70 shadow-xs">
+          <span class="text-2xl">🔄</span>
+          <h4 class="text-xs sm:text-sm font-bold text-brand-dark mt-1.5">استبدال واسترجاع سهل</h4>
+          <p class="text-[10px] sm:text-xs text-neutral-500">خلال 14 يوم بكل مرونة</p>
+        </div>
+        <div class="bg-white p-3.5 sm:p-5 rounded-2xl border border-neutral-200/70 shadow-xs">
+          <span class="text-2xl">🚚</span>
+          <h4 class="text-xs sm:text-sm font-bold text-brand-dark mt-1.5">توصيل سريع</h4>
+          <p class="text-[10px] sm:text-xs text-neutral-500">لكافة محافظات مصر</p>
+        </div>
+        <div class="bg-white p-3.5 sm:p-5 rounded-2xl border border-neutral-200/70 shadow-xs">
+          <span class="text-2xl">💎</span>
+          <h4 class="text-xs sm:text-sm font-bold text-brand-dark mt-1.5">خامات ممتازة</h4>
+          <p class="text-[10px] sm:text-xs text-neutral-500">أقمشة مختارة بعناية فائقة</p>
         </div>
       </div>
     </section>
 
     <!-- 8. آراء العميلات -->
-    <section class="px-4 py-3">
-      <div class="bg-white rounded-xl p-3.5 border border-neutral-200/70">
-        <div class="flex items-center gap-1 text-brand-accent text-xs mb-1.5">
+    <section class="w-full py-2">
+      <div class="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-neutral-200/80 max-w-3xl mx-auto text-center">
+        <div class="flex items-center justify-center gap-1 text-brand-accent text-sm sm:text-base mb-2">
           ★★★★★
-          <span class="text-[10px] text-neutral-400 font-sans mr-1">(تقييم 4.9 من 5)</span>
+          <span class="text-xs text-neutral-400 font-sans mr-1">(تقييم 4.9 من 5)</span>
         </div>
-        <p class="text-xs text-neutral-700 italic">"الخامة ممتازة جداً ومش شفافة نهائياً، التوصيل في القاهرة أخد يومين بس ووصلت زي الصورة بالضبط شكراً سنابل."</p>
-        <span class="block text-[11px] font-bold text-brand-dark mt-2">— أستاذة نورهان (القاهرة)</span>
+        <p class="text-xs sm:text-sm text-neutral-700 italic leading-relaxed">"الخامة ممتازة جداً ومش شفافة نهائياً، التوصيل في القاهرة أخد يومين بس ووصلت زي الصورة بالضبط شكراً سنابل."</p>
+        <span class="block text-xs sm:text-sm font-bold text-brand-dark mt-2.5">— أستاذة نورهان (القاهرة)</span>
       </div>
     </section>
   </main>
 
-  <!-- 9. الشريط السفلي الثابت -->
-  <div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-neutral-200 px-4 py-2.5 max-w-md mx-auto flex items-center justify-between gap-3 shadow-lg">
+  <!-- 9. الشريط السفلي الثابت (يظهر على الموبايل فقط ومخفي على سطح المكتب)[cite: 6] -->
+  <div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-neutral-200 px-4 py-2.5 flex items-center justify-between gap-3 shadow-xl md:hidden">
     <div>
       <span class="text-[11px] text-neutral-500 block">الإجمالي المبدئي</span>
       <span id="stickyBarTotal" class="text-base font-extrabold text-brand-dark">500 ج.م</span>
@@ -257,7 +300,7 @@
       <a href="https://wa.me/201124574341?text=مرحباً%20سنابل،%20أريد%20الاستفسار%20عن%20المنتجات" target="_blank" onclick="trackWhatsAppClick()" class="p-2.5 bg-emerald-50 text-emerald-600 rounded-xl border border-emerald-200 flex items-center justify-center active:scale-95" aria-label="طلب عبر واتساب">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.072-2.122-.52-1.825-.758-2.997-2.613-3.088-2.735-.091-.121-.734-.977-.734-1.864 0-.887.464-1.323.63-1.503.166-.18.362-.226.483-.226.121 0 .241.002.348.006.113.005.263-.043.412.316.151.362.513 1.25.558 1.341.045.09.076.197.015.318-.06.121-.09.197-.181.303-.09.106-.191.237-.272.318-.09.09-.185.188-.08.369.105.18.468.772.999 1.246.685.612 1.261.802 1.442.893.18.09.287.075.393-.045.105-.121.453-.529.574-.71.121-.181.241-.151.407-.09.166.06 1.055.498 1.236.588.181.09.302.136.347.212.045.075.045.436-.099.841z"/></svg>
       </a>
-      <button onclick="toggleCheckoutDrawer()" class="flex-1 py-3 bg-brand-dark text-white rounded-xl text-xs font-extrabold flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition">
+      <button onclick="toggleCheckoutDrawer()" class="flex-1 py-3 bg-brand-dark text-white rounded-xl text-xs font-black flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition">
         <span>تأكيد الطلب الآن</span>
         <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
       </button>
@@ -265,46 +308,46 @@
   </div>
 
   <!-- 10. درج إتمام الطلب السريع (Drawer) -->
-  <div id="checkoutDrawer" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs transition-opacity duration-300 hidden opacity-0 flex items-end justify-center">
-    <div class="bg-white w-full max-w-md rounded-t-3xl max-h-[92vh] overflow-y-auto p-5 pb-8 shadow-2xl transform transition-transform duration-300 translate-y-full" id="drawerContent">
+  <div id="checkoutDrawer" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs transition-opacity duration-300 hidden opacity-0 flex items-end md:items-center justify-center">
+    <div class="bg-white w-full max-w-lg rounded-t-3xl md:rounded-3xl max-h-[92vh] overflow-y-auto p-5 sm:p-7 shadow-2xl transform transition-transform duration-300 translate-y-full md:translate-y-0" id="drawerContent">
       
       <div class="flex items-center justify-between border-b border-neutral-100 pb-3 mb-4">
         <div class="flex items-center gap-2">
-          <span class="text-base font-black text-brand-dark">سلة الشراء وتأكيد الطلب</span>
+          <span class="text-base sm:text-lg font-black text-brand-dark">سلة الشراء وتأكيد الطلب</span>
           <span class="bg-brand-highlight text-brand-dark text-[10px] px-2 py-0.5 rounded font-bold">دفع عند الاستلام</span>
         </div>
-        <button onclick="toggleCheckoutDrawer()" class="p-1 text-neutral-400 hover:text-neutral-700">✕</button>
+        <button onclick="toggleCheckoutDrawer()" class="p-1 text-neutral-400 hover:text-neutral-700 text-lg">✕</button>
       </div>
 
       <!-- ملخص سريع للمنتج -->
-      <div class="bg-brand-light/60 p-3 rounded-xl flex items-center gap-3 mb-4 border border-neutral-200/50">
-        <img id="summaryProductImg" src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=120&q=80" alt="المنتج" class="w-12 h-16 rounded-lg object-cover bg-neutral-200">
+      <div class="bg-brand-light/60 p-3.5 rounded-xl flex items-center gap-3 mb-4 border border-neutral-200/50">
+        <img id="summaryProductImg" src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=150&q=80" alt="المنتج" class="w-14 h-18 rounded-lg object-cover bg-neutral-200">
         <div class="flex-1">
-          <h4 id="summaryProductName" class="text-xs font-bold text-brand-dark">طقم الاحتشام المتكامل (دريس ساتر + خمار فرنسي)</h4>
+          <h4 id="summaryProductName" class="text-xs sm:text-sm font-bold text-brand-dark">طقم الاحتشام المتكامل (دريس ساتر + خمار فرنسي)</h4>
           <span class="text-[11px] text-neutral-500 block">الخامة: شيفون كريب كوري | المقاس: موحد</span>
           <div class="flex items-center justify-between mt-1">
-            <span id="summaryProductPrice" class="text-xs font-extrabold text-brand-dark">1,099 ج.م</span>
+            <span id="summaryProductPrice" class="text-xs sm:text-sm font-black text-brand-dark">1,099 ج.م</span>
             <span class="text-[10px] text-neutral-400">الكمية: 1</span>
           </div>
         </div>
       </div>
 
-      <!-- استمارة الطلب السريع مع الـ 27 محافظة كاملة -->
+      <!-- استمارة الطلب السريع مع الـ 27 محافظة كاملة[cite: 6] -->
       <form id="orderForm" onsubmit="handleOrderSubmit(event)" class="space-y-3">
         <div>
           <label class="block text-[11px] font-bold text-neutral-700 mb-1">الاسم بالكامل *</label>
-          <input type="text" id="drawerCustName" required placeholder="مثال: سارة أحمد" class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg text-xs focus:bg-white focus:border-brand-dark outline-hidden">
+          <input type="text" id="drawerCustName" required placeholder="مثال: سارة أحمد" class="w-full px-3.5 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-xs focus:bg-white focus:border-brand-dark outline-hidden">
         </div>
 
         <div>
           <label class="block text-[11px] font-bold text-neutral-700 mb-1">رقم الهاتف (مفعل به واتساب) *</label>
-          <input type="tel" id="drawerCustPhone" dir="ltr" required placeholder="01xxxxxxxxx" class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg text-xs text-right focus:bg-white focus:border-brand-dark outline-hidden">
+          <input type="tel" id="drawerCustPhone" dir="ltr" required placeholder="01xxxxxxxxx" class="w-full px-3.5 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-xs text-right focus:bg-white focus:border-brand-dark outline-hidden">
         </div>
 
         <div class="grid grid-cols-2 gap-2">
           <div>
             <label class="block text-[11px] font-bold text-neutral-700 mb-1">المحافظة (27 محافظة) *</label>
-            <select id="drawerCustGov" required class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg text-xs focus:bg-white focus:border-brand-dark outline-hidden">
+            <select id="drawerCustGov" required class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-xs focus:bg-white focus:border-brand-dark outline-hidden">
               <option value="">اختاري المحافظة</option>
               <option value="القاهرة">القاهرة</option>
               <option value="الجيزة">الجيزة</option>
@@ -337,17 +380,17 @@
           </div>
           <div>
             <label class="block text-[11px] font-bold text-neutral-700 mb-1">المدينة / الحي *</label>
-            <input type="text" id="drawerCustCity" required placeholder="مثال: مدينة نصر" class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg text-xs focus:bg-white focus:border-brand-dark outline-hidden">
+            <input type="text" id="drawerCustCity" required placeholder="مثال: مدينة نصر" class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-xs focus:bg-white focus:border-brand-dark outline-hidden">
           </div>
         </div>
 
         <div>
-          <label class="block text-[11px] font-bold text-neutral-700 mb-1">العنوان بالتفصيل (الشارع، رقم العمارة، الشقة) *</label>
-          <input type="text" id="drawerCustAddress" required placeholder="العنوان بالتفصيل لتسهيل وسرعة وصول المندوب" class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg text-xs focus:bg-white focus:border-brand-dark outline-hidden">
+          <label class="block text-[11px] font-bold text-neutral-700 mb-1">العنوان بالتفصيل (اسم الشارع، رقم العمارة، الشقة) *</label>
+          <input type="text" id="drawerCustAddress" required placeholder="العنوان بالتفصيل لتسهيل وسرعة وصول المندوب" class="w-full px-3.5 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-xs focus:bg-white focus:border-brand-dark outline-hidden">
         </div>
 
         <!-- الحسبة النهائية -->
-        <div class="pt-2 border-t border-neutral-100 space-y-1 text-xs">
+        <div class="pt-2 border-t border-neutral-100 space-y-1.5 text-xs">
           <div class="flex justify-between text-neutral-600">
             <span>قيمة المنتجات:</span>
             <span id="checkoutSubtotal">1,099 ج.م</span>
@@ -356,14 +399,14 @@
             <span>مصاريف الشحن:</span>
             <span class="text-emerald-700 font-bold">40 ج.م</span>
           </div>
-          <div class="flex justify-between text-brand-dark font-extrabold text-sm pt-1 border-t border-dashed border-neutral-200">
+          <div class="flex justify-between text-brand-dark font-black text-sm pt-1 border-t border-dashed border-neutral-200">
             <span>المبلغ الإجمالي عند الاستلام:</span>
             <span id="checkoutGrandTotal">1,139 ج.م</span>
           </div>
         </div>
 
         <!-- زر الطلب المباشر لواتساب -->
-        <button type="submit" class="w-full py-3.5 bg-brand-btn active:bg-black text-white text-xs font-black rounded-xl shadow-lg mt-2 flex items-center justify-center gap-2">
+        <button type="submit" class="w-full py-3.5 bg-brand-btn active:bg-black hover:bg-neutral-900 text-white text-xs sm:text-sm font-black rounded-xl shadow-lg mt-2 flex items-center justify-center gap-2">
           <span>تأكيد الطلب عبر واتساب الآن</span>
           <span>💬</span>
         </button>
@@ -374,7 +417,7 @@
   </div>
 
   <script>
-    // رقم واتساب إدارة متجر سنابل لاستقبال الطلبات
+    // رقم واتساب إدارة متجر سنابل المعتمد[cite: 6]
     const STORE_WHATSAPP_NUMBER = "201124574341";
 
     let currentCart = {
@@ -449,7 +492,7 @@
       const subtotal = currentCart.price * currentCart.quantity;
       const grandTotal = subtotal + 40;
 
-      // تتبع حدث الشراء في الإعلانات
+      // تتبع حدث الشراء
       dispatchTrackingEvent('Purchase', {
         value: grandTotal,
         currency: 'EGP',
