@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>سنابل للمحجبات | أناقتك المحتشمة</title>
+  
+  <!-- الشعار كأيقونة مفضلة للمتصفح (Favicon) -->
+  <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
+  <link rel="apple-touch-icon" href="assets/images/logo.jpg">
+
   <!-- خط كوفي وأنيق للقراءة السريعة -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,17 +56,17 @@
     <span>✨ معاينة وفحص قبل الاستلام</span>
   </div>
 
-  <!-- 2. الهيدر المتجاوب -->
+  <!-- 2. الهيدر المتجاوب بالشعار الدائري الجديد -->
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-neutral-200/80 px-4 lg:px-8 py-3.5 shadow-xs">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       
-      <!-- اللوجو والقائمة -->
+      <!-- اللوجو الدائري واسم المتجر -->
       <div class="flex items-center gap-4">
         <button aria-label="القائمة" class="p-1 text-brand-dark md:hidden">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
-        <a href="index.html" class="text-xl sm:text-2xl font-black text-brand-dark tracking-tight flex items-center gap-1.5">
-          <span class="text-brand-accent text-xl">🌾</span>
+        <a href="index.html" class="text-xl sm:text-2xl font-black text-brand-dark tracking-tight flex items-center gap-2.5">
+          <img src="assets/images/logo.jpg" alt="شعار سنابل للمحجبات" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover border border-brand-accent/40 shadow-xs">
           <span>سنابل</span>
           <span class="text-xs sm:text-sm font-normal text-neutral-500 mr-1">للمحجبات</span>
         </a>
@@ -75,7 +80,7 @@
         <a href="#guarantees" class="hover:text-brand-accent transition">الضمان والمعاينة</a>
       </nav>
 
-      <!-- الأيقونات والسلة (تبدأ بـ 0 ومخفية لحين اختيار منتج) -->
+      <!-- الأيقونات والسلة -->
       <div class="flex items-center gap-3 sm:gap-4">
         <a href="https://wa.me/201124574341" target="_blank" class="hidden sm:flex items-center gap-1.5 text-xs font-bold bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-full border border-emerald-200 hover:bg-emerald-100 transition">
           <span>واتساب المتجر</span>
@@ -287,15 +292,15 @@
     </section>
   </main>
 
-  <!-- 9. فوتر المتجر الاحترافي وحسابات السوشيال ميديا والحقوق القانونية -->
+  <!-- 9. فوتر المتجر المحدث بالشعار الرسمي وحسابات التواصل الاجتماعي -->
   <footer class="mt-12 bg-brand-dark text-white border-t border-neutral-800 pt-10 pb-24 md:pb-12">
     <div class="max-w-7xl mx-auto px-4 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-neutral-800 text-center md:text-right">
         
-        <!-- هوية البراند -->
+        <!-- هوية البراند بالشعار الدائري -->
         <div class="space-y-2">
-          <div class="text-2xl font-black tracking-tight flex items-center justify-center md:justify-start gap-1.5">
-            <span class="text-brand-accent">🌾</span>
+          <div class="text-2xl font-black tracking-tight flex items-center justify-center md:justify-start gap-2.5">
+            <img src="assets/images/logo.jpg" alt="شعار سنابل للمحجبات" class="w-9 h-9 rounded-full object-cover border border-brand-accent/40 shadow-xs">
             <span>سنابل للمحجبات</span>
           </div>
           <p class="text-xs sm:text-sm text-neutral-400 leading-relaxed max-w-sm mx-auto md:mx-0">
@@ -346,10 +351,9 @@
     </div>
   </footer>
 
-  <!-- 10. زر الواتساب العائم للاستفسارات السريعة (مضبوط ليعلو شريط الشراء على الموبايل بدون تعارض) -->
+  <!-- 10. زر الواتساب العائم للاستفسارات السريعة -->
   <aside aria-label="مساعدة واستفسار سريع عبر واتساب" class="fixed z-40 bottom-24 left-4 md:bottom-6 md:left-6">
     <a href="https://wa.me/201124574341?text=مرحباً%20سنابل،%20عندي%20استفسار%20عن%20المنتجات" target="_blank" onclick="trackWhatsAppClick()" class="relative group flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white p-3.5 sm:px-4 sm:py-3 rounded-full shadow-2xl transition transform hover:scale-105 active:scale-95" aria-label="تواصل معنا عبر واتساب">
-      <!-- تأثير نبض خفيف لجذب الانتباه -->
       <span class="animate-ping absolute -top-1 -right-1 inline-flex h-3.5 w-3.5 rounded-full bg-emerald-400 opacity-75"></span>
       <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
       <span class="hidden sm:inline text-xs font-bold">استفسار سريع</span>
@@ -382,7 +386,7 @@
         <button onclick="toggleCheckoutDrawer()" class="p-1 text-neutral-400 hover:text-neutral-700 text-lg">✕</button>
       </div>
 
-      <!-- حالة السلة الفارغة (تظهر إذا لم تختر العميلة منتجاً بعد) -->
+      <!-- حالة السلة الفارغة -->
       <div id="emptyCartState" class="text-center py-8">
         <span class="text-4xl block mb-2">🛍️</span>
         <h4 class="text-sm font-bold text-neutral-700">سلتك فارغة حالياً</h4>
@@ -392,7 +396,7 @@
         </a>
       </div>
 
-      <!-- محتوى السلة والطلب (يظهر بعد اختيار منتج) -->
+      <!-- محتوى السلة والطلب -->
       <div id="activeCartState" class="hidden space-y-4">
         <div class="bg-brand-light/60 p-3.5 rounded-xl flex items-center gap-3 border border-neutral-200/50">
           <img id="summaryProductImg" src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=150&q=80" alt="المنتج" class="w-14 h-18 rounded-lg object-cover bg-neutral-200">
@@ -491,10 +495,10 @@
   </div>
 
   <script>
-    // رقم واتساب إدارة متجر سنابل المعتمد[cite: 6]
+    // رقم واتساب إدارة متجر سنابل المعتمد
     const STORE_WHATSAPP_NUMBER = "201124574341";
 
-    // تبدأ السلة فارغة تماماً عند أول زيارة للمتجر[cite: 7]
+    // تبدأ السلة فارغة تماماً عند أول زيارة للمتجر
     let currentCart = null;
 
     function updateCartUI() {
@@ -561,7 +565,6 @@
 
     function handleStickyButtonClick() {
       if (!currentCart) {
-        // إذا كانت السلة فارغة، يتم توجيه العميلة لمنتجات الأكثر طلباً لاختيار قطعة
         document.getElementById('quick-catalog').scrollIntoView({ behavior: 'smooth' });
       } else {
         toggleCheckoutDrawer();
