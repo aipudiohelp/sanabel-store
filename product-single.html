@@ -1,1 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>خمار فرنسي 3 طبقات مثلث كريب مستورد | سنابل للمحجبات</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Cairo', 'sans-serif'] },
+          colors: { brand: { dark: '#243427', light: '#FAF8F4', accent: '#E0A938', soft: '#EFECE6' } }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-brand-light text-neutral-800 font-sans pb-24">
 
+  <!-- هيدر التنقل الخلفي -->
+  <div class="sticky top-0 z-30 bg-white/95 backdrop-blur-sm border-b border-neutral-200 px-4 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-1 text-xs font-bold text-neutral-600">
+      <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      <span>رجوع للمتجر</span>
+    </a>
+    <span class="text-xs font-bold text-brand-dark">سنابل للمحجبات</span>
+    <a href="cart.html" class="relative p-1 text-brand-dark">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+      <span class="cart-badge-count absolute -top-1 -right-1 bg-amber-600 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+    </a>
+  </div>
+
+  <main class="max-w-md mx-auto px-4 pt-3">
+    <!-- معرض الصور المخصص للموبايل -->
+    <div class="relative rounded-2xl overflow-hidden bg-neutral-100 aspect-[3/4] shadow-sm border border-neutral-200/70">
+      <img id="mainProductImg" src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=600&q=80" alt="خمار فرنسي 3 طبقات" class="w-full h-full object-cover">
+      <span class="absolute top-3 right-3 bg-brand-dark text-white text-[11px] font-bold px-2.5 py-1 rounded-full">الأكثر طلباً 🔥</span>
+    </div>
+
+    <!-- بطاقة البيانات والسعر الفوري -->
+    <div class="mt-4">
+      <h1 class="text-lg font-extrabold text-brand-dark leading-snug">خمار فرنسي 3 طبقات مثلث – شيفون كريب مستورد</h1>
+      <p class="text-xs text-neutral-500 mt-1">قصة مثلثة انسيابية تمنحك ستراً تاماً دون ثقل مع نعومة فائقة لا تشف.</p>
+
+      <div class="flex items-baseline gap-3 mt-3 bg-white p-3 rounded-xl border border-neutral-200/60">
+        <span class="text-xl font-black text-brand-dark">500 ج.م</span>
+        <span class="text-xs text-neutral-400 line-through">650 ج.م</span>
+        <span class="bg-emerald-50 text-emerald-700 text-xs font-bold px-2 py-0.5 rounded mr-auto">وفّرتِ 150 ج.م</span>
+      </div>
+    </div>
+
+    <!-- اختيار اللون (Color Swatches) -->
+    <div class="mt-4 bg-white p-3.5 rounded-xl border border-neutral-200/60">
+      <label class="block text-xs font-bold text-neutral-700 mb-2">اختاري اللون: <span id="selectedColorName" class="text-brand-dark font-extrabold">أسود ملكي</span></label>
+      <div class="flex items-center gap-3">
+        <button onclick="selectColor('أسود ملكي', this)" class="w-9 h-9 rounded-full bg-neutral-900 ring-2 ring-brand-dark ring-offset-2 transition-all"></button>
+        <button onclick="selectColor('كافيه دافئ', this)" class="w-9 h-9 rounded-full bg-[#8c7462] transition-all"></button>
+        <button onclick="selectColor('زيتي داكن', this)" class="w-9 h-9 rounded-full bg-[#2a3c2d] transition-all"></button>
+        <button onclick="selectColor('وردي هادئ (موف)', this)" class="w-9 h-9 rounded-full bg-[#b8979c] transition-all"></button>
+      </div>
+    </div>
+
+    <!-- بيع إضافي لرفع السلة (Cross-Sell / Complete The Look) -->
+    <div class="mt-4 bg-brand-soft/60 border border-brand-dark/15 p-3.5 rounded-xl">
+      <span class="text-[11px] font-bold text-brand-dark block mb-1">💡 وفّري شحنتك وأضيفي إلى إطلالتك:</span>
+      <div class="flex items-center justify-between gap-2 bg-white p-2.5 rounded-lg mt-2">
+        <div class="flex items-center gap-2">
+          <div class="w-10 h-10 rounded bg-neutral-200 overflow-hidden flex-shrink-0">
+            <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=100&q=80" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <div class="text-xs font-bold text-neutral-800">نقاب طبي مقوى خليجي</div>
+            <div class="text-[11px] text-brand-dark font-bold">+160 ج.م فقط</div>
+          </div>
+        </div>
+        <button onclick="addAddonProduct()" class="text-xs bg-brand-dark text-white font-bold px-3 py-1.5 rounded-md active:scale-95 transition">+ إضافة</button>
+      </div>
+    </div>
+
+    <!-- معلومات الثقة القابلة للطي (Accordion) -->
+    <div class="mt-4 space-y-2 text-xs">
+      <details class="bg-white p-3 rounded-xl border border-neutral-200/60" open>
+        <summary class="font-bold text-neutral-700 cursor-pointer">مواصفات الخامة والمقاس</summary>
+        <p class="mt-2 text-neutral-600 leading-relaxed">مصنوع من شيفون كريب كوري عالي الجودة مستورد مخصوص لسنابل، خفيف على الرأس، بارد في الصيف، بطبقات متدرجة تمنع الشفافية تماماً.</p>
+      </details>
+      <details class="bg-white p-3 rounded-xl border border-neutral-200/60">
+        <summary class="font-bold text-neutral-700 cursor-pointer">سياسة المعاينة والاسترجاع</summary>
+        <p class="mt-2 text-neutral-600 leading-relaxed">حقك تعايني وتفحصي المنتج مع المندوب قبل دفع أي جنيه، وإمكانية الاستبدال والاسترجاع خلال 14 يوماً بكل سهولة.</p>
+      </details>
+    </div>
+  </main>
+
+  <!-- البار السفلي الثابت لشاشات الموبايل (Sticky Action Thumb-Zone) -->
+  <div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-neutral-200 px-4 py-2.5 max-w-md mx-auto flex items-center gap-2.5 shadow-lg">
+    <a id="waDirectBtn" href="https://wa.me/201001234567?text=استفسار%20عن%20خمار%20فرنسي%203%20طبقات" target="_blank" class="p-3 bg-emerald-50 text-emerald-700 rounded-xl border border-emerald-300 active:scale-95 flex-shrink-0" title="طلب بالواتساب">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.072-2.122-.52-1.825-.758-2.997-2.613-3.088-2.735-.091-.121-.734-.977-.734-1.864 0-.887.464-1.323.63-1.503.166-.18.362-.226.483-.226.121 0 .241.002.348.006.113.005.263-.043.412.316.151.362.513 1.25.558 1.341.045.09.076.197.015.318-.06.121-.09.197-.181.303-.09.106-.191.237-.272.318-.09.09-.185.188-.08.369.105.18.468.772.999 1.246.685.612 1.261.802 1.442.893.18.09.287.075.393-.045.105-.121.453-.529.574-.71.121-.181.241-.151.407-.09.166.06 1.055.498 1.236.588.181.09.302.136.347.212.045.075.045.436-.099.841z"/></svg>
+    </a>
+    <button onclick="handleAddToCart()" class="flex-1 py-3 bg-brand-dark text-white rounded-xl text-xs font-black shadow-md flex items-center justify-center gap-2 active:scale-95 transition">
+      <span>أضيفي للسلة واطلبي الآن</span>
+      <span class="text-amber-300">• 500 ج.م</span>
+    </button>
+  </div>
+
+  <script src="assets/js/store-core.js"></script>
+  <script>
+    let selectedColor = 'أسود ملكي';
+
+    function selectColor(color, btn) {
+      selectedColor = color;
+      document.getElementById('selectedColorName').innerText = color;
+      // تحديث مظهر الحلقة
+      document.querySelectorAll('.rounded-full').forEach(b => b.classList.remove('ring-2', 'ring-brand-dark', 'ring-offset-2'));
+      btn.classList.add('ring-2', 'ring-brand-dark', 'ring-offset-2');
+
+      // تحديث رابط الواتساب الديناميكي
+      const waMsg = encodeURIComponent(`مرحباً سنابل، أريد طلب خمار فرنسي 3 طبقات لون (${color}) بسعر 500 ج.م`);
+      document.getElementById('waDirectBtn').href = `https://wa.me/201001234567?text=${waMsg}`;
+    }
+
+    function handleAddToCart() {
+      SanabelStore.addItem({
+        id: 'khimar-french-3',
+        title: 'خمار فرنسي 3 طبقات مثلث كريب',
+        price: 500,
+        color: selectedColor,
+        size: 'موحد',
+        image: document.getElementById('mainProductImg').src
+      });
+      window.location.href = 'checkout.html';
+    }
+
+    function addAddonProduct() {
+      SanabelStore.addItem({
+        id: 'niqab-medical-1',
+        title: 'نقاب طبي مقوى خليجي',
+        price: 160,
+        color: 'أسود',
+        size: 'طبي'
+      });
+      alert('تمت إضافة النقاب الطبي لطقمك بنجاح!');
+    }
+  </script>
+</body>
+</html>
