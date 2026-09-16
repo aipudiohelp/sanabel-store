@@ -37,7 +37,7 @@
 </head>
 <body class="bg-brand-cream text-neutral-800 font-sans antialiased selection:bg-brand-medium selection:text-white thumb-safe-area">
 
-  <!-- 1. شريط الثقة والشحن (Top Announcement Bar) -->
+  <!-- 1. شريط الثقة والشحن -->
   <div class="bg-brand-dark text-white text-xs py-2 px-3 text-center tracking-wide font-medium flex justify-center items-center gap-2">
     <span>🚚 شحن سريع لجميع المحافظات</span>
     <span class="opacity-50">•</span>
@@ -46,7 +46,7 @@
     <span>✨ معاينة قبل الاستلام</span>
   </div>
 
-  <!-- 2. الهيدر المدمج (Sticky Mobile Header) -->
+  <!-- 2. الهيدر المدمج -->
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-neutral-200/60 px-4 py-3 flex items-center justify-between shadow-sm">
     <div class="flex items-center gap-3">
       <button aria-label="القائمة" class="p-1 text-brand-dark">
@@ -71,7 +71,7 @@
   </header>
 
   <main class="max-w-md mx-auto">
-    <!-- 3. الهيرو المباشر والمكثف (Direct Hero Section) -->
+    <!-- 3. الهيرو المباشر -->
     <section class="relative bg-gradient-to-b from-brand-light to-brand-cream px-4 pt-5 pb-6 border-b border-neutral-200/50">
       <div class="flex items-center gap-4">
         <div class="w-7/12">
@@ -91,13 +91,12 @@
       </div>
     </section>
 
-    <!-- 4. مسارا الشراء الرئيسيان (Primary Choice Paths) -->
+    <!-- 4. مسارا الشراء الرئيسيان -->
     <section class="px-4 py-5">
       <div class="text-center mb-3">
         <h2 class="text-sm font-bold text-brand-dark">تسوقي حسب اختيارك</h2>
       </div>
       <div class="grid grid-cols-2 gap-3">
-        <!-- المسار 1 -->
         <div class="bg-white p-3 rounded-xl border border-neutral-200/70 shadow-sm flex flex-col justify-between active:border-brand-dark transition">
           <div>
             <div class="h-28 rounded-lg bg-neutral-100 overflow-hidden mb-2.5">
@@ -111,7 +110,6 @@
           </button>
         </div>
 
-        <!-- المسار 2 (Highest AOV) -->
         <div class="bg-white p-3 rounded-xl border-2 border-brand-dark/20 bg-gradient-to-b from-brand-highlight/20 to-white shadow-sm flex flex-col justify-between relative overflow-hidden">
           <span class="absolute top-1.5 left-1.5 bg-brand-dark text-white text-[9px] px-1.5 py-0.5 rounded font-bold">الأوفر ٪</span>
           <div>
@@ -128,7 +126,7 @@
       </div>
     </section>
 
-    <!-- 5. الأكثر طلباً (Swipeable Best Sellers) -->
+    <!-- 5. الأكثر طلباً -->
     <section id="quick-catalog" class="py-3">
       <div class="px-4 flex items-center justify-between mb-3">
         <div>
@@ -141,10 +139,8 @@
         <span class="text-xs font-bold text-brand-medium">سحب أفقي ←</span>
       </div>
 
-      <!-- Carousels Container -->
       <div class="flex gap-3 overflow-x-auto px-4 no-scrollbar pb-2 snap-x snap-mandatory">
-        
-        <!-- كارت منتج 1 -->
+        <!-- كارت 1 -->
         <div class="min-w-[195px] max-w-[200px] snap-start bg-white rounded-xl border border-neutral-200/80 shadow-sm p-2.5 flex flex-col justify-between">
           <div>
             <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-neutral-100 mb-2">
@@ -158,12 +154,12 @@
               <span class="text-[11px] text-neutral-400 line-through">650 ج.م</span>
             </div>
           </div>
-          <button onclick="openProductQuickView('خمار فرنسي 3 طبقات', 500)" class="mt-2.5 w-full py-2 bg-brand-dark active:bg-neutral-900 text-white text-xs font-bold rounded-lg flex items-center justify-center gap-1.5 shadow-sm">
+          <button onclick="openProductQuickView('خمار فرنسي 3 طبقات مثلث', 500)" class="mt-2.5 w-full py-2 bg-brand-dark active:bg-neutral-900 text-white text-xs font-bold rounded-lg flex items-center justify-center gap-1.5 shadow-sm">
             <span>أضيفي للسلة</span>
           </button>
         </div>
 
-        <!-- كارت منتج 2 -->
+        <!-- كارت 2 -->
         <div class="min-w-[195px] max-w-[200px] snap-start bg-white rounded-xl border border-neutral-200/80 shadow-sm p-2.5 flex flex-col justify-between">
           <div>
             <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-neutral-100 mb-2">
@@ -177,12 +173,12 @@
               <span class="text-[11px] text-neutral-400 line-through">200 ج.م</span>
             </div>
           </div>
-          <button onclick="openProductQuickView('نقاب طبي مقوى', 160)" class="mt-2.5 w-full py-2 bg-brand-dark active:bg-neutral-900 text-white text-xs font-bold rounded-lg flex items-center justify-center gap-1.5 shadow-sm">
+          <button onclick="openProductQuickView('نقاب طبي مقوى خليجي', 160)" class="mt-2.5 w-full py-2 bg-brand-dark active:bg-neutral-900 text-white text-xs font-bold rounded-lg flex items-center justify-center gap-1.5 shadow-sm">
             <span>أضيفي للسلة</span>
           </button>
         </div>
 
-        <!-- كارت منتج 3 -->
+        <!-- كارت 3 -->
         <div class="min-w-[195px] max-w-[200px] snap-start bg-white rounded-xl border border-neutral-200/80 shadow-sm p-2.5 flex flex-col justify-between">
           <div>
             <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-neutral-100 mb-2">
@@ -196,14 +192,14 @@
               <span class="text-[11px] text-neutral-400 line-through">700 ج.م</span>
             </div>
           </div>
-          <button onclick="openProductQuickView('خمار إندونيسي 3 قطع', 550)" class="mt-2.5 w-full py-2 bg-brand-dark active:bg-neutral-900 text-white text-xs font-bold rounded-lg flex items-center justify-center gap-1.5 shadow-sm">
+          <button onclick="openProductQuickView('خمار إندونيسي 3 قطع مع غشوة', 550)" class="mt-2.5 w-full py-2 bg-brand-dark active:bg-neutral-900 text-white text-xs font-bold rounded-lg flex items-center justify-center gap-1.5 shadow-sm">
             <span>أضيفي للسلة</span>
           </button>
         </div>
       </div>
     </section>
 
-    <!-- 6. قسم زيادة متوسط السلة: الإطلالة الكاملة (AOV Booster Bundle) -->
+    <!-- 6. قسم رفع السلة: الإطلالة الكاملة -->
     <section class="px-4 py-4">
       <div class="bg-gradient-to-br from-brand-medium to-brand-dark text-white p-4 rounded-2xl shadow-md relative overflow-hidden">
         <div class="flex items-center justify-between mb-2">
@@ -225,7 +221,7 @@
       </div>
     </section>
 
-    <!-- 7. عوامل الطمأنينة (Guarantees & Risk-Reversal) -->
+    <!-- 7. عوامل الطمأنينة -->
     <section class="px-4 py-3">
       <div class="grid grid-cols-2 gap-2.5 text-center">
         <div class="bg-white p-3 rounded-xl border border-neutral-200/60 shadow-xs">
@@ -241,7 +237,7 @@
       </div>
     </section>
 
-    <!-- 8. آراء العميلات السريعة (Social Proof) -->
+    <!-- 8. آراء العميلات -->
     <section class="px-4 py-3">
       <div class="bg-white rounded-xl p-3.5 border border-neutral-200/70">
         <div class="flex items-center gap-1 text-amber-500 text-xs mb-1.5">
@@ -254,18 +250,16 @@
     </section>
   </main>
 
-  <!-- 9. الشريط السفلي الثابت للطلب السريع (Mobile Sticky Purchase Bar) -->
+  <!-- 9. الشريط السفلي الثابت -->
   <div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-neutral-200 px-4 py-2.5 max-w-md mx-auto flex items-center justify-between gap-3 shadow-lg">
     <div>
       <span class="text-[11px] text-neutral-500 block">الإجمالي المبدئي</span>
       <span id="stickyBarTotal" class="text-base font-extrabold text-brand-dark">500 ج.م</span>
     </div>
     <div class="flex items-center gap-2 flex-1 justify-end">
-      <!-- زر الواتساب كمسار بديل للزائرات المترددات -->
       <a href="https://wa.me/201001234567?text=مرحباً%20سنابل،%20أريد%20الاستفسار%20عن%20المنتجات" target="_blank" onclick="trackWhatsAppClick()" class="p-2.5 bg-emerald-50 text-emerald-600 rounded-xl border border-emerald-200 flex items-center justify-center active:scale-95" aria-label="طلب عبر واتساب">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.072-2.122-.52-1.825-.758-2.997-2.613-3.088-2.735-.091-.121-.734-.977-.734-1.864 0-.887.464-1.323.63-1.503.166-.18.362-.226.483-.226.121 0 .241.002.348.006.113.005.263-.043.412.316.151.362.513 1.25.558 1.341.045.09.076.197.015.318-.06.121-.09.197-.181.303-.09.106-.191.237-.272.318-.09.09-.185.188-.08.369.105.18.468.772.999 1.246.685.612 1.261.802 1.442.893.18.09.287.075.393-.045.105-.121.453-.529.574-.71.121-.181.241-.151.407-.09.166.06 1.055.498 1.236.588.181.09.302.136.347.212.045.075.045.436-.099.841z"/></svg>
       </a>
-      <!-- زر إتمام الشراء الصريح -->
       <button onclick="toggleCheckoutDrawer()" class="flex-1 py-3 bg-brand-dark text-white rounded-xl text-xs font-extrabold flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition">
         <span>تأكيد الطلب الآن</span>
         <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
@@ -273,14 +267,13 @@
     </div>
   </div>
 
-  <!-- 10. درج إتمام الطلب بصفحة واحدة (Bottom-Sheet Checkout Drawer) -->
+  <!-- 10. درج إتمام الطلب السريع (Drawer) مع كافة المحافظات والربط بواتساب -->
   <div id="checkoutDrawer" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs transition-opacity duration-300 hidden opacity-0 flex items-end justify-center">
     <div class="bg-white w-full max-w-md rounded-t-3xl max-h-[92vh] overflow-y-auto p-5 pb-8 shadow-2xl transform transition-transform duration-300 translate-y-full" id="drawerContent">
       
-      <!-- إغلاق ومقبض السحب -->
       <div class="flex items-center justify-between border-b border-neutral-100 pb-3 mb-4">
         <div class="flex items-center gap-2">
-          <span class="text-base font-black text-brand-dark">سلة الشراء وإتمام الطلب</span>
+          <span class="text-base font-black text-brand-dark">سلة الشراء وتأكيد الطلب</span>
           <span class="bg-brand-highlight text-brand-dark text-[10px] px-2 py-0.5 rounded font-bold">دفع عند الاستلام</span>
         </div>
         <button onclick="toggleCheckoutDrawer()" class="p-1 text-neutral-400 hover:text-neutral-700">✕</button>
@@ -288,10 +281,10 @@
 
       <!-- ملخص سريع للمنتج -->
       <div class="bg-brand-light/60 p-3 rounded-xl flex items-center gap-3 mb-4 border border-neutral-200/50">
-        <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=120&q=80" alt="المنتج" class="w-12 h-16 rounded-lg object-cover bg-neutral-200">
+        <img id="summaryProductImg" src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=120&q=80" alt="المنتج" class="w-12 h-16 rounded-lg object-cover bg-neutral-200">
         <div class="flex-1">
           <h4 id="summaryProductName" class="text-xs font-bold text-brand-dark">خمار فرنسي 3 طبقات مثلث</h4>
-          <span class="text-[11px] text-neutral-500 block">اللون: أسود ملكي | المقاس: موحد</span>
+          <span class="text-[11px] text-neutral-500 block">الخامة: شيفون كريب كوري | المقاس: موحد</span>
           <div class="flex items-center justify-between mt-1">
             <span id="summaryProductPrice" class="text-xs font-extrabold text-brand-dark">500 ج.م</span>
             <span class="text-[10px] text-neutral-400">الكمية: 1</span>
@@ -299,38 +292,61 @@
         </div>
       </div>
 
-      <!-- حقول الطلب السريع (5 حقول فقط بدون تسجيل دخول) -->
+      <!-- استمارة الطلب السريع مع الـ 27 محافظة -->
       <form id="orderForm" onsubmit="handleOrderSubmit(event)" class="space-y-3">
         <div>
           <label class="block text-[11px] font-bold text-neutral-700 mb-1">الاسم بالكامل *</label>
-          <input type="text" required placeholder="مثال: سارة أحمد" class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg text-xs focus:bg-white focus:border-brand-dark outline-hidden">
+          <input type="text" id="drawerCustName" required placeholder="مثال: سارة أحمد" class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg text-xs focus:bg-white focus:border-brand-dark outline-hidden">
         </div>
 
         <div>
           <label class="block text-[11px] font-bold text-neutral-700 mb-1">رقم الهاتف (مفعل به واتساب) *</label>
-          <input type="tel" dir="ltr" required placeholder="01xxxxxxxxx" class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg text-xs text-right focus:bg-white focus:border-brand-dark outline-hidden">
+          <input type="tel" id="drawerCustPhone" dir="ltr" required placeholder="01xxxxxxxxx" class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg text-xs text-right focus:bg-white focus:border-brand-dark outline-hidden">
         </div>
 
         <div class="grid grid-cols-2 gap-2">
           <div>
-            <label class="block text-[11px] font-bold text-neutral-700 mb-1">المحافظة *</label>
-            <select required class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg text-xs focus:bg-white focus:border-brand-dark outline-hidden">
+            <label class="block text-[11px] font-bold text-neutral-700 mb-1">المحافظة (27 محافظة) *</label>
+            <select id="drawerCustGov" required class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg text-xs focus:bg-white focus:border-brand-dark outline-hidden">
               <option value="">اختاري المحافظة</option>
-              <option value="cairo">القاهرة</option>
-              <option value="giza">الجيزة</option>
-              <option value="alex">الإسكندرية</option>
-              <option value="other">محافظة أخرى</option>
+              <option value="القاهرة">القاهرة</option>
+              <option value="الجيزة">الجيزة</option>
+              <option value="الإسكندرية">الإسكندرية</option>
+              <option value="القليوبية">القليوبية</option>
+              <option value="الدقهلية">الدقهلية</option>
+              <option value="الشرقية">الشرقية</option>
+              <option value="الغربية">الغربية</option>
+              <option value="المنوفية">المنوفية</option>
+              <option value="البحيرة">البحيرة</option>
+              <option value="كفر الشيخ">كفر الشيخ</option>
+              <option value="دمياط">دمياط</option>
+              <option value="بورسعيد">بورسعيد</option>
+              <option value="الإسماعيلية">الإسماعيلية</option>
+              <option value="السويس">السويس</option>
+              <option value="الفيوم">الفيوم</option>
+              <option value="بني سويف">بني سويف</option>
+              <option value="المنيا">المنيا</option>
+              <option value="أسيوط">أسيوط</option>
+              <option value="سوهاج">سوهاج</option>
+              <option value="قنا">قنا</option>
+              <option value="الأقصر">الأقصر</option>
+              <option value="أسوان">أسوان</option>
+              <option value="البحر الأحمر">البحر الأحمر</option>
+              <option value="الوادي الجديد">الوادي الجديد</option>
+              <option value="مطروح">مطروح</option>
+              <option value="شمال سيناء">شمال سيناء</option>
+              <option value="جنوب سيناء">جنوب سيناء</option>
             </select>
           </div>
           <div>
             <label class="block text-[11px] font-bold text-neutral-700 mb-1">المدينة / الحي *</label>
-            <input type="text" required placeholder="مثال: مدينة نصر" class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg text-xs focus:bg-white focus:border-brand-dark outline-hidden">
+            <input type="text" id="drawerCustCity" required placeholder="مثال: مدينة نصر" class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg text-xs focus:bg-white focus:border-brand-dark outline-hidden">
           </div>
         </div>
 
         <div>
-          <label class="block text-[11px] font-bold text-neutral-700 mb-1">العنوان بالتفصيل (اسم الشارع، رقم العمارة، الشقة) *</label>
-          <input type="text" required placeholder="العنوان بالتفصيل لتسهيل وسرعة وصول المندوب" class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg text-xs focus:bg-white focus:border-brand-dark outline-hidden">
+          <label class="block text-[11px] font-bold text-neutral-700 mb-1">العنوان بالتفصيل (الشارع، رقم العمارة، الشقة) *</label>
+          <input type="text" id="drawerCustAddress" required placeholder="العنوان بالتفصيل لتسهيل وسرعة وصول المندوب" class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg text-xs focus:bg-white focus:border-brand-dark outline-hidden">
         </div>
 
         <!-- الحسبة النهائية -->
@@ -349,20 +365,21 @@
           </div>
         </div>
 
-        <!-- زر الحسم النفسي -->
+        <!-- زر الطلب المباشر لواتساب -->
         <button type="submit" class="w-full py-3.5 bg-brand-btn active:bg-black text-white text-xs font-black rounded-xl shadow-lg mt-2 flex items-center justify-center gap-2">
-          <span>تأكيد الطلب والدفع عند الاستلام</span>
-          <span>✓</span>
+          <span>تأكيد الطلب عبر واتساب الآن</span>
+          <span>💬</span>
         </button>
         
-        <p class="text-[10px] text-center text-neutral-400">🔒 بياناتك محمية وتُستخدم فقط لتوصيل وتأكيد هذا الطلب.</p>
+        <p class="text-[10px] text-center text-neutral-400">🔒 سيتم تحويلك فوراً لمحادثة واتساب المتجر لتأكيد شحنتك ومعاينتها.</p>
       </form>
     </div>
   </div>
 
-  <!-- سكربت التحكم والتتبع التلقائي للإعلانات -->
   <script>
-    // نظام السلة المحلي
+    // رقم واتساب إدارة متجر سنابل لاستقبال الطلبات
+    const STORE_WHATSAPP_NUMBER = "201001234567";
+
     let currentCart = {
       product: 'خمار فرنسي 3 طبقات مثلث',
       price: 500,
@@ -371,7 +388,7 @@
 
     function updateTotals() {
       const subtotal = currentCart.price * currentCart.quantity;
-      const total = subtotal + 40; // 40 جنيه شحن
+      const total = subtotal + 40;
       document.getElementById('stickyBarTotal').innerText = `${subtotal} ج.م`;
       document.getElementById('checkoutSubtotal').innerText = `${subtotal} ج.م`;
       document.getElementById('checkoutGrandTotal').innerText = `${total} ج.م`;
@@ -384,29 +401,18 @@
       document.getElementById('summaryProductPrice').innerText = `${price} ج.م`;
       updateTotals();
       
-      // حدث تتبع: AddToCart
-      dispatchTrackingEvent('AddToCart', {
-        content_name: title,
-        value: price,
-        currency: 'EGP'
-      });
-      
+      dispatchTrackingEvent('AddToCart', { content_name: title, value: price, currency: 'EGP' });
       toggleCheckoutDrawer();
     }
 
     function addBundleToCart() {
-      currentCart.product = 'طقم الاحتشام المتكامل (دريس + خمار)';
+      currentCart.product = 'طقم الاحتشام المتكامل (دريس + خمار فرنسي)';
       currentCart.price = 1099;
       document.getElementById('summaryProductName').innerText = currentCart.product;
       document.getElementById('summaryProductPrice').innerText = `1,099 ج.م`;
       updateTotals();
 
-      dispatchTrackingEvent('AddToCart', {
-        content_name: currentCart.product,
-        value: 1099,
-        currency: 'EGP'
-      });
-
+      dispatchTrackingEvent('AddToCart', { content_name: currentCart.product, value: 1099, currency: 'EGP' });
       toggleCheckoutDrawer();
     }
 
@@ -421,10 +427,7 @@
           content.classList.remove('translate-y-full');
         }, 10);
         
-        dispatchTrackingEvent('InitiateCheckout', {
-          value: currentCart.price,
-          currency: 'EGP'
-        });
+        dispatchTrackingEvent('InitiateCheckout', { value: currentCart.price, currency: 'EGP' });
       } else {
         drawer.classList.add('opacity-0');
         content.classList.add('translate-y-full');
@@ -441,29 +444,55 @@
     function handleOrderSubmit(e) {
       e.preventDefault();
       
-      // حدث تتبع الشراء: Purchase
+      const name = document.getElementById('drawerCustName').value.trim();
+      const phone = document.getElementById('drawerCustPhone').value.trim();
+      const gov = document.getElementById('drawerCustGov').value;
+      const city = document.getElementById('drawerCustCity').value.trim();
+      const address = document.getElementById('drawerCustAddress').value.trim();
+      const subtotal = currentCart.price * currentCart.quantity;
+      const grandTotal = subtotal + 40;
+
+      // تتبع حدث الشراء في الإعلانات
       dispatchTrackingEvent('Purchase', {
-        value: currentCart.price + 40,
+        value: grandTotal,
         currency: 'EGP',
         content_name: currentCart.product
       });
 
-      alert(`تم استلام طلبك بنجاح لـ (${currentCart.product})! سيتواصل معك فريق سنابل لتأكيد الشحن فوراً.`);
+      // صياغة رسالة الواتساب المتكاملة
+      const whatsappMessage = 
+`🌾 *طلب شراء جديد - متجر سنابل للمحجبات* 🌾
+-----------------------------------
+👤 *بيانات العميل:*
+• الاسم: ${name}
+• الموبايل: ${phone}
+• المحافظة: ${gov}
+• المنطقة / الحي: ${city}
+• العنوان بالتفصيل: ${address}
+-----------------------------------
+🛍️ *المنتج المطلوب:*
+• ${currentCart.product}
+• الكمية: ${currentCart.quantity}
+• السعر: ${subtotal} ج.م
+-----------------------------------
+💰 *الحساب الإجمالي:*
+• قيمة المنتجات: ${subtotal} ج.م
+• مصاريف الشحن: 40 ج.م
+• المطلوب دفعه عند الاستلام: *${grandTotal} ج.م*
+-----------------------------------
+يرجى تأكيد موعد الشحن والتوصيل.`;
+
       toggleCheckoutDrawer();
+
+      // فتح محادثة الواتساب فوراً
+      const encodedMsg = encodeURIComponent(whatsappMessage);
+      window.location.href = `https://wa.me/${STORE_WHATSAPP_NUMBER}?text=${encodedMsg}`;
     }
 
-    // طبقة إرسال بيانات التتبع لإعلانات Meta و Google
     function dispatchTrackingEvent(eventName, payload) {
       console.log(`[Tracking Event - ${eventName}]:`, payload);
-      
-      // تكامل DataLayer لـ GTM
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: eventName,
-        ecommerce: payload
-      });
-
-      // تكامل Meta Pixel إذا وُجد في الصفحة
+      window.dataLayer.push({ event: eventName, ecommerce: payload });
       if (typeof fbq === 'function') {
         fbq('track', eventName, payload);
       }
