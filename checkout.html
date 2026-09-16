@@ -1,1 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>إتمام الطلب السريع | سنابل للمحجبات</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#FAF8F4] text-neutral-800 font-sans pb-10">
 
+  <div class="max-w-md mx-auto px-4 pt-4">
+    <!-- شعار المتجر وضمان المعاينة -->
+    <div class="text-center mb-4">
+      <div class="text-xl font-extrabold text-[#243427]">🌾 سنابل للمحجبات</div>
+      <p class="text-[11px] text-emerald-800 font-bold mt-1 bg-emerald-50 inline-block px-3 py-1 rounded-full border border-emerald-200">
+        ✓ الدفع عند الاستلام مع حق فحص ومعاينة المنتج
+      </p>
+    </div>
+
+    <!-- ملخص محتويات السلة -->
+    <div class="bg-white p-3.5 rounded-2xl border border-neutral-200/80 shadow-xs mb-4">
+      <h2 class="text-xs font-bold text-neutral-500 mb-2 border-b border-neutral-100 pb-1">محتويات طلبك:</h2>
+      <div id="checkoutItemsList" class="divide-y divide-neutral-100 text-xs">
+        <!-- يتم ملؤها ديناميكياً من store-core.js -->
+      </div>
+
+      <div class="mt-3 pt-2 border-t border-dashed border-neutral-200 text-xs space-y-1">
+        <div class="flex justify-between text-neutral-600">
+          <span>قيمة المنتجات:</span>
+          <span id="subtotalVal" class="font-bold">0 ج.م</span>
+        </div>
+        <div class="flex justify-between text-neutral-600">
+          <span>الشحن:</span>
+          <span id="shippingVal" class="font-bold text-neutral-800">45 ج.م</span>
+        </div>
+        <div class="flex justify-between text-[#243427] font-black text-sm pt-1.5 border-t border-neutral-200">
+          <span>المطلوب عند الاستلام:</span>
+          <span id="grandTotalVal">0 ج.م</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- استمارة الطلب (5 حقول أساسية فقط) -->
+    <form id="fastCheckoutForm" onsubmit="submitFastOrder(event)" class="bg-white p-4 rounded-2xl border border-neutral-200/80 shadow-xs space-y-3">
+      <h3 class="text-xs font-black text-neutral-800">أين نرسل طلبك؟</h3>
+      
+      <div>
+        <label class="block text-[11px] font-bold text-neutral-700 mb-1">الاسم الكريم بالكامل *</label>
+        <input type="text" id="custName" required placeholder="مثال: منى محمود" class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg text-xs outline-hidden focus:border-[#243427]">
+      </div>
+
+      <div>
+        <label class="block text-[11px] font-bold text-neutral-700 mb-1">رقم الموبايل للتواصل ومتابعة الشحن *</label>
+        <input type="tel" id="custPhone" dir="ltr" required placeholder="01xxxxxxxxx" class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg text-xs text-right outline-hidden focus:border-[#243427]">
+      </div>
+
+      <div class="grid grid-cols-2 gap-2">
+        <div>
+          <label class="block text-[11px] font-bold text-neutral-700 mb-1">المحافظة *</label>
+          <select id="custGov" required class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg text-xs outline-hidden focus:border-[#243427]">
+            <option value="">اختاري المحافظة</option>
+            <option value="القاهرة">القاهرة</option>
+            <option value="الجيزة">الجيزة</option>
+            <option value="الإسكندرية">الإسكندرية</option>
+            <option value="الدلتا والقناة">الدلتا والقناة</option>
+            <option value="الصعيد">محافظات الصعيد</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-[11px] font-bold text-neutral-700 mb-1">المنطقة / الحي *</label>
+          <input type="text" id="custCity" required placeholder="مثال: التجمع الخامس" class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg text-xs outline-hidden focus:border-[#243427]">
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-[11px] font-bold text-neutral-700 mb-1">العنوان بالتفصيل (الشارع، رقم العمارة، رقم الشقة) *</label>
+        <input type="text" id="custAddress" required placeholder="اكتبي عنوانك بدقة لتسليم سريع دون تأخير" class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg text-xs outline-hidden focus:border-[#243427]">
+      </div>
+
+      <div>
+        <label class="block text-[11px] font-bold text-neutral-700 mb-1">ملاحظات للمندوب (اختياري)</label>
+        <input type="text" id="custNotes" placeholder="مثال: الاتصال قبل الوصول بنصف ساعة" class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg text-xs outline-hidden">
+      </div>
+
+      <button type="submit" class="w-full mt-2 py-3.5 bg-[#243427] active:bg-black text-white text-xs font-black rounded-xl shadow-lg flex items-center justify-center gap-2">
+        <span>تأكيد الطلب الآن</span>
+        <span>←</span>
+      </button>
+
+      <p class="text-[10px] text-center text-neutral-400">🔒 بياناتك في أمان تام وتُستخدم لتوصيل طلبك فقط.</p>
+    </form>
+  </div>
+
+  <script src="assets/js/store-core.js"></script>
+  <script>
+    function renderCheckoutItems() {
+      const cart = SanabelStore.getCart();
+      const listEl = document.getElementById('checkoutItemsList');
+      const totals = SanabelStore.getTotals();
+
+      if (cart.length === 0) {
+        listEl.innerHTML = '<p class="text-neutral-400 py-3 text-center">السلة فارغة حالياً</p>';
+        return;
+      }
+
+      listEl.innerHTML = cart.map(item => `
+        <div class="py-2 flex items-center justify-between">
+          <div>
+            <span class="font-bold text-neutral-800">${item.title}</span>
+            <div class="text-[10px] text-neutral-400">اللون: ${item.color} • الكمية: ${item.quantity}</div>
+          </div>
+          <span class="font-bold text-neutral-800">${item.price * item.quantity} ج.م</span>
+        </div>
+      `).join('');
+
+      document.getElementById('subtotalVal').textContent = `${totals.subtotal} ج.م`;
+      document.getElementById('shippingVal').textContent = totals.isFreeShipping ? 'مجاني 🎁' : `${totals.shipping} ج.م`;
+      document.getElementById('grandTotalVal').textContent = `${totals.total} ج.م`;
+    }
+
+    function submitFastOrder(e) {
+      e.preventDefault();
+      const totals = SanabelStore.getTotals();
+      const orderPayload = {
+        name: document.getElementById('custName').value,
+        phone: document.getElementById('custPhone').value,
+        governorate: document.getElementById('custGov').value,
+        city: document.getElementById('custCity').value,
+        address: document.getElementById('custAddress').value,
+        notes: document.getElementById('custNotes').value,
+        items: SanabelStore.getCart(),
+        total: totals.total
+      };
+
+      console.log('Order Submitted Successfully:', orderPayload);
+
+      // تفريغ السلة والتحويل لصفحة الشكر
+      localStorage.removeItem(SanabelStore.STORAGE_KEY);
+      window.location.href = 'order-success.html';
+    }
+
+    document.addEventListener('DOMContentLoaded', renderCheckoutItems);
+  </script>
+</body>
+</html>
