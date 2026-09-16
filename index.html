@@ -130,8 +130,8 @@
               <div class="text-[11px] sm:text-xs text-neutral-400 line-through">بدلاً من 1,249 ج.م</div>
               <div class="text-lg sm:text-2xl font-black text-brand-accent">1,099 ج.م فقط</div>
             </div>
-            <button onclick="addBundleToCart()" class="bg-brand-accent hover:bg-amber-400 text-neutral-950 text-xs sm:text-sm font-black px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl shadow-md transition active:scale-95 whitespace-nowrap">
-              أضيفي الإطلالة للسلة
+            <button onclick="openProductModal('bundle-complete')" class="bg-brand-accent hover:bg-amber-400 text-neutral-950 text-xs sm:text-sm font-black px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl shadow-md transition active:scale-95 whitespace-nowrap">
+              اختاري المقاس واللون
             </button>
           </div>
         </div>
@@ -170,8 +170,8 @@
             <h3 class="font-bold text-xs sm:text-base text-brand-dark">الإطلالات المتكاملة</h3>
             <p class="text-[11px] sm:text-xs text-neutral-500 mt-1">دريس + خمار + نقاب بتنسيق متناغم</p>
           </div>
-          <button onclick="addBundleToCart()" class="mt-3 w-full py-2 bg-brand-dark text-white text-xs sm:text-sm font-bold rounded-xl active:scale-95 hover:bg-neutral-900 transition">
-            اكتشفي الأطقم
+          <button onclick="openProductModal('bundle-complete')" class="mt-3 w-full py-2 bg-brand-dark text-white text-xs sm:text-sm font-bold rounded-xl active:scale-95 hover:bg-neutral-900 transition">
+            اختاري إطلالتك
           </button>
         </div>
       </div>
@@ -185,7 +185,7 @@
             <span>الأكثر طلباً ومبيعاً</span>
             <span class="text-sm sm:text-base">🔥</span>
           </h2>
-          <p class="text-xs sm:text-sm text-neutral-500">قطع أجمعت عميلات سنابل على خامتها وانسيابيتها</p>
+          <p class="text-xs sm:text-sm text-neutral-500">اضغطي على أي قطعة لاختيار اللون والمقاس المناسب</p>
         </div>
         <span class="text-xs font-bold text-brand-accent md:hidden">سحب أفقي ←</span>
       </div>
@@ -194,10 +194,10 @@
         
         <!-- كارت منتج 1 -->
         <div class="min-w-[210px] max-w-[220px] md:min-w-0 md:max-w-none snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
-          <div>
+          <div onclick="openProductModal('khimar-french')" class="cursor-pointer">
             <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
               <span class="absolute top-2 right-2 bg-neutral-900/85 text-brand-accent text-[10px] px-2 py-0.5 rounded-md font-semibold backdrop-blur-sm">شيفون كريب</span>
-              <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=500&q=80" alt="خمار فرنسي 3 طبقات" class="w-full h-full object-cover object-top">
+              <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=500&q=80" alt="خمار فرنسي 3 طبقات" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
             </div>
             <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">خمار فرنسي 3 طبقات مثلث</h3>
             <p class="text-[11px] text-neutral-500 mt-0.5">مستورد ناعم غير شفاف ساتر</p>
@@ -206,17 +206,17 @@
               <span class="text-xs text-neutral-400 line-through">650 ج.م</span>
             </div>
           </div>
-          <button onclick="addToCart('خمار فرنسي 3 طبقات مثلث', 500, 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=500&q=80')" class="mt-3 w-full py-2.5 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 shadow-sm transition">
-            <span>أضيفي للسلة</span>
+          <button onclick="openProductModal('khimar-french')" class="mt-3 w-full py-2.5 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 shadow-sm transition">
+            <span>اختاري اللون والمقاس</span>
           </button>
         </div>
 
         <!-- كارت منتج 2 -->
         <div class="min-w-[210px] max-w-[220px] md:min-w-0 md:max-w-none snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
-          <div>
+          <div onclick="openProductModal('niqab-medical')" class="cursor-pointer">
             <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
               <span class="absolute top-2 right-2 bg-brand-medium text-amber-300 text-[10px] px-2 py-0.5 rounded-md font-semibold">طبي مريح</span>
-              <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=500&q=80" alt="نقاب طبي مقوى" class="w-full h-full object-cover object-top">
+              <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=500&q=80" alt="نقاب طبي مقوى" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
             </div>
             <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">نقاب طبي مقوى خليجي</h3>
             <p class="text-[11px] text-neutral-500 mt-0.5">شيفون لا يسبب حساسية وبارد</p>
@@ -225,17 +225,17 @@
               <span class="text-xs text-neutral-400 line-through">200 ج.م</span>
             </div>
           </div>
-          <button onclick="addToCart('نقاب طبي مقوى خليجي', 160, 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=500&q=80')" class="mt-3 w-full py-2.5 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 shadow-sm transition">
-            <span>أضيفي للسلة</span>
+          <button onclick="openProductModal('niqab-medical')" class="mt-3 w-full py-2.5 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 shadow-sm transition">
+            <span>اختاري المقاس والتفاصيل</span>
           </button>
         </div>
 
         <!-- كارت منتج 3 -->
         <div class="min-w-[210px] max-w-[220px] md:min-w-0 md:max-w-none snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
-          <div>
+          <div onclick="openProductModal('khimar-indonesian')" class="cursor-pointer">
             <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
               <span class="absolute top-2 right-2 bg-neutral-900/85 text-brand-accent text-[10px] px-2 py-0.5 rounded-md font-semibold">طقم 3 قطع</span>
-              <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=80" alt="خمار إندونيسي 3 قطع" class="w-full h-full object-cover object-top">
+              <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=80" alt="خمار إندونيسي 3 قطع" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
             </div>
             <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">خمار إندونيسي 3 قطع مع غشوة</h3>
             <p class="text-[11px] text-neutral-500 mt-0.5">ساتر وخفيف للخرجات والدوام</p>
@@ -244,8 +244,8 @@
               <span class="text-xs text-neutral-400 line-through">700 ج.م</span>
             </div>
           </div>
-          <button onclick="addToCart('خمار إندونيسي 3 قطع مع غشوة', 550, 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=80')" class="mt-3 w-full py-2.5 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 shadow-sm transition">
-            <span>أضيفي للسلة</span>
+          <button onclick="openProductModal('khimar-indonesian')" class="mt-3 w-full py-2.5 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 shadow-sm transition">
+            <span>اختاري اللون والمقاس</span>
           </button>
         </div>
       </div>
@@ -318,23 +318,15 @@
         <div class="space-y-3">
           <div class="font-bold text-brand-accent text-sm sm:text-base">تابعي إطلالاتنا الجديدة:</div>
           <div class="flex items-center justify-center md:justify-start gap-3">
-            
-            <!-- فيسبوك -->
             <a href="https://web.facebook.com/sanabel.clothing2014" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-neutral-800 hover:bg-[#1877F2] hover:text-white flex items-center justify-center text-neutral-300 transition duration-300" aria-label="Facebook">
               <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
             </a>
-
-            <!-- إنستجرام -->
             <a href="https://www.instagram.com/sanabel_scarf?stkn=YjlycDdxeTE3c2I4" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-neutral-800 hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] hover:text-white flex items-center justify-center text-neutral-300 transition duration-300" aria-label="Instagram">
               <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             </a>
-
-            <!-- تيك توك -->
             <a href="https://www.tiktok.com/@sanabelhigap?_r=1&_t=ZS-99m3MHD6Z09" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-neutral-800 hover:bg-black hover:text-white flex items-center justify-center text-neutral-300 transition duration-300" aria-label="TikTok">
               <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-1.01-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 2.89 3.5 2.77 1.81-.07 3.25-1.52 3.3-3.32.05-3.89.02-7.78.02-11.66z"/></svg>
             </a>
-
-            <!-- واتساب -->
             <a href="https://wa.me/201124574341" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-neutral-800 hover:bg-[#25D366] hover:text-white flex items-center justify-center text-neutral-300 transition duration-300" aria-label="WhatsApp">
               <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
             </a>
@@ -372,7 +364,71 @@
     </div>
   </div>
 
-  <!-- 12. درج إتمام الطلب السريع (Multi-Item Checkout Drawer) -->
+  <!-- 12. نافذة اختيار اللون والمقاس وتفاصيل المنتج (Product Options Bottom-Sheet) -->
+  <div id="productOptionsModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs transition-opacity duration-300 hidden opacity-0 flex items-end md:items-center justify-center">
+    <div class="bg-white w-full max-w-lg rounded-t-3xl md:rounded-3xl max-h-[92vh] overflow-y-auto p-5 sm:p-7 shadow-2xl transform transition-transform duration-300 translate-y-full md:translate-y-0" id="productModalContent">
+      
+      <!-- هيدر النافذة وزر الإغلاق -->
+      <div class="flex items-center justify-between border-b border-neutral-100 pb-3 mb-4">
+        <span class="text-xs font-bold text-brand-accent">سنابل للمحجبات • تفاصيل القطعة</span>
+        <button onclick="closeProductModal()" class="p-1 text-neutral-400 hover:text-neutral-700 text-lg">✕</button>
+      </div>
+
+      <!-- معلومات المنتج المصغرة -->
+      <div class="flex gap-3.5 items-center mb-4 bg-brand-light/50 p-3 rounded-2xl border border-neutral-200/60">
+        <img id="modalProductImg" src="" alt="المنتج" class="w-16 h-20 rounded-xl object-cover object-top bg-neutral-200 flex-shrink-0">
+        <div>
+          <h3 id="modalProductTitle" class="text-xs sm:text-sm font-black text-brand-dark leading-snug"></h3>
+          <p id="modalProductDesc" class="text-[11px] text-neutral-500 mt-1 leading-relaxed"></p>
+          <div class="flex items-baseline gap-2 mt-2">
+            <span id="modalProductPrice" class="text-base font-black text-brand-dark"></span>
+            <span id="modalProductOldPrice" class="text-xs text-neutral-400 line-through"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- اختيار الألوان الواقعية -->
+      <div class="space-y-2 mb-4">
+        <label class="block text-xs font-black text-neutral-800">
+          اختاري اللون: <span id="modalSelectedColorLabel" class="text-brand-accent mr-1"></span>
+        </label>
+        <div id="modalColorsContainer" class="flex flex-wrap gap-2 pt-1">
+          <!-- تضاف الألوان ديناميكياً -->
+        </div>
+      </div>
+
+      <!-- اختيار المقاسات -->
+      <div class="space-y-2 mb-5">
+        <label class="block text-xs font-black text-neutral-800">
+          اختاري المقاس: <span id="modalSelectedSizeLabel" class="text-brand-accent mr-1"></span>
+        </label>
+        <div id="modalSizesContainer" class="flex flex-wrap gap-2 pt-1">
+          <!-- تضاف المقاسات ديناميكياً -->
+        </div>
+      </div>
+
+      <!-- اختيار الكمية وزر التأكيد -->
+      <div class="pt-3 border-t border-neutral-100 space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-neutral-700">الكمية المطلوبة:</span>
+          <div class="flex items-center border border-neutral-300 rounded-xl bg-neutral-50 overflow-hidden">
+            <button type="button" onclick="changeModalQty(-1)" class="px-3 py-1 text-sm font-black text-neutral-700 hover:bg-neutral-200">-</button>
+            <span id="modalQtyDisplay" class="px-3 text-xs font-black text-brand-dark">1</span>
+            <button type="button" onclick="changeModalQty(1)" class="px-3 py-1 text-sm font-black text-neutral-700 hover:bg-neutral-200">+</button>
+          </div>
+        </div>
+
+        <button type="button" onclick="confirmAddModalToCart()" class="w-full py-3.5 bg-brand-dark hover:bg-neutral-900 active:scale-95 text-white rounded-xl text-xs sm:text-sm font-black shadow-lg flex items-center justify-center gap-2 transition">
+          <span>أضيفي للسلة بالخيارات المختارة</span>
+          <span class="text-brand-accent">•</span>
+          <span id="modalSubmitTotal" class="text-brand-accent"></span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 13. درج إتمام الطلب السريع (Multi-Item Checkout Drawer) -->
   <div id="checkoutDrawer" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs transition-opacity duration-300 hidden opacity-0 flex items-end md:items-center justify-center">
     <div class="bg-white w-full max-w-lg rounded-t-3xl md:rounded-3xl max-h-[92vh] overflow-y-auto p-5 sm:p-7 shadow-2xl transform transition-transform duration-300 translate-y-full md:translate-y-0" id="drawerContent">
       
@@ -399,7 +455,7 @@
         
         <!-- قائمة المنتجات المتعددة في السلة -->
         <div id="cartItemsList" class="space-y-2.5 max-h-56 overflow-y-auto pr-1">
-          <!-- يتم ملؤها ديناميكياً بكل المنتجات المضافة -->
+          <!-- تضاف المنتجات ديناميكياً مع ألوانها ومقاساتها -->
         </div>
 
         <!-- زر لمتابعة التسوق وإضافة قطع أخرى -->
@@ -497,39 +553,191 @@
     // رقم واتساب إدارة متجر سنابل المعتمد
     const STORE_WHATSAPP_NUMBER = "201124574341";
 
-    // مصفوفة السلة المجمعة لحفظ المنتجات المتعددة
+    // كتالوج المنتجات المدعم بالألوان والمقاسات الواقعية
+    const catalog = {
+      'khimar-french': {
+        id: 'khimar-french',
+        title: 'خمار فرنسي 3 طبقات مثلث',
+        price: 500,
+        oldPrice: 650,
+        image: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=500&q=80',
+        desc: 'شيفون كريب كوري مستورد، ناعم جداً على الرأس، طبقات متدرجة تمنع الشفافية تماماً.',
+        colors: [
+          { name: 'أسود ملكي', hex: '#151515' },
+          { name: 'كافيه دافئ', hex: '#8C7462' },
+          { name: 'كشمير ناعم', hex: '#B8979C' },
+          { name: 'زيتي داكن', hex: '#2A3C2D' }
+        ],
+        sizes: ['مقاس موحد ساتر (طول 150 سم)']
+      },
+      'niqab-medical': {
+        id: 'niqab-medical',
+        title: 'نقاب طبي مقوى خليجي',
+        price: 160,
+        oldPrice: 200,
+        image: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=500&q=80',
+        desc: 'شيفون ناعم مبطن برغوة طبية مقواة عند الجبهة، مريح للعين ولا يسبب تحسس أثناء التنفس.',
+        colors: [
+          { name: 'أسود فاحم', hex: '#111111' }
+        ],
+        sizes: ['تندة وسط (عادي)', 'تندة طويلة ساترة']
+      },
+      'khimar-indonesian': {
+        id: 'khimar-indonesian',
+        title: 'خمار إندونيسي 3 قطع مع غشوة',
+        price: 550,
+        oldPrice: 700,
+        image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=80',
+        desc: 'طقم متكامل (خمار + نقاب + غشوة خفيفة) مصمم للخرجات الطويلة والمشاوير اليومية.',
+        colors: [
+          { name: 'أسود ملكي', hex: '#151515' },
+          { name: 'كحلي ليلي', hex: '#1C2833' },
+          { name: 'زيتي داكن', hex: '#2A3C2D' },
+          { name: 'رمادي هادئ', hex: '#566573' }
+        ],
+        sizes: ['مقاس موحد']
+      },
+      'bundle-complete': {
+        id: 'bundle-complete',
+        title: 'طقم الاحتشام المتكامل (دريس ساتر + خمار فرنسي)',
+        price: 1099,
+        oldPrice: 1249,
+        image: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=500&q=80',
+        desc: 'تنسيق أنيق ومحتشم بخامة صيفية ناعمة لا تحتاج كوي متكرر بلون موحد جذاب.',
+        colors: [
+          { name: 'أسود ملكي', hex: '#151515' },
+          { name: 'كافيه دافئ', hex: '#8C7462' },
+          { name: 'زيتي ملكي', hex: '#2A3C2D' }
+        ],
+        sizes: ['مقاس 1 (يلبس حتى 75 كجم)', 'مقاس 2 (يلبس حتى 95 كجم)', 'مقاس 3 (يلبس حتى 115 كجم)']
+      }
+    };
+
+    // مصفوفة السلة المجمعة
     let cart = [];
 
-    // إضافة منتج للسلة (إذا كان موجوداً مسبقاً يزيد عدده، وإذا كان جديداً يضاف للقائمة)
-    function addToCart(title, price, image) {
-      const existingItem = cart.find(item => item.title === title);
-      
+    // حالة المنتج النشط في نافذة الخيارات
+    let activeModalProduct = null;
+    let selectedColor = '';
+    let selectedSize = '';
+    let modalQuantity = 1;
+
+    // فتح نافذة اختيار اللون والمقاس
+    function openProductModal(productId) {
+      const product = catalog[productId];
+      if (!product) return;
+
+      activeModalProduct = product;
+      selectedColor = product.colors[0].name;
+      selectedSize = product.sizes[0];
+      modalQuantity = 1;
+
+      document.getElementById('modalProductImg').src = product.image;
+      document.getElementById('modalProductTitle').innerText = product.title;
+      document.getElementById('modalProductDesc').innerText = product.desc;
+      document.getElementById('modalProductPrice').innerText = `${product.price} ج.م`;
+      document.getElementById('modalProductOldPrice').innerText = `${product.oldPrice} ج.م`;
+      document.getElementById('modalQtyDisplay').innerText = modalQuantity;
+      document.getElementById('modalSubmitTotal').innerText = `${product.price} ج.م`;
+
+      renderModalColors(product.colors);
+      renderModalSizes(product.sizes);
+
+      const modal = document.getElementById('productOptionsModal');
+      const content = document.getElementById('productModalContent');
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        content.classList.remove('translate-y-full');
+      }, 10);
+    }
+
+    function closeProductModal() {
+      const modal = document.getElementById('productOptionsModal');
+      const content = document.getElementById('productModalContent');
+      modal.classList.add('opacity-0');
+      content.classList.add('translate-y-full');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 300);
+    }
+
+    function renderModalColors(colors) {
+      const container = document.getElementById('modalColorsContainer');
+      document.getElementById('modalSelectedColorLabel').innerText = selectedColor;
+
+      container.innerHTML = colors.map(c => `
+        <button type="button" onclick="selectColor('${c.name}')" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-bold transition ${selectedColor === c.name ? 'border-brand-dark bg-brand-dark text-white ring-2 ring-brand-accent/50' : 'border-neutral-200 bg-white text-neutral-700 hover:border-neutral-400'}">
+          <span class="w-3.5 h-3.5 rounded-full border border-white/40" style="background-color: ${c.hex}"></span>
+          <span>${c.name}</span>
+        </button>
+      `).join('');
+    }
+
+    function selectColor(colorName) {
+      selectedColor = colorName;
+      renderModalColors(activeModalProduct.colors);
+    }
+
+    function renderModalSizes(sizes) {
+      const container = document.getElementById('modalSizesContainer');
+      document.getElementById('modalSelectedSizeLabel').innerText = selectedSize;
+
+      container.innerHTML = sizes.map(s => `
+        <button type="button" onclick="selectSize('${s}')" class="px-3.5 py-1.5 rounded-xl border text-xs font-bold transition ${selectedSize === s ? 'border-brand-dark bg-brand-dark text-white ring-2 ring-brand-accent/50' : 'border-neutral-200 bg-white text-neutral-700 hover:border-neutral-400'}">
+          <span>${s}</span>
+        </button>
+      `).join('');
+    }
+
+    function selectSize(sizeName) {
+      selectedSize = sizeName;
+      renderModalSizes(activeModalProduct.sizes);
+    }
+
+    function changeModalQty(delta) {
+      modalQuantity = Math.max(1, modalQuantity + delta);
+      document.getElementById('modalQtyDisplay').innerText = modalQuantity;
+      document.getElementById('modalSubmitTotal').innerText = `${activeModalProduct.price * modalQuantity} ج.م`;
+    }
+
+    // تأكيد إضافة المنتج باللون والمقاس للسلة
+    function confirmAddModalToCart() {
+      if (!activeModalProduct) return;
+
+      const existingItem = cart.find(item => 
+        item.id === activeModalProduct.id && 
+        item.color === selectedColor && 
+        item.size === selectedSize
+      );
+
       if (existingItem) {
-        existingItem.quantity += 1;
+        existingItem.quantity += modalQuantity;
       } else {
         cart.push({
-          title: title,
-          price: price,
-          image: image,
-          quantity: 1
+          id: activeModalProduct.id,
+          title: activeModalProduct.title,
+          price: activeModalProduct.price,
+          image: activeModalProduct.image,
+          color: selectedColor,
+          size: selectedSize,
+          quantity: modalQuantity
         });
       }
 
+      closeProductModal();
       updateCartUI();
-      dispatchTrackingEvent('AddToCart', { content_name: title, value: price, currency: 'EGP' });
+      dispatchTrackingEvent('AddToCart', {
+        content_name: activeModalProduct.title,
+        color: selectedColor,
+        size: selectedSize,
+        value: activeModalProduct.price * modalQuantity,
+        currency: 'EGP'
+      });
+
       toggleCheckoutDrawer();
     }
 
-    // إضافة باقة الإطلالة المتكاملة
-    function addBundleToCart() {
-      addToCart(
-        'طقم الاحتشام المتكامل (دريس ساتر + خمار فرنسي)',
-        1099,
-        'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=500&q=80'
-      );
-    }
-
-    // تعديل الكمية (+ أو -)
     function updateItemQuantity(index, change) {
       if (cart[index]) {
         cart[index].quantity += change;
@@ -540,7 +748,6 @@
       updateCartUI();
     }
 
-    // حذف منتج بالكامل من السلة
     function removeCartItem(index) {
       if (cart[index]) {
         cart.splice(index, 1);
@@ -548,7 +755,7 @@
       updateCartUI();
     }
 
-    // تحديث واجهات السلة والعداد والشريط الثابت
+    // تحديث واجهات السلة مع عرض الألوان والمقاسات المختارة
     function updateCartUI() {
       const badge = document.getElementById('cartBadge');
       const emptyState = document.getElementById('emptyCartState');
@@ -579,13 +786,13 @@
         emptyState.classList.add('hidden');
         activeState.classList.remove('hidden');
 
-        // بناء قائمة المنتجات التفاعلية
         itemsListContainer.innerHTML = cart.map((item, index) => `
           <div class="bg-brand-light/60 p-3 rounded-xl flex items-center justify-between gap-2 border border-neutral-200/60">
             <div class="flex items-center gap-2.5 overflow-hidden">
-              <img src="${item.image}" alt="${item.title}" class="w-12 h-14 rounded-lg object-cover bg-neutral-200 flex-shrink-0">
+              <img src="${item.image}" alt="${item.title}" class="w-12 h-14 rounded-lg object-cover object-top bg-neutral-200 flex-shrink-0">
               <div class="overflow-hidden">
                 <h4 class="text-xs font-bold text-brand-dark truncate">${item.title}</h4>
+                <span class="text-[10px] text-neutral-500 block truncate">اللون: ${item.color} | المقاس: ${item.size}</span>
                 <span class="text-xs font-black text-brand-accent mt-0.5 block">${item.price * item.quantity} ج.م</span>
               </div>
             </div>
@@ -647,7 +854,7 @@
       dispatchTrackingEvent('Contact', { channel: 'WhatsApp' });
     }
 
-    // إرسال الطلب المجمع لكافة محتويات السلة
+    // إرسال الطلب المجمع بجميع الألوان والمقاسات لواتساب
     function handleOrderSubmit(e) {
       e.preventDefault();
       if (cart.length === 0) return;
@@ -661,19 +868,18 @@
       const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
       const grandTotal = subtotal + 40;
 
-      // تجهيز تفاصيل كل منتج داخل نص الواتساب
+      // تجهيز تفاصيل كل قطعة مع اللون والمقاس
       const productsListText = cart.map((item, idx) => 
-        `${idx + 1}) *${item.title}*\n   الكمية: ${item.quantity} × ${item.price} ج.م = ${item.quantity * item.price} ج.م`
+        `${idx + 1}) *${item.title}*\n   - اللون: ${item.color} | المقاس: ${item.size}\n   - الكمية: ${item.quantity} × ${item.price} ج.م = ${item.quantity * item.price} ج.م`
       ).join('\n');
 
-      // تتبع حدث الشراء
       dispatchTrackingEvent('Purchase', {
         value: grandTotal,
         currency: 'EGP',
         num_items: cart.length
       });
 
-      // صياغة رسالة الواتساب المجمعة
+      // صياغة رسالة الواتساب المكتملة
       const whatsappMessage = 
 `🌾 *طلب شراء جديد - متجر سنابل للمحجبات* 🌾
 -----------------------------------
@@ -684,7 +890,7 @@
 • المنطقة / الحي: ${city}
 • العنوان بالتفصيل: ${address}
 -----------------------------------
-🛍️ *المنتجات المطلوبة في الشحنة:*
+🛍️ *المنتجات المطلوبة (اللون والمقاس):*
 ${productsListText}
 -----------------------------------
 💰 *الحساب الإجمالي:*
@@ -696,7 +902,6 @@ ${productsListText}
 
       toggleCheckoutDrawer();
 
-      // فتح محادثة الواتساب فوراً
       const encodedMsg = encodeURIComponent(whatsappMessage);
       window.location.href = `https://wa.me/${STORE_WHATSAPP_NUMBER}?text=${encodedMsg}`;
     }
@@ -710,7 +915,6 @@ ${productsListText}
       }
     }
 
-    // تشغيل فحص حالة السلة المجمعة عند فتح الصفحة
     document.addEventListener('DOMContentLoaded', updateCartUI);
   </script>
 </body>
