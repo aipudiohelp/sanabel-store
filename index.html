@@ -71,27 +71,14 @@
   </header>
 
   <main class="max-w-md mx-auto">
-    <!-- 3. الهيرو المباشر -->
-    <section class="relative bg-gradient-to-b from-brand-light to-brand-cream px-4 pt-5 pb-5 border-b border-neutral-200/50">
-      <div class="flex items-center gap-4">
-        <div class="w-7/12">
-          <span class="inline-block bg-brand-highlight text-brand-dark text-xs px-2 py-0.5 rounded-md font-semibold mb-2">تشكيلة الموسم الجديدة</span>
-          <h1 class="text-xl font-bold text-brand-dark leading-snug">أناقتك المحتشمة تبدأ من سنابل</h1>
-          <p class="text-xs text-neutral-600 mt-1 mb-3">خمار • طرح • نقاب • أطقم متناسقة صُممت لراحتك اليومية وقيمتك الراقية.</p>
-          <a href="#quick-catalog" class="inline-flex items-center gap-1.5 bg-brand-dark text-white text-xs font-bold px-4 py-2.5 rounded-lg shadow-sm active:scale-95 transition">
-            <span>تسوقي الآن</span>
-            <svg class="w-3.5 h-3.5 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-          </a>
-        </div>
-        <div class="w-5/12">
-          <div class="relative rounded-2xl overflow-hidden shadow-md aspect-[3/4] bg-neutral-200 border-2 border-white">
-            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=400&q=80" alt="سنابل للمحجبات" class="w-full h-full object-cover">
-          </div>
-        </div>
-      </div>
+    <!-- 3. الهيرو المباشر: بانر كامل بعرض الشاشة -->
+    <section class="relative w-full overflow-hidden border-b border-neutral-200/60 bg-[#161713]">
+      <a href="#quick-catalog" class="block w-full active:opacity-95 transition">
+        <img src="assets/images/banners/hero-banner.png" alt="تشكيلة الموسم الجديدة - سنابل للمحجبات" class="w-full h-auto object-cover block">
+      </a>
     </section>
 
-    <!-- 4. قسم الإطلالة الكاملة (تم نقله هنا مباشرة بعد تشكيلة الموسم وقبل تسوقي حسب اختيارك) -->
+    <!-- 4. قسم الإطلالة الكاملة (مباشرة أسفل البانر لرفع معدل الشراء) -->
     <section class="px-4 pt-4 pb-1">
       <div class="bg-gradient-to-br from-brand-medium to-brand-dark text-white p-4 rounded-2xl shadow-md relative overflow-hidden">
         <div class="flex items-center justify-between mb-2">
@@ -267,7 +254,7 @@
     </div>
   </div>
 
-  <!-- 10. درج إتمام الطلب السريع (Drawer) مع كافة المحافظات والربط بواتساب -->
+  <!-- 10. درج إتمام الطلب السريع (Drawer) -->
   <div id="checkoutDrawer" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs transition-opacity duration-300 hidden opacity-0 flex items-end justify-center">
     <div class="bg-white w-full max-w-md rounded-t-3xl max-h-[92vh] overflow-y-auto p-5 pb-8 shadow-2xl transform transition-transform duration-300 translate-y-full" id="drawerContent">
       
