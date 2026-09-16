@@ -72,7 +72,7 @@
 
   <main class="max-w-md mx-auto">
     <!-- 3. الهيرو المباشر -->
-    <section class="relative bg-gradient-to-b from-brand-light to-brand-cream px-4 pt-5 pb-6 border-b border-neutral-200/50">
+    <section class="relative bg-gradient-to-b from-brand-light to-brand-cream px-4 pt-5 pb-5 border-b border-neutral-200/50">
       <div class="flex items-center gap-4">
         <div class="w-7/12">
           <span class="inline-block bg-brand-highlight text-brand-dark text-xs px-2 py-0.5 rounded-md font-semibold mb-2">تشكيلة الموسم الجديدة</span>
@@ -91,8 +91,30 @@
       </div>
     </section>
 
-    <!-- 4. مسارا الشراء الرئيسيان -->
-    <section class="px-4 py-5">
+    <!-- 4. قسم الإطلالة الكاملة (تم نقله هنا مباشرة بعد تشكيلة الموسم وقبل تسوقي حسب اختيارك) -->
+    <section class="px-4 pt-4 pb-1">
+      <div class="bg-gradient-to-br from-brand-medium to-brand-dark text-white p-4 rounded-2xl shadow-md relative overflow-hidden">
+        <div class="flex items-center justify-between mb-2">
+          <span class="bg-amber-400 text-neutral-900 text-[10px] font-extrabold px-2 py-0.5 rounded-full">وفرّي 150 ج.م عند الطلب معاً</span>
+          <span class="text-[11px] opacity-80">عرض الإطلالة المتناسقة</span>
+        </div>
+        <h3 class="text-base font-bold mb-1">طقم الاحتشام المتكامل (دريس ساتر + خمار فرنسي)</h3>
+        <p class="text-xs text-neutral-200 mb-3">تنسيق مريح بلون موحد وخامة صيفية ناعمة لا تحتاج كوي متكرر.</p>
+        
+        <div class="bg-white/10 p-3 rounded-xl backdrop-blur-sm flex items-center justify-between border border-white/15">
+          <div>
+            <div class="text-[11px] text-neutral-300 line-through">بدلاً من 1,249 ج.م</div>
+            <div class="text-lg font-black text-white">1,099 ج.م فقط</div>
+          </div>
+          <button onclick="addBundleToCart()" class="bg-amber-400 hover:bg-amber-300 text-neutral-900 text-xs font-bold px-4 py-2.5 rounded-lg shadow transition active:scale-95">
+            أضيفي الإطلالة للسلة
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. مسارا الشراء الرئيسيان -->
+    <section class="px-4 py-4">
       <div class="text-center mb-3">
         <h2 class="text-sm font-bold text-brand-dark">تسوقي حسب اختيارك</h2>
       </div>
@@ -126,8 +148,8 @@
       </div>
     </section>
 
-    <!-- 5. الأكثر طلباً -->
-    <section id="quick-catalog" class="py-3">
+    <!-- 6. الأكثر طلباً -->
+    <section id="quick-catalog" class="py-2">
       <div class="px-4 flex items-center justify-between mb-3">
         <div>
           <h2 class="text-base font-extrabold text-brand-dark flex items-center gap-1.5">
@@ -199,28 +221,6 @@
       </div>
     </section>
 
-    <!-- 6. قسم رفع السلة: الإطلالة الكاملة -->
-    <section class="px-4 py-4">
-      <div class="bg-gradient-to-br from-brand-medium to-brand-dark text-white p-4 rounded-2xl shadow-md relative overflow-hidden">
-        <div class="flex items-center justify-between mb-2">
-          <span class="bg-amber-400 text-neutral-900 text-[10px] font-extrabold px-2 py-0.5 rounded-full">وفرّي 150 ج.م عند الطلب معاً</span>
-          <span class="text-[11px] opacity-80">عرض الإطلالة المتناسقة</span>
-        </div>
-        <h3 class="text-base font-bold mb-1">طقم الاحتشام المتكامل (دريس ساتر + خمار فرنسي)</h3>
-        <p class="text-xs text-neutral-200 mb-3">تنسيق مريح بلون موحد وخامة صيفية ناعمة لا تحتاج كوي متكرر.</p>
-        
-        <div class="bg-white/10 p-3 rounded-xl backdrop-blur-sm flex items-center justify-between border border-white/15">
-          <div>
-            <div class="text-[11px] text-neutral-300 line-through">بدلاً من 1,249 ج.م</div>
-            <div class="text-lg font-black text-white">1,099 ج.م فقط</div>
-          </div>
-          <button onclick="addBundleToCart()" class="bg-amber-400 hover:bg-amber-300 text-neutral-900 text-xs font-bold px-4 py-2.5 rounded-lg shadow transition active:scale-95">
-            أضيفي الإطلالة للسلة
-          </button>
-        </div>
-      </div>
-    </section>
-
     <!-- 7. عوامل الطمأنينة -->
     <section class="px-4 py-3">
       <div class="grid grid-cols-2 gap-2.5 text-center">
@@ -283,10 +283,10 @@
       <div class="bg-brand-light/60 p-3 rounded-xl flex items-center gap-3 mb-4 border border-neutral-200/50">
         <img id="summaryProductImg" src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=120&q=80" alt="المنتج" class="w-12 h-16 rounded-lg object-cover bg-neutral-200">
         <div class="flex-1">
-          <h4 id="summaryProductName" class="text-xs font-bold text-brand-dark">خمار فرنسي 3 طبقات مثلث</h4>
+          <h4 id="summaryProductName" class="text-xs font-bold text-brand-dark">طقم الاحتشام المتكامل (دريس ساتر + خمار فرنسي)</h4>
           <span class="text-[11px] text-neutral-500 block">الخامة: شيفون كريب كوري | المقاس: موحد</span>
           <div class="flex items-center justify-between mt-1">
-            <span id="summaryProductPrice" class="text-xs font-extrabold text-brand-dark">500 ج.م</span>
+            <span id="summaryProductPrice" class="text-xs font-extrabold text-brand-dark">1,099 ج.م</span>
             <span class="text-[10px] text-neutral-400">الكمية: 1</span>
           </div>
         </div>
@@ -353,7 +353,7 @@
         <div class="pt-2 border-t border-neutral-100 space-y-1 text-xs">
           <div class="flex justify-between text-neutral-600">
             <span>قيمة المنتجات:</span>
-            <span id="checkoutSubtotal">500 ج.م</span>
+            <span id="checkoutSubtotal">1,099 ج.م</span>
           </div>
           <div class="flex justify-between text-neutral-600">
             <span>مصاريف الشحن:</span>
@@ -361,7 +361,7 @@
           </div>
           <div class="flex justify-between text-brand-dark font-extrabold text-sm pt-1 border-t border-dashed border-neutral-200">
             <span>المبلغ الإجمالي عند الاستلام:</span>
-            <span id="checkoutGrandTotal">540 ج.م</span>
+            <span id="checkoutGrandTotal">1,139 ج.م</span>
           </div>
         </div>
 
@@ -381,8 +381,8 @@
     const STORE_WHATSAPP_NUMBER = "201124574341";
 
     let currentCart = {
-      product: 'خمار فرنسي 3 طبقات مثلث',
-      price: 500,
+      product: 'طقم الاحتشام المتكامل (دريس ساتر + خمار فرنسي)',
+      price: 1099,
       quantity: 1
     };
 
@@ -406,7 +406,7 @@
     }
 
     function addBundleToCart() {
-      currentCart.product = 'طقم الاحتشام المتكامل (دريس + خمار فرنسي)';
+      currentCart.product = 'طقم الاحتشام المتكامل (دريس ساتر + خمار فرنسي)';
       currentCart.price = 1099;
       document.getElementById('summaryProductName').innerText = currentCart.product;
       document.getElementById('summaryProductPrice').innerText = `1,099 ج.م`;
