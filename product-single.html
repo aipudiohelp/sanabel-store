@@ -34,10 +34,65 @@
   </div>
 
   <main class="max-w-md mx-auto px-4 pt-3">
-    <!-- معرض الصور المخصص للموبايل -->
-    <div class="relative rounded-2xl overflow-hidden bg-neutral-100 aspect-[3/4] shadow-sm border border-neutral-200/70">
-      <img id="mainProductImg" src="assets/images/products/french-set/french-set-main.png" alt="خمار فرنسي 3 طبقات" class="w-full h-full object-cover">
-      <span class="absolute top-3 right-3 bg-brand-dark text-white text-[11px] font-bold px-2.5 py-1 rounded-full">الأكثر طلباً 🔥</span>
+
+    <!-- معرض صور المنتج -->
+    <div class="relative rounded-2xl overflow-hidden bg-neutral-100 shadow-sm border border-neutral-200/70">
+      <div class="relative aspect-[3/4]">
+        <img id="mainProductImg" src="assets/images/products/french-set/french-set-main.png"
+             alt="طقم فرنسي قطعتين" class="w-full h-full object-cover">
+        <span class="absolute top-3 right-3 bg-brand-dark text-white text-[11px] font-bold px-2.5 py-1 rounded-full">الأكثر طلباً 🔥</span>
+        <span id="imageCounter" class="absolute bottom-3 left-3 bg-black/65 text-white text-[10px] font-bold px-2.5 py-1 rounded-full">1 / 11</span>
+      </div>
+
+      <div class="bg-white px-2.5 py-2.5 border-t border-neutral-200">
+        <div class="flex gap-2 overflow-x-auto snap-x" style="scrollbar-width:none">
+          <button type="button" class="product-thumb shrink-0 w-16 h-20 rounded-lg overflow-hidden border-2 border-brand-dark snap-start"
+                  onclick="setProductImage(this)" data-src="assets/images/products/french-set/french-set-main.png">
+            <img src="assets/images/products/french-set/french-set-main.png" class="w-full h-full object-cover" alt="الصورة الرئيسية">
+          </button>
+          <button type="button" class="product-thumb shrink-0 w-16 h-20 rounded-lg overflow-hidden border border-neutral-200 snap-start"
+                  onclick="setProductImage(this)" data-src="assets/images/products/french-set/french-set-detail.png">
+            <img src="assets/images/products/french-set/french-set-detail.png" class="w-full h-full object-cover" alt="تفاصيل الطقم">
+          </button>
+          <button type="button" class="product-thumb shrink-0 w-16 h-20 rounded-lg overflow-hidden border border-neutral-200 snap-start"
+                  onclick="setProductImage(this)" data-src="assets/images/products/french-set/french-set-full.png">
+            <img src="assets/images/products/french-set/french-set-full.png" class="w-full h-full object-cover" alt="الطقم كامل">
+          </button>
+          <button type="button" class="product-thumb shrink-0 w-16 h-20 rounded-lg overflow-hidden border border-neutral-200 snap-start"
+                  onclick="setProductImage(this)" data-src="assets/images/products/french-set/french-set-black.png">
+            <img src="assets/images/products/french-set/french-set-black.png" class="w-full h-full object-cover" alt="اللون الأسود">
+          </button>
+          <button type="button" class="product-thumb shrink-0 w-16 h-20 rounded-lg overflow-hidden border border-neutral-200 snap-start"
+                  onclick="setProductImage(this)" data-src="assets/images/products/french-set/french-set-grey.png">
+            <img src="assets/images/products/french-set/french-set-grey.png" class="w-full h-full object-cover" alt="درجات الرمادي">
+          </button>
+          <button type="button" class="product-thumb shrink-0 w-16 h-20 rounded-lg overflow-hidden border border-neutral-200 snap-start"
+                  onclick="setProductImage(this)" data-src="assets/images/products/french-set/french-set-beige.png">
+            <img src="assets/images/products/french-set/french-set-beige.png" class="w-full h-full object-cover" alt="درجات البيج">
+          </button>
+          <button type="button" class="product-thumb shrink-0 w-16 h-20 rounded-lg overflow-hidden border border-neutral-200 snap-start"
+                  onclick="setProductImage(this)" data-src="assets/images/products/french-set/french-set-offwhite.png">
+            <img src="assets/images/products/french-set/french-set-offwhite.png" class="w-full h-full object-cover" alt="أوف وايت">
+          </button>
+          <button type="button" class="product-thumb shrink-0 w-16 h-20 rounded-lg overflow-hidden border border-neutral-200 snap-start"
+                  onclick="setProductImage(this)" data-src="assets/images/products/french-set/french-set-navy.png">
+            <img src="assets/images/products/french-set/french-set-navy.png" class="w-full h-full object-cover" alt="كحلي">
+          </button>
+          <button type="button" class="product-thumb shrink-0 w-16 h-20 rounded-lg overflow-hidden border border-neutral-200 snap-start"
+                  onclick="setProductImage(this)" data-src="assets/images/products/french-set/french-set-petrol.png">
+            <img src="assets/images/products/french-set/french-set-petrol.png" class="w-full h-full object-cover" alt="جنزاري">
+          </button>
+          <button type="button" class="product-thumb shrink-0 w-16 h-20 rounded-lg overflow-hidden border border-neutral-200 snap-start"
+                  onclick="setProductImage(this)" data-src="assets/images/products/french-set/french-set-havana.png">
+            <img src="assets/images/products/french-set/french-set-havana.png" class="w-full h-full object-cover" alt="هافان">
+          </button>
+          <button type="button" class="product-thumb shrink-0 w-16 h-20 rounded-lg overflow-hidden border border-neutral-200 snap-start"
+                  onclick="setProductImage(this)" data-src="assets/images/products/french-set/french-set-lifestyle.png">
+            <img src="assets/images/products/french-set/french-set-lifestyle.png" class="w-full h-full object-cover" alt="صورة لايف ستايل">
+          </button>
+        </div>
+        <p class="text-[10px] text-neutral-500 text-center mt-2">اسحبي الصور يميناً ويساراً لمشاهدة كل الصور</p>
+      </div>
     </div>
 
     <!-- بطاقة البيانات والسعر الفوري -->
@@ -48,7 +103,7 @@
       <div class="flex items-baseline gap-3 mt-3 bg-white p-3 rounded-xl border border-neutral-200/60">
         <span class="text-xl font-black text-brand-dark">999 ج.م</span>
         <span class="text-xs text-neutral-400 line-through">1,100 ج.م</span>
-        <span class="bg-emerald-50 text-emerald-700 text-xs font-bold px-2 py-0.5 rounded mr-auto">وفّرتِ 150 ج.م</span>
+        <span class="bg-emerald-50 text-emerald-700 text-xs font-bold px-2 py-0.5 rounded mr-auto">وفّرتِ 101 ج.م</span>
       </div>
     </div>
 
@@ -56,25 +111,25 @@
     <div class="mt-4 bg-white p-3.5 rounded-xl border border-neutral-200/60">
       <label class="block text-xs font-bold text-neutral-700 mb-2">اختاري اللون: <span id="selectedColorName" class="text-brand-dark font-extrabold">أسود</span></label>
       <div class="grid grid-cols-2 gap-2">
-        <button onclick="selectColor('أسود', this)" class="flex items-center gap-2 px-3 py-2 rounded-lg border border-brand-dark bg-brand-dark text-white text-xs font-bold">
+        <button onclick="selectColor('أسود', this)" class="color-option flex items-center gap-2 px-3 py-2 rounded-lg border border-brand-dark bg-brand-dark text-white text-xs font-bold">
           <span class="w-5 h-5 rounded-full bg-neutral-900 border border-white/30"></span>أسود
         </button>
-        <button onclick="selectColor('درجات الرمادي', this)" class="flex items-center gap-2 px-3 py-2 rounded-lg border border-neutral-200 text-xs font-bold">
+        <button onclick="selectColor('درجات الرمادي', this)" class="color-option flex items-center gap-2 px-3 py-2 rounded-lg border border-neutral-200 text-xs font-bold">
           <span class="w-5 h-5 rounded-full bg-neutral-500"></span>درجات الرمادي
         </button>
-        <button onclick="selectColor('درجات البيج', this)" class="flex items-center gap-2 px-3 py-2 rounded-lg border border-neutral-200 text-xs font-bold">
+        <button onclick="selectColor('درجات البيج', this)" class="color-option flex items-center gap-2 px-3 py-2 rounded-lg border border-neutral-200 text-xs font-bold">
           <span class="w-5 h-5 rounded-full bg-[#A88C72]"></span>درجات البيج
         </button>
-        <button onclick="selectColor('أوف وايت', this)" class="flex items-center gap-2 px-3 py-2 rounded-lg border border-neutral-200 text-xs font-bold">
+        <button onclick="selectColor('أوف وايت', this)" class="color-option flex items-center gap-2 px-3 py-2 rounded-lg border border-neutral-200 text-xs font-bold">
           <span class="w-5 h-5 rounded-full bg-[#F1EBDD] border"></span>أوف وايت
         </button>
-        <button onclick="selectColor('كحلي', this)" class="flex items-center gap-2 px-3 py-2 rounded-lg border border-neutral-200 text-xs font-bold">
+        <button onclick="selectColor('كحلي', this)" class="color-option flex items-center gap-2 px-3 py-2 rounded-lg border border-neutral-200 text-xs font-bold">
           <span class="w-5 h-5 rounded-full bg-[#17233A]"></span>كحلي
         </button>
-        <button onclick="selectColor('جنزاري', this)" class="flex items-center gap-2 px-3 py-2 rounded-lg border border-neutral-200 text-xs font-bold">
+        <button onclick="selectColor('جنزاري', this)" class="color-option flex items-center gap-2 px-3 py-2 rounded-lg border border-neutral-200 text-xs font-bold">
           <span class="w-5 h-5 rounded-full bg-[#24534D]"></span>جنزاري
         </button>
-        <button onclick="selectColor('هافان', this)" class="flex items-center gap-2 px-3 py-2 rounded-lg border border-neutral-200 text-xs font-bold">
+        <button onclick="selectColor('هافان', this)" class="color-option flex items-center gap-2 px-3 py-2 rounded-lg border border-neutral-200 text-xs font-bold">
           <span class="w-5 h-5 rounded-full bg-[#8B6A4D]"></span>هافان
         </button>
       </div>
@@ -155,7 +210,7 @@
 
   <!-- البار السفلي الثابت لشاشات الموبايل (Sticky Action Thumb-Zone) -->
   <div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-neutral-200 px-4 py-2.5 max-w-md mx-auto flex items-center gap-2.5 shadow-lg">
-    <a id="waDirectBtn" href="https://wa.me/201124574341?text=استفسار%20عن%20خمار%20فرنسي%203%20طبقات" target="_blank" class="p-3 bg-emerald-50 text-emerald-700 rounded-xl border border-emerald-300 active:scale-95 flex-shrink-0" title="طلب بالواتساب">
+    <a id="waDirectBtn" href="https://wa.me/201124574341?text=استفسار%20عن%20طقم%20فرنسي%20قطعتين" target="_blank" class="p-3 bg-emerald-50 text-emerald-700 rounded-xl border border-emerald-300 active:scale-95 flex-shrink-0" title="طلب بالواتساب">
       <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.072-2.122-.52-1.825-.758-2.997-2.613-3.088-2.735-.091-.121-.734-.977-.734-1.864 0-.887.464-1.323.63-1.503.166-.18.362-.226.483-.226.121 0 .241.002.348.006.113.005.263-.043.412.316.151.362.513 1.25.558 1.341.045.09.076.197.015.318-.06.121-.09.197-.181.303-.09.106-.191.237-.272.318-.09.09-.185.188-.08.369.105.18.468.772.999 1.246.685.612 1.261.802 1.442.893.18.09.287.075.393-.045.105-.121.453-.529.574-.71.121-.181.241-.151.407-.09.166.06 1.055.498 1.236.588.181.09.302.136.347.212.045.075.045.436-.099.841z"/></svg>
     </a>
     <button onclick="handleAddToCart()" class="flex-1 py-3 bg-brand-dark text-white rounded-xl text-xs font-black shadow-md flex items-center justify-center gap-2 active:scale-95 transition">
@@ -166,16 +221,36 @@
 
   <script src="assets/js/store-core.js"></script>
   <script>
-    let selectedColor = 'أسود ملكي';
+    let selectedColor = 'أسود';
 
     function selectColor(color, btn) {
       selectedColor = color;
       document.getElementById('selectedColorName').innerText = color;
-      // تحديث مظهر الحلقة
-      document.querySelectorAll('.rounded-full').forEach(b => b.classList.remove('ring-2', 'ring-brand-dark', 'ring-offset-2'));
-      btn.classList.add('ring-2', 'ring-brand-dark', 'ring-offset-2');
 
-      // تحديث رابط الواتساب الديناميكي
+      document.querySelectorAll('.color-option').forEach(el => {
+        el.classList.remove('border-brand-dark', 'bg-brand-dark', 'text-white', 'ring-2', 'ring-brand-accent');
+        el.classList.add('border-neutral-200');
+      });
+      btn.classList.remove('border-neutral-200');
+      btn.classList.add('border-brand-dark', 'bg-brand-dark', 'text-white', 'ring-2', 'ring-brand-accent');
+
+      const colorImages = {
+        'أسود': 'assets/images/products/french-set/french-set-black.png',
+        'درجات الرمادي': 'assets/images/products/french-set/french-set-grey.png',
+        'درجات البيج': 'assets/images/products/french-set/french-set-beige.png',
+        'أوف وايت': 'assets/images/products/french-set/french-set-offwhite.png',
+        'كحلي': 'assets/images/products/french-set/french-set-navy.png',
+        'جنزاري': 'assets/images/products/french-set/french-set-petrol.png',
+        'هافان': 'assets/images/products/french-set/french-set-havana.png'
+      };
+
+      const target = colorImages[color];
+      if (target) {
+        const thumb = Array.from(document.querySelectorAll('.product-thumb'))
+          .find(el => el.dataset.src === target);
+        if (thumb) setProductImage(thumb);
+      }
+
       const waMsg = encodeURIComponent(`مرحباً سنابل، أريد طلب طقم فرنسي قطعتين لون (${color}) بسعر 999 ج.م`);
       document.getElementById('waDirectBtn').href = `https://wa.me/201124574341?text=${waMsg}`;
     }
@@ -183,13 +258,21 @@
     function setProductImage(btn) {
       const src = btn.dataset.src;
       document.getElementById('mainProductImg').src = src;
-      document.querySelectorAll('[data-src]').forEach(el => {
+
+      const thumbs = Array.from(document.querySelectorAll('.product-thumb'));
+      thumbs.forEach(el => {
         el.classList.remove('border-2', 'border-brand-dark');
         el.classList.add('border', 'border-neutral-200');
       });
+
       btn.classList.remove('border', 'border-neutral-200');
       btn.classList.add('border-2', 'border-brand-dark');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      const index = thumbs.indexOf(btn) + 1;
+      const counter = document.getElementById('imageCounter');
+      if (counter) counter.innerText = `${index} / ${thumbs.length}`;
+
+      btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     }
 
     function handleAddToCart() {
