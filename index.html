@@ -97,12 +97,12 @@
   <!-- الحاوية المتجاوبة لكامل محتوى المتجر -->
   <main class="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 space-y-4 sm:space-y-8 pt-3 sm:pt-6">
     
-    <!-- 3. الهيرو: كارت البانر بعرض الشاشة مع زر تسوقي التشكيلة الآن -->
+    <!-- 3. الهيرو: كارت البانر بعرض الشاشة مع فيديو الحركة الواقعي المدمج -->
     <section class="w-full">
       <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-neutral-300/60 bg-[#161713] transition hover:shadow-xl">
-        <a href="#quick-catalog" class="block w-full">
-          <img src="assets/images/banners/hero-banner.png" alt="تشكيلة الموسم الجديدة - سنابل للمحجبات" class="w-full h-auto object-cover block max-h-[480px]">
-        </a>
+        <div class="relative w-full overflow-hidden bg-black">
+          <video src="assets/images/banners/hero-video.mp4" autoplay loop muted playsinline class="w-full h-auto object-cover block max-h-[480px]"></video>
+        </div>
         <div class="absolute bottom-3 sm:bottom-6 left-3 sm:left-6 z-10">
           <a href="#quick-catalog" class="inline-flex items-center gap-2 bg-brand-accent hover:bg-amber-400 text-neutral-950 text-xs sm:text-sm font-black px-4 sm:px-6 py-2 sm:py-3 rounded-xl shadow-xl active:scale-95 transition">
             <span>تسوقي التشكيلة الآن</span>
@@ -112,26 +112,27 @@
       </div>
     </section>
 
-    <!-- 4. قسم الإطلالة الكاملة (AOV Booster Bundle) -->
+    <!-- 4. قسم الإطلالة الكاملة (محدث بالبيانات والأسعار الجديدة) -->
     <section id="bundle-section" class="w-full">
       <div class="bg-gradient-to-br from-brand-medium to-brand-dark text-white p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-md relative overflow-hidden border border-brand-accent/25">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div class="space-y-1 sm:space-y-2">
             <div class="flex items-center gap-2">
-              <span class="bg-brand-accent text-neutral-950 text-[10px] sm:text-xs font-black px-2.5 py-0.5 rounded-full">وفرّي 150 ج.م عند الطلب معاً</span>
+              <span class="bg-brand-accent text-neutral-950 text-[10px] sm:text-xs font-black px-2.5 py-0.5 rounded-full">وفرّي 101 ج.م لفترة محدودة</span>
               <span class="text-xs text-amber-200/90 font-bold">عرض الإطلالة المتناسقة</span>
             </div>
-            <h2 class="text-base sm:text-xl font-black">طقم الاحتشام المتكامل (دريس ساتر + خمار فرنسي)</h2>
-            <p class="text-xs sm:text-sm text-neutral-300">تنسيق مريح بلون موحد وخامة كريب صيفية ناعمة لا تحتاج كوي متكرر ولا تشف.</p>
+            <h2 class="text-base sm:text-xl font-black">طقم فرنسي قطعتين</h2>
+            <p class="text-xs sm:text-sm text-neutral-300">خامة رويال عالية الجودة</p>
           </div>
 
           <div class="bg-white/10 p-3 sm:p-4 rounded-xl sm:rounded-2xl backdrop-blur-sm flex items-center justify-between md:justify-end gap-4 sm:gap-6 border border-white/15 min-w-[280px]">
             <div>
-              <div class="text-[11px] sm:text-xs text-neutral-400 line-through">بدلاً من 1,249 ج.م</div>
-              <div class="text-lg sm:text-2xl font-black text-brand-accent">1,099 ج.م فقط</div>
+              <div class="text-[11px] sm:text-xs text-neutral-400 line-through">بدلاً من 1,100 ج.م</div>
+              <div class="text-lg sm:text-2xl font-black text-brand-accent">999 ج.م فقط</div>
             </div>
-            <button onclick="openProductModal('bundle-complete')" class="bg-brand-accent hover:bg-amber-400 text-neutral-950 text-xs sm:text-sm font-black px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl shadow-md transition active:scale-95 whitespace-nowrap">
-              اختاري المقاس واللون
+            <button onclick="openProductModal('khimar-french')" class="bg-brand-accent hover:bg-amber-400 text-neutral-950 text-xs sm:text-sm font-black px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl shadow-md transition active:scale-95 whitespace-nowrap flex items-center gap-1.5">
+              <span>تسوقي الآن</span>
+              <span class="rtl:rotate-180">←</span>
             </button>
           </div>
         </div>
@@ -165,12 +166,12 @@
           <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-brand-dark text-brand-accent text-[9px] sm:text-xs px-2 py-0.5 rounded-md font-bold">الأوفر ٪</span>
           <div>
             <div class="aspect-[4/5] rounded-xl bg-neutral-100 overflow-hidden mb-3">
-              <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=600&q=80" alt="الإطلالات المتكاملة" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
+              <img src="assets/images/products/french-set/french-set-main.png" alt="الإطلالات المتكاملة" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
             </div>
             <h3 class="font-bold text-xs sm:text-base text-brand-dark">الإطلالات المتكاملة</h3>
-            <p class="text-[11px] sm:text-xs text-neutral-500 mt-1">دريس + خمار + نقاب بتنسيق متناغم</p>
+            <p class="text-[11px] sm:text-xs text-neutral-500 mt-1">طقم فرنسي قطعتين بتنسيق متناغم</p>
           </div>
-          <button onclick="openProductModal('bundle-complete')" class="mt-3 w-full py-2 bg-brand-dark text-white text-xs sm:text-sm font-bold rounded-xl active:scale-95 hover:bg-neutral-900 transition">
+          <button onclick="openProductModal('khimar-french')" class="mt-3 w-full py-2 bg-brand-dark text-white text-xs sm:text-sm font-bold rounded-xl active:scale-95 hover:bg-neutral-900 transition">
             اختاري إطلالتك
           </button>
         </div>
@@ -196,18 +197,18 @@
         <div class="min-w-[210px] max-w-[220px] md:min-w-0 md:max-w-none snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
           <div onclick="openProductModal('khimar-french')" class="cursor-pointer">
             <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
-              <span class="absolute top-2 right-2 bg-neutral-900/85 text-brand-accent text-[10px] px-2 py-0.5 rounded-md font-semibold backdrop-blur-sm">شيفون كريب</span>
-              <img src="assets/images/products/french-set/french-set-main.png" alt="خمار فرنسي 3 طبقات" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
+              <span class="absolute top-2 right-2 bg-neutral-900/85 text-brand-accent text-[10px] px-2 py-0.5 rounded-md font-semibold backdrop-blur-sm">خامة رويال</span>
+              <img src="assets/images/products/french-set/french-set-main.png" alt="طقم فرنسي قطعتين" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
             </div>
             <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">طقم فرنسي قطعتين</h3>
-            <p class="text-[11px] text-neutral-500 mt-0.5">دريس بكشكشه + خمار مثلث • خامة رويال • مقاس موحد</p>
+            <p class="text-[11px] text-neutral-500 mt-0.5">خامة رويال عالية الجودة • مقاس موحد</p>
             <div class="flex items-baseline gap-2 mt-2">
               <span class="text-sm sm:text-base font-black text-brand-dark">999 ج.م</span>
               <span class="text-xs text-neutral-400 line-through">1,100 ج.م</span>
             </div>
           </div>
           <button onclick="openProductModal('khimar-french')" class="mt-3 w-full py-2.5 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 shadow-sm transition">
-            <span>اختاري اللون والمقاس</span>
+            <span>تسوقي الآن ←</span>
           </button>
         </div>
 
@@ -553,7 +554,7 @@
     // رقم واتساب إدارة متجر سنابل المعتمد
     const STORE_WHATSAPP_NUMBER = "201124574341";
 
-    // كتالوج المنتجات المدعم بالألوان والمقاسات الواقعية
+    // كتالوج المنتجات المحدث بالأسعار وخامة الرويال
     const catalog = {
       'khimar-french': {
         id: 'khimar-french',
@@ -599,20 +600,6 @@
           { name: 'رمادي هادئ', hex: '#566573' }
         ],
         sizes: ['مقاس موحد']
-      },
-      'bundle-complete': {
-        id: 'bundle-complete',
-        title: 'طقم الاحتشام المتكامل (دريس ساتر + خمار فرنسي)',
-        price: 1099,
-        oldPrice: 1249,
-        image: 'assets/images/products/french-set/french-set-main.png',
-        desc: 'تنسيق أنيق ومحتشم بخامة صيفية ناعمة لا تحتاج كوي متكرر بلون موحد جذاب.',
-        colors: [
-          { name: 'أسود ملكي', hex: '#151515' },
-          { name: 'كافيه دافئ', hex: '#8C7462' },
-          { name: 'زيتي ملكي', hex: '#2A3C2D' }
-        ],
-        sizes: ['مقاس 1 (يلبس حتى 75 كجم)', 'مقاس 2 (يلبس حتى 95 كجم)', 'مقاس 3 (يلبس حتى 115 كجم)']
       }
     };
 
@@ -758,7 +745,7 @@
       updateCartUI();
     }
 
-    // تحديث واجهات السلة مع عرض الألوان والمقاسات المختارة
+    // تحديث واجهات السلة مع تفاصيل القطع
     function updateCartUI() {
       const badge = document.getElementById('cartBadge');
       const emptyState = document.getElementById('emptyCartState');
@@ -871,7 +858,6 @@
       const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
       const grandTotal = subtotal + 40;
 
-      // تجهيز تفاصيل كل قطعة مع اللون والمقاس
       const productsListText = cart.map((item, idx) => 
         `${idx + 1}) *${item.title}*\n   - اللون: ${item.color} | المقاس: ${item.size}\n   - الكمية: ${item.quantity} × ${item.price} ج.م = ${item.quantity * item.price} ج.م`
       ).join('\n');
@@ -882,7 +868,6 @@
         num_items: cart.length
       });
 
-      // صياغة رسالة الواتساب المكتملة
       const whatsappMessage = 
 `🌾 *طلب شراء جديد - متجر سنابل للمحجبات* 🌾
 -----------------------------------
