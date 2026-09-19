@@ -186,14 +186,14 @@
             <span>الأكثر طلباً ومبيعاً</span>
             <span class="text-sm sm:text-base">🔥</span>
           </h2>
-          <p class="text-xs sm:text-sm text-neutral-500">اضغطي على أي قطعة لاختيار اللون والمقاس المناسب</p>
+          <p class="text-xs sm:text-sm text-neutral-500">اضغطي على أي قطعة لاختيار اللون والمقاس وتصفح كل الصور</p>
         </div>
         <span class="text-xs font-bold text-brand-accent md:hidden">سحب أفقي ←</span>
       </div>
 
       <div class="flex gap-3 overflow-x-auto no-scrollbar pb-3 snap-x snap-mandatory md:grid md:grid-cols-3 md:gap-6 md:overflow-visible">
         
-        <!-- كارت منتج 1 -->
+        <!-- كارت منتج 1 (الطقم الفرنسي بصورة الغلاف الرئيسية) -->
         <div class="min-w-[210px] max-w-[220px] md:min-w-0 md:max-w-none snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
           <div onclick="openProductModal('khimar-french')" class="cursor-pointer">
             <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
@@ -365,36 +365,47 @@
     </div>
   </div>
 
-  <!-- 12. نافذة اختيار اللون والمقاس وتفاصيل المنتج (Product Options Bottom-Sheet) -->
+  <!-- 12. نافذة اختيار اللون والمقاس ومعرض صور القطعة (Product Options & Gallery Modal) -->
   <div id="productOptionsModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs transition-opacity duration-300 hidden opacity-0 flex items-end md:items-center justify-center">
-    <div class="bg-white w-full max-w-lg rounded-t-3xl md:rounded-3xl max-h-[92vh] overflow-y-auto p-5 sm:p-7 shadow-2xl transform transition-transform duration-300 translate-y-full md:translate-y-0" id="productModalContent">
+    <div class="bg-white w-full max-w-lg rounded-t-3xl md:rounded-3xl max-h-[94vh] overflow-y-auto p-5 sm:p-7 shadow-2xl transform transition-transform duration-300 translate-y-full md:translate-y-0" id="productModalContent">
       
       <!-- هيدر النافذة وزر الإغلاق -->
-      <div class="flex items-center justify-between border-b border-neutral-100 pb-3 mb-4">
-        <span class="text-xs font-bold text-brand-accent">سنابل للمحجبات • تفاصيل القطعة</span>
+      <div class="flex items-center justify-between border-b border-neutral-100 pb-3 mb-3">
+        <span class="text-xs font-bold text-brand-accent">سنابل للمحجبات • استعراض القطعة وتفاصيلها</span>
         <button onclick="closeProductModal()" class="p-1 text-neutral-400 hover:text-neutral-700 text-lg">✕</button>
       </div>
 
-      <!-- معلومات المنتج المصغرة -->
-      <div class="flex gap-3.5 items-center mb-4 bg-brand-light/50 p-3 rounded-2xl border border-neutral-200/60">
-        <img id="modalProductImg" src="" alt="المنتج" class="w-16 h-20 rounded-xl object-cover object-top bg-neutral-200 flex-shrink-0">
-        <div>
-          <h3 id="modalProductTitle" class="text-xs sm:text-sm font-black text-brand-dark leading-snug"></h3>
-          <p id="modalProductDesc" class="text-[11px] text-neutral-500 mt-1 leading-relaxed"></p>
-          <div class="flex items-baseline gap-2 mt-2">
-            <span id="modalProductPrice" class="text-base font-black text-brand-dark"></span>
-            <span id="modalProductOldPrice" class="text-xs text-neutral-400 line-through"></span>
-          </div>
+      <!-- المعرض البصري المطور: الصورة المكبرة وشريط المعاينة المصغر -->
+      <div class="mb-4">
+        <!-- الصورة الرئيسية للمعاينة بالحجم الكامل بنسبة طول طبيعية للموديل -->
+        <div class="relative w-full aspect-[4/5] max-h-72 rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200/80 shadow-xs mb-2.5">
+          <img id="modalProductImg" src="" alt="معاينة المنتج" class="w-full h-full object-cover object-top transition duration-300">
+          <span id="modalActivePhotoBadge" class="absolute bottom-2.5 right-2.5 bg-neutral-900/80 backdrop-blur-xs text-white text-[10px] px-2 py-0.5 rounded font-bold">معاينة تفاعلية</span>
+        </div>
+
+        <!-- شريط مصغر للصور العامة وزوايا الخامة (Thumbnails Gallery) -->
+        <div id="modalThumbnailsGallery" class="flex gap-2 overflow-x-auto no-scrollbar pb-1">
+          <!-- تضاف مصغرات الزوايا ديناميكياً -->
         </div>
       </div>
 
-      <!-- اختيار الألوان الواقعية -->
+      <!-- معلومات المنتج والسعر -->
+      <div class="mb-4">
+        <h3 id="modalProductTitle" class="text-sm sm:text-base font-black text-brand-dark leading-snug"></h3>
+        <p id="modalProductDesc" class="text-xs text-neutral-500 mt-1 leading-relaxed"></p>
+        <div class="flex items-baseline gap-2 mt-2">
+          <span id="modalProductPrice" class="text-base sm:text-lg font-black text-brand-dark"></span>
+          <span id="modalProductOldPrice" class="text-xs text-neutral-400 line-through"></span>
+        </div>
+      </div>
+
+      <!-- اختيار الألوان الواقعية (تغير الصورة فوراً عند النقر) -->
       <div class="space-y-2 mb-4">
         <label class="block text-xs font-black text-neutral-800">
           اختاري اللون: <span id="modalSelectedColorLabel" class="text-brand-accent mr-1"></span>
         </label>
         <div id="modalColorsContainer" class="flex flex-wrap gap-2 pt-1">
-          <!-- تضاف الألوان ديناميكياً -->
+          <!-- تضاف أزرار الألوان ديناميكياً -->
         </div>
       </div>
 
@@ -420,7 +431,7 @@
         </div>
 
         <button type="button" onclick="confirmAddModalToCart()" class="w-full py-3.5 bg-brand-dark hover:bg-neutral-900 active:scale-95 text-white rounded-xl text-xs sm:text-sm font-black shadow-lg flex items-center justify-center gap-2 transition">
-          <span>أضيفي للسلة بالخيارات المختارة</span>
+          <span>أضيفي للسلة باللون والمقاس المختار</span>
           <span class="text-brand-accent">•</span>
           <span id="modalSubmitTotal" class="text-brand-accent"></span>
         </button>
@@ -456,7 +467,7 @@
         
         <!-- قائمة المنتجات المتعددة في السلة -->
         <div id="cartItemsList" class="space-y-2.5 max-h-56 overflow-y-auto pr-1">
-          <!-- تضاف المنتجات ديناميكياً مع ألوانها ومقاساتها -->
+          <!-- تضاف المنتجات ديناميكياً مع صورتها الخاصة بلونها ومقاسها -->
         </div>
 
         <!-- زر لمتابعة التسوق وإضافة قطع أخرى -->
@@ -554,23 +565,31 @@
     // رقم واتساب إدارة متجر سنابل المعتمد
     const STORE_WHATSAPP_NUMBER = "201124574341";
 
-    // كتالوج المنتجات المحدث بالأسعار وخامة الرويال
+    // كتالوج المنتجات المدمج بجميع صور الألوان والزوايا المرفوعة على المتجر
     const catalog = {
       'khimar-french': {
         id: 'khimar-french',
         title: 'طقم فرنسي قطعتين',
         price: 999,
         oldPrice: 1100,
-        image: 'assets/images/products/french-set/french-set-main.png',
+        mainImage: 'assets/images/products/french-set/french-set-main.png',
         desc: 'دريس بكشكشه علي الصدر وسويته سحريه وخمار مثلث — خامه رويال عاليه الجوده — المقاس موحد.',
+        // ربط كل لون بصورته الحقيقية المرفوعة
         colors: [
-          { name: 'أسود', hex: '#111111' },
-          { name: 'درجات الرمادي', hex: '#777777' },
-          { name: 'درجات البيج', hex: '#A88C72' },
-          { name: 'أوف وايت', hex: '#F1EBDD' },
-          { name: 'كحلي', hex: '#17233A' },
-          { name: 'جنزاري', hex: '#24534D' },
-          { name: 'هافان', hex: '#8B6A4D' }
+          { name: 'أسود', hex: '#111111', image: 'assets/images/products/french-set/french-set-black.png' },
+          { name: 'درجات الرمادي', hex: '#777777', image: 'assets/images/products/french-set/french-set-grey.png' },
+          { name: 'درجات البيج', hex: '#A88C72', image: 'assets/images/products/french-set/french-set-beige.png' },
+          { name: 'أوف وايت', hex: '#F1EBDD', image: 'assets/images/products/french-set/french-set-offwhite.png' },
+          { name: 'كحلي', hex: '#17233A', image: 'assets/images/products/french-set/french-set-navy.png' },
+          { name: 'جنزاري', hex: '#24534D', image: 'assets/images/products/french-set/french-set-petrol.png' },
+          { name: 'هافان', hex: '#8B6A4D', image: 'assets/images/products/french-set/french-set-havana.png' }
+        ],
+        // معرض الصور والزوايا العامة للطقم الفرنسي
+        gallery: [
+          { label: 'الرئيسية', url: 'assets/images/products/french-set/french-set-main.png' },
+          { label: 'الإطلالة كاملة', url: 'assets/images/products/french-set/french-set-full.png' },
+          { label: 'تفاصيل الخامة', url: 'assets/images/products/french-set/french-set-detail.png' },
+          { label: 'لايف ستايل', url: 'assets/images/products/french-set/french-set-lifestyle.png' }
         ],
         sizes: ['مقاس موحد']
       },
@@ -579,10 +598,13 @@
         title: 'نقاب طبي مقوى خليجي',
         price: 160,
         oldPrice: 200,
-        image: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=500&q=80',
+        mainImage: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=500&q=80',
         desc: 'شيفون ناعم مبطن برغوة طبية مقواة عند الجبهة، مريح للعين ولا يسبب تحسس أثناء التنفس.',
         colors: [
-          { name: 'أسود فاحم', hex: '#111111' }
+          { name: 'أسود فاحم', hex: '#111111', image: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=500&q=80' }
+        ],
+        gallery: [
+          { label: 'الرئيسية', url: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=500&q=80' }
         ],
         sizes: ['تندة وسط (عادي)', 'تندة طويلة ساترة']
       },
@@ -591,13 +613,16 @@
         title: 'خمار إندونيسي 3 قطع مع غشوة',
         price: 550,
         oldPrice: 700,
-        image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=80',
+        mainImage: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=80',
         desc: 'طقم متكامل (خمار + نقاب + غشوة خفيفة) مصمم للخرجات الطويلة والمشاوير اليومية.',
         colors: [
-          { name: 'أسود ملكي', hex: '#151515' },
-          { name: 'كحلي ليلي', hex: '#1C2833' },
-          { name: 'زيتي داكن', hex: '#2A3C2D' },
-          { name: 'رمادي هادئ', hex: '#566573' }
+          { name: 'أسود ملكي', hex: '#151515', image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=80' },
+          { name: 'كحلي ليلي', hex: '#1C2833', image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=80' },
+          { name: 'زيتي داكن', hex: '#2A3C2D', image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=80' },
+          { name: 'رمادي هادئ', hex: '#566573', image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=80' }
+        ],
+        gallery: [
+          { label: 'الرئيسية', url: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=80' }
         ],
         sizes: ['مقاس موحد']
       }
@@ -608,11 +633,12 @@
 
     // حالة المنتج النشط في نافذة الخيارات
     let activeModalProduct = null;
+    let currentPreviewImage = '';
     let selectedColor = '';
     let selectedSize = '';
     let modalQuantity = 1;
 
-    // فتح نافذة اختيار اللون والمقاس
+    // فتح نافذة اختيار اللون والمقاس واستعراض الصور
     function openProductModal(productId) {
       const product = catalog[productId];
       if (!product) return;
@@ -620,9 +646,11 @@
       activeModalProduct = product;
       selectedColor = product.colors[0].name;
       selectedSize = product.sizes[0];
+      // تعيين الصورة الافتراضية بحسب أول لون مختار
+      currentPreviewImage = product.colors[0].image || product.mainImage;
       modalQuantity = 1;
 
-      document.getElementById('modalProductImg').src = product.image;
+      document.getElementById('modalProductImg').src = currentPreviewImage;
       document.getElementById('modalProductTitle').innerText = product.title;
       document.getElementById('modalProductDesc').innerText = product.desc;
       document.getElementById('modalProductPrice').innerText = `${product.price} ج.م`;
@@ -630,6 +658,7 @@
       document.getElementById('modalQtyDisplay').innerText = modalQuantity;
       document.getElementById('modalSubmitTotal').innerText = `${product.price} ج.م`;
 
+      renderThumbnailsGallery(product.gallery || []);
       renderModalColors(product.colors);
       renderModalSizes(product.sizes);
 
@@ -652,23 +681,52 @@
       }, 300);
     }
 
+    // بناء شريط الصور المصغرة
+    function renderThumbnailsGallery(gallery) {
+      const container = document.getElementById('modalThumbnailsGallery');
+      if (!gallery || gallery.length === 0) {
+        container.innerHTML = '';
+        return;
+      }
+
+      container.innerHTML = gallery.map(item => `
+        <button type="button" onclick="setPreviewImage('${item.url}', '${item.label}')" class="flex-shrink-0 group flex flex-col items-center">
+          <img src="${item.url}" alt="${item.label}" class="w-14 h-16 rounded-xl object-cover object-top border-2 transition ${currentPreviewImage === item.url ? 'border-brand-accent scale-95 shadow-sm' : 'border-neutral-200 opacity-70 hover:opacity-100'}">
+          <span class="text-[9px] font-bold text-neutral-500 mt-1">${item.label}</span>
+        </button>
+      `).join('');
+    }
+
+    // تبديل صورة المعاينة الحالية
+    function setPreviewImage(imageUrl, label) {
+      currentPreviewImage = imageUrl;
+      document.getElementById('modalProductImg').src = imageUrl;
+      document.getElementById('modalActivePhotoBadge').innerText = label || 'معاينة';
+      renderThumbnailsGallery(activeModalProduct.gallery || []);
+    }
+
+    // بناء قائمة الألوان مع التبديل المباشر للصورة
     function renderModalColors(colors) {
       const container = document.getElementById('modalColorsContainer');
       document.getElementById('modalSelectedColorLabel').innerText = selectedColor;
 
       container.innerHTML = colors.map(c => `
-        <button type="button" onclick="selectColor('${c.name}')" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-bold transition ${selectedColor === c.name ? 'border-brand-dark bg-brand-dark text-white ring-2 ring-brand-accent/50' : 'border-neutral-200 bg-white text-neutral-700 hover:border-neutral-400'}">
-          <span class="w-3.5 h-3.5 rounded-full border border-white/40" style="background-color: ${c.hex}"></span>
+        <button type="button" onclick="selectColor('${c.name}', '${c.image}')" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-bold transition ${selectedColor === c.name ? 'border-brand-dark bg-brand-dark text-white ring-2 ring-brand-accent/50' : 'border-neutral-200 bg-white text-neutral-700 hover:border-neutral-400'}">
+          <span class="w-3.5 h-3.5 rounded-full border border-white/40 shadow-xs" style="background-color: ${c.hex}"></span>
           <span>${c.name}</span>
         </button>
       `).join('');
     }
 
-    function selectColor(colorName) {
+    function selectColor(colorName, colorImageUrl) {
       selectedColor = colorName;
+      if (colorImageUrl) {
+        setPreviewImage(colorImageUrl, `لون ${colorName}`);
+      }
       renderModalColors(activeModalProduct.colors);
     }
 
+    // بناء قائمة المقاسات
     function renderModalSizes(sizes) {
       const container = document.getElementById('modalSizesContainer');
       document.getElementById('modalSelectedSizeLabel').innerText = selectedSize;
@@ -691,7 +749,7 @@
       document.getElementById('modalSubmitTotal').innerText = `${activeModalProduct.price * modalQuantity} ج.م`;
     }
 
-    // تأكيد إضافة المنتج باللون والمقاس للسلة
+    // تأكيد إضافة المنتج باللون المختار وصورته الخاصة للسلة
     function confirmAddModalToCart() {
       if (!activeModalProduct) return;
 
@@ -708,7 +766,7 @@
           id: activeModalProduct.id,
           title: activeModalProduct.title,
           price: activeModalProduct.price,
-          image: activeModalProduct.image,
+          image: currentPreviewImage || activeModalProduct.mainImage,
           color: selectedColor,
           size: selectedSize,
           quantity: modalQuantity
@@ -745,7 +803,7 @@
       updateCartUI();
     }
 
-    // تحديث واجهات السلة مع تفاصيل القطع
+    // تحديث واجهات السلة مع عرض صورة كل لون بدقة
     function updateCartUI() {
       const badge = document.getElementById('cartBadge');
       const emptyState = document.getElementById('emptyCartState');
