@@ -112,7 +112,7 @@
       </div>
     </section>
 
-    <!-- 4. قسم الإطلالة الكاملة (محدث بالبيانات والأسعار الجديدة) -->
+    <!-- 4. قسم الإطلالة الكاملة -->
     <section id="bundle-section" class="w-full">
       <div class="bg-gradient-to-br from-brand-medium to-brand-dark text-white p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-md relative overflow-hidden border border-brand-accent/25">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -193,7 +193,7 @@
 
       <div class="flex gap-3 overflow-x-auto no-scrollbar pb-3 snap-x snap-mandatory md:grid md:grid-cols-3 md:gap-6 md:overflow-visible">
         
-        <!-- كارت منتج 1 (الطقم الفرنسي بصورة الغلاف الرئيسية) -->
+        <!-- كارت منتج 1 -->
         <div class="min-w-[210px] max-w-[220px] md:min-w-0 md:max-w-none snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
           <div onclick="openProductModal('khimar-french')" class="cursor-pointer">
             <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
@@ -365,7 +365,7 @@
     </div>
   </div>
 
-  <!-- 12. نافذة اختيار اللون والمقاس ومعرض صور القطعة (Product Options & Gallery Modal) -->
+  <!-- 12. نافذة اختيار اللون والمقاس ومعرض صور القطعة (تم تصحيح إطار الصورة بالكامل لمنع القص) -->
   <div id="productOptionsModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs transition-opacity duration-300 hidden opacity-0 flex items-end md:items-center justify-center">
     <div class="bg-white w-full max-w-lg rounded-t-3xl md:rounded-3xl max-h-[94vh] overflow-y-auto p-5 sm:p-7 shadow-2xl transform transition-transform duration-300 translate-y-full md:translate-y-0" id="productModalContent">
       
@@ -375,12 +375,12 @@
         <button onclick="closeProductModal()" class="p-1 text-neutral-400 hover:text-neutral-700 text-lg">✕</button>
       </div>
 
-      <!-- المعرض البصري المطور: الصورة المكبرة وشريط المعاينة المصغر -->
+      <!-- المعرض البصري: إطار طولي كامل بدون أي قص نهائياً -->
       <div class="mb-4">
-        <!-- الصورة الرئيسية للمعاينة بالحجم الكامل بنسبة طول طبيعية للموديل -->
-        <div class="relative w-full aspect-[4/5] max-h-72 rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200/80 shadow-xs mb-2.5">
-          <img id="modalProductImg" src="" alt="معاينة المنتج" class="w-full h-full object-cover object-top transition duration-300">
-          <span id="modalActivePhotoBadge" class="absolute bottom-2.5 right-2.5 bg-neutral-900/80 backdrop-blur-xs text-white text-[10px] px-2 py-0.5 rounded font-bold">معاينة تفاعلية</span>
+        <!-- تم استبدال الارتفاع الثابت بـ object-contain وارتفاع طولي كامل يصل لـ 500 بكسل -->
+        <div class="relative w-full rounded-2xl overflow-hidden bg-[#FAF8F5] border border-neutral-200/80 shadow-xs mb-2.5 flex items-center justify-center min-h-[340px] max-h-[500px]">
+          <img id="modalProductImg" src="" alt="معاينة المنتج" class="w-full h-auto max-h-[500px] object-contain block mx-auto transition duration-300">
+          <span id="modalActivePhotoBadge" class="absolute bottom-2.5 right-2.5 bg-neutral-900/80 backdrop-blur-xs text-white text-[10px] px-2.5 py-1 rounded-md font-bold">معاينة كاملة</span>
         </div>
 
         <!-- شريط مصغر للصور العامة وزوايا الخامة (Thumbnails Gallery) -->
@@ -701,7 +701,7 @@
     function setPreviewImage(imageUrl, label) {
       currentPreviewImage = imageUrl;
       document.getElementById('modalProductImg').src = imageUrl;
-      document.getElementById('modalActivePhotoBadge').innerText = label || 'معاينة';
+      document.getElementById('modalActivePhotoBadge').innerText = label || 'معاينة كاملة';
       renderThumbnailsGallery(activeModalProduct.gallery || []);
     }
 
