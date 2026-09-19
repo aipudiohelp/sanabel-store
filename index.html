@@ -180,7 +180,7 @@
       </div>
     </section>
 
-    <!-- 5. مسارا الشراء الرئيسيان -->
+    <!-- 5. مسارا الشراء الرئيسيان (تم تحديث صورة كارت الخمار والنقاب بالبانر الجديد) -->
     <section id="choice-paths" class="w-full">
       <div class="text-center mb-3 sm:mb-5">
         <h2 class="text-base sm:text-xl font-black text-brand-dark">تسوقي حسب احتياجك</h2>
@@ -188,14 +188,14 @@
       </div>
 
       <div class="grid grid-cols-2 gap-3 sm:gap-6">
-        <!-- المسار 1 -->
+        <!-- المسار 1: الخمار والنقاب (محدث بالصورة الرسمية khimar-niqab.jpg) -->
         <div class="bg-white p-3 sm:p-5 rounded-2xl border border-neutral-200/90 shadow-sm flex flex-col justify-between hover:border-brand-dark transition">
           <div>
             <div class="aspect-[4/5] rounded-xl bg-neutral-100 overflow-hidden mb-3">
-              <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=600&q=80" alt="الخمار والنقاب" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
+              <img src="assets/images/categories/khimar-niqab.jpg" alt="الخمار والطرح والنقاب" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
             </div>
             <h3 class="font-bold text-xs sm:text-base text-brand-dark">الخمار والطرح والنقاب</h3>
-            <p class="text-[11px] sm:text-xs text-neutral-500 mt-1">خامات كريب كوري وسيلك خفيفة وباردة</p>
+            <p class="text-[11px] sm:text-xs text-neutral-500 mt-1">خامات شيفون ليزر سعودي وكريب كوري ساتر</p>
           </div>
           <button onclick="document.getElementById('quick-catalog').scrollIntoView({ behavior: 'smooth' })" class="mt-3 w-full py-2 bg-brand-light text-brand-dark text-xs sm:text-sm font-bold rounded-xl hover:bg-neutral-200 transition">
             تصفحي القطع
@@ -219,7 +219,7 @@
       </div>
     </section>
 
-    <!-- 6. الأكثر طلباً -->
+    <!-- 6. الأكثر طلباً (تضم تشكيلة الكابات والخمارات المحدثة بالكامل) -->
     <section id="quick-catalog" class="w-full py-2">
       <div class="flex items-center justify-between mb-3 sm:mb-6">
         <div>
@@ -227,14 +227,14 @@
             <span>الأكثر طلباً ومبيعاً</span>
             <span class="text-sm sm:text-base">🔥</span>
           </h2>
-          <p class="text-xs sm:text-sm text-neutral-500">اضغطي على أي قطعة لاختيار اللون والمقاس وتصفح كل الصور</p>
+          <p class="text-xs sm:text-sm text-neutral-500">اضغطي على أي قطعة لاختيار اللون والمقاس وتصفح كامل الصور</p>
         </div>
         <span class="text-xs font-bold text-brand-accent md:hidden">سحب أفقي ←</span>
       </div>
 
-      <div class="flex gap-3 overflow-x-auto no-scrollbar pb-3 snap-x snap-mandatory md:grid md:grid-cols-4 md:gap-4 lg:gap-6 md:overflow-visible">
+      <div class="flex gap-3 overflow-x-auto no-scrollbar pb-3 snap-x snap-mandatory md:grid md:grid-cols-3 md:gap-4 lg:gap-6 md:overflow-visible">
         
-        <!-- كارت منتج 1: طقم فرنسي قطعتين -->
+        <!-- كارت 1: طقم فرنسي قطعتين -->
         <div class="min-w-[200px] max-w-[220px] md:min-w-0 md:max-w-none snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
           <div onclick="openProductModal('khimar-french')" class="cursor-pointer">
             <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
@@ -253,8 +253,8 @@
           </button>
         </div>
 
-        <!-- كارت منتج 2: طقم كاب واسع وجيبة كلوش -->
-        <div class="min-w-[200px] max-w-[220px] md:min-w-0 md:max-w-none snap-start bg-white rounded-2xl border-2 border-brand-accent/30 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition bg-gradient-to-b from-[#FAF8F3] to-white">
+        <!-- كارت 2: طقم كاب واسع وجيبة كلوش -->
+        <div class="min-w-[200px] max-w-[220px] md:min-w-0 md:max-w-none snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
           <div onclick="openProductModal('cape-set')" class="cursor-pointer">
             <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
               <span class="absolute top-2 right-2 bg-brand-dark text-brand-accent text-[10px] px-2 py-0.5 rounded-md font-bold shadow-xs">كريب تركي</span>
@@ -272,7 +272,45 @@
           </button>
         </div>
 
-        <!-- كارت منتج 3: نقاب طبي مقوى -->
+        <!-- كارت 3: كاب شيفون سعودي ليزر مفتوح ومقفول (المنتج الجديد 1) -->
+        <div class="min-w-[200px] max-w-[220px] md:min-w-0 md:max-w-none snap-start bg-white rounded-2xl border-2 border-brand-accent/30 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition bg-gradient-to-b from-[#FAF8F3] to-white">
+          <div onclick="openProductModal('laser-cape')" class="cursor-pointer">
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
+              <span class="absolute top-2 right-2 bg-neutral-900/90 text-brand-accent text-[10px] px-2 py-0.5 rounded-md font-semibold backdrop-blur-sm">شيفون ليزر</span>
+              <img src="assets/images/products/laser-cape/laser-cape-main.jpg" alt="كاب شيفون سعودي ليزر مفتوح ومقفول" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
+            </div>
+            <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">كاب شيفون سعودي ليزر مفتوح ومقفول</h3>
+            <p class="text-[11px] text-neutral-500 mt-0.5">مفتوح ومقفول • خامة سعودية فاخرة</p>
+            <div class="flex items-baseline gap-2 mt-2">
+              <span class="text-sm sm:text-base font-black text-brand-dark">600 ج.م</span>
+              <span class="text-xs text-neutral-400 line-through">650 ج.م</span>
+            </div>
+          </div>
+          <button onclick="openProductModal('laser-cape')" class="mt-3 w-full py-2.5 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 shadow-sm transition">
+            <span>اختاري القطعة</span>
+          </button>
+        </div>
+
+        <!-- كارت 4: كاب غشوة شيفون سعودي ليزر (المنتج الجديد 2) -->
+        <div class="min-w-[200px] max-w-[220px] md:min-w-0 md:max-w-none snap-start bg-white rounded-2xl border-2 border-brand-accent/30 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition bg-gradient-to-b from-[#FAF8F3] to-white">
+          <div onclick="openProductModal('ghishwa-cape')" class="cursor-pointer">
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
+              <span class="absolute top-2 right-2 bg-brand-dark text-brand-accent text-[10px] px-2 py-0.5 rounded-md font-bold shadow-xs">مع غشوة</span>
+              <img src="assets/images/products/ghishwa-cape/ghishwa-cape-main.jpg" alt="كاب غشوة شيفون سعودي ليزر" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
+            </div>
+            <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">كاب غشوة شيفون سعودي ليزر</h3>
+            <p class="text-[11px] text-neutral-500 mt-0.5">شيفون ليزر بطبقات ناعمة وغشوة</p>
+            <div class="flex items-baseline gap-2 mt-2">
+              <span class="text-sm sm:text-base font-black text-brand-dark">700 ج.م</span>
+              <span class="text-xs text-neutral-400 line-through">750 ج.م</span>
+            </div>
+          </div>
+          <button onclick="openProductModal('ghishwa-cape')" class="mt-3 w-full py-2.5 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 shadow-sm transition">
+            <span>اختاري القطعة</span>
+          </button>
+        </div>
+
+        <!-- كارت 5: نقاب طبي مقوى خليجي -->
         <div class="min-w-[200px] max-w-[220px] md:min-w-0 md:max-w-none snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
           <div onclick="openProductModal('niqab-medical')" class="cursor-pointer">
             <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
@@ -291,7 +329,7 @@
           </button>
         </div>
 
-        <!-- كارت منتج 4: خمار إندونيسي 3 قطع -->
+        <!-- كارت 6: خمار إندونيسي 3 قطع مع غشوة -->
         <div class="min-w-[200px] max-w-[220px] md:min-w-0 md:max-w-none snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
           <div onclick="openProductModal('khimar-indonesian')" class="cursor-pointer">
             <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
@@ -390,23 +428,6 @@
             </a>
             <a href="https://wa.me/201124574341" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-neutral-800 hover:bg-[#25D366] hover:text-white flex items-center justify-center text-neutral-300 transition duration-300" aria-label="WhatsApp">
               <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- الحقوق القانونية -->
-      <div class="pt-6 text-center text-xs text-neutral-500">
-        <p>جميع الحقوق محفوظة © 2026 متجر سنابل للمحجبات. صُمم بأعلى معايير تجربة المستخدم لسرعة وسهولة الطلب.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- 10. زر الواتساب العائم للاستفسارات السريعة -->
-  <aside aria-label="مساعدة واستفسار سريع عبر واتساب" class="fixed z-40 bottom-24 left-4 md:bottom-6 md:left-6">
-    <a href="https://wa.me/201124574341?text=مرحباً%20سنابل،%20عندي%20استفسار%20عن%20المنتجات" target="_blank" onclick="trackWhatsAppClick()" class="relative group flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white p-3.5 sm:px-4 sm:py-3 rounded-full shadow-2xl transition transform hover:scale-105 active:scale-95" aria-label="تواصل معنا عبر واتساب">
-      <span class="animate-ping absolute -top-1 -right-1 inline-flex h-3.5 w-3.5 rounded-full bg-emerald-400 opacity-75"></span>
-      <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
             </a>
           </div>
         </div>
@@ -715,7 +736,7 @@
       "جنوب سيناء": 155
     };
 
-    // كتالوج المنتجات المحدث بمنتج طقم الكاب ونظام ربط المقاس باللون
+    // كتالوج المنتجات المحدث بجميع الموديلات ونظام المقاسات المرتبطة بالألوان
     const catalog = {
       // 1. طقم فرنسي قطعتين
       'khimar-french': {
@@ -770,7 +791,41 @@
         ]
       },
 
-      // 3. نقاب طبي مقوى
+      // 3. كاب شيفون سعودي ليزر مفتوح ومقفول
+      'laser-cape': {
+        id: 'laser-cape',
+        title: 'كاب شيفون سعودي ليزر مفتوح ومقفول',
+        price: 600,
+        oldPrice: 650,
+        mainImage: 'assets/images/products/laser-cape/laser-cape-main.jpg',
+        desc: 'كاب شيفون ليزر سعودي بتصميم عملي ومحتشم يمكن ارتداؤه مفتوح أو مقفول بأناقة تامة وبقصة انسيابية.',
+        colors: [
+          { name: 'أسود فاحم', hex: '#111111', image: 'assets/images/products/laser-cape/laser-cape-main.jpg' }
+        ],
+        gallery: [
+          { label: 'الرئيسية', url: 'assets/images/products/laser-cape/laser-cape-main.jpg' }
+        ],
+        sizes: ['مقاس موحد']
+      },
+
+      // 4. كاب غشوة شيفون سعودي ليزر
+      'ghishwa-cape': {
+        id: 'ghishwa-cape',
+        title: 'كاب غشوة شيفون سعودي ليزر',
+        price: 700,
+        oldPrice: 750,
+        mainImage: 'assets/images/products/ghishwa-cape/ghishwa-cape-main.jpg',
+        desc: 'كاب راقي مع غشوة شيفون ليزر سعودي فخمة، انسيابية وخفيفة ومريحة لا تشف وساترة للخرجات والدوام.',
+        colors: [
+          { name: 'أسود ملكي', hex: '#111111', image: 'assets/images/products/ghishwa-cape/ghishwa-cape-main.jpg' }
+        ],
+        gallery: [
+          { label: 'الرئيسية', url: 'assets/images/products/ghishwa-cape/ghishwa-cape-main.jpg' }
+        ],
+        sizes: ['مقاس موحد']
+      },
+
+      // 5. نقاب طبي مقوى خليجي
       'niqab-medical': {
         id: 'niqab-medical',
         title: 'نقاب طبي مقوى خليجي',
@@ -787,7 +842,7 @@
         sizes: ['تندة وسط (عادي)', 'تندة طويلة ساترة']
       },
 
-      // 4. خمار إندونيسي 3 قطع
+      // 6. خمار إندونيسي 3 قطع مع غشوة
       'khimar-indonesian': {
         id: 'khimar-indonesian',
         title: 'خمار إندونيسي 3 قطع مع غشوة',
@@ -825,7 +880,7 @@
       if (colorObj && colorObj.sizes && colorObj.sizes.length > 0) {
         return colorObj.sizes;
       }
-      return activeModalProduct.sizes || [];
+      return activeModalProduct.sizes || ['مقاس موحد'];
     }
 
     // فتح نافذة تفاصيل واختيار المنتج
