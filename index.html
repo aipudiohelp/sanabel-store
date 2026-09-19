@@ -365,7 +365,7 @@
     </div>
   </div>
 
-  <!-- 12. نافذة اختيار اللون والمقاس ومعرض صور القطعة (تم تصحيح إطار الصورة بالكامل لمنع القص) -->
+  <!-- 12. نافذة اختيار اللون والمقاس ومعرض صور القطعة -->
   <div id="productOptionsModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs transition-opacity duration-300 hidden opacity-0 flex items-end md:items-center justify-center">
     <div class="bg-white w-full max-w-lg rounded-t-3xl md:rounded-3xl max-h-[94vh] overflow-y-auto p-5 sm:p-7 shadow-2xl transform transition-transform duration-300 translate-y-full md:translate-y-0" id="productModalContent">
       
@@ -377,7 +377,6 @@
 
       <!-- المعرض البصري: إطار طولي كامل بدون أي قص نهائياً -->
       <div class="mb-4">
-        <!-- تم استبدال الارتفاع الثابت بـ object-contain وارتفاع طولي كامل يصل لـ 500 بكسل -->
         <div class="relative w-full rounded-2xl overflow-hidden bg-[#FAF8F5] border border-neutral-200/80 shadow-xs mb-2.5 flex items-center justify-center min-h-[340px] max-h-[500px]">
           <img id="modalProductImg" src="" alt="معاينة المنتج" class="w-full h-auto max-h-[500px] object-contain block mx-auto transition duration-300">
           <span id="modalActivePhotoBadge" class="absolute bottom-2.5 right-2.5 bg-neutral-900/80 backdrop-blur-xs text-white text-[10px] px-2.5 py-1 rounded-md font-bold">معاينة كاملة</span>
@@ -440,7 +439,7 @@
     </div>
   </div>
 
-  <!-- 13. درج إتمام الطلب السريع (Multi-Item Checkout Drawer) -->
+  <!-- 13. درج إتمام الطلب السريع مع أسعار الشحن المتغيرة حسب المحافظة -->
   <div id="checkoutDrawer" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs transition-opacity duration-300 hidden opacity-0 flex items-end md:items-center justify-center">
     <div class="bg-white w-full max-w-lg rounded-t-3xl md:rounded-3xl max-h-[92vh] overflow-y-auto p-5 sm:p-7 shadow-2xl transform transition-transform duration-300 translate-y-full md:translate-y-0" id="drawerContent">
       
@@ -477,7 +476,7 @@
           </button>
         </div>
 
-        <!-- استمارة الطلب مع الـ 27 محافظة كاملة -->
+        <!-- استمارة الطلب مع أسعار الشحن الدقيقة لكل محافظة -->
         <form id="orderForm" onsubmit="handleOrderSubmit(event)" class="space-y-3 pt-2 border-t border-neutral-100">
           <div>
             <label class="block text-[11px] font-bold text-neutral-700 mb-1">الاسم بالكامل *</label>
@@ -491,36 +490,65 @@
 
           <div class="grid grid-cols-2 gap-2">
             <div>
-              <label class="block text-[11px] font-bold text-neutral-700 mb-1">المحافظة (27 محافظة) *</label>
-              <select id="drawerCustGov" required class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-xs focus:bg-white focus:border-brand-dark outline-hidden">
+              <label class="block text-[11px] font-bold text-neutral-700 mb-1">المحافظة (حسب تسعيرة الشحن) *</label>
+              <select id="drawerCustGov" required onchange="handleGovernorateChange()" class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-xs focus:bg-white focus:border-brand-dark outline-hidden font-medium">
                 <option value="">اختاري المحافظة</option>
-                <option value="القاهرة">القاهرة</option>
-                <option value="الجيزة">الجيزة</option>
-                <option value="الإسكندرية">الإسكندرية</option>
-                <option value="القليوبية">القليوبية</option>
-                <option value="الدقهلية">الدقهلية</option>
-                <option value="الشرقية">الشرقية</option>
-                <option value="الغربية">الغربية</option>
-                <option value="المنوفية">المنوفية</option>
-                <option value="البحيرة">البحيرة</option>
-                <option value="كفر الشيخ">كفر الشيخ</option>
-                <option value="دمياط">دمياط</option>
-                <option value="بورسعيد">بورسعيد</option>
-                <option value="الإسماعيلية">الإسماعيلية</option>
-                <option value="السويس">السويس</option>
-                <option value="الفيوم">الفيوم</option>
-                <option value="بني سويف">بني سويف</option>
-                <option value="المنيا">المنيا</option>
-                <option value="أسيوط">أسيوط</option>
-                <option value="سوهاج">سوهاج</option>
-                <option value="قنا">قنا</option>
-                <option value="الأقصر">الأقصر</option>
-                <option value="أسوان">أسوان</option>
-                <option value="البحر الأحمر">البحر الأحمر</option>
-                <option value="الوادي الجديد">الوادي الجديد</option>
-                <option value="مطروح">مطروح</option>
-                <option value="شمال سيناء">شمال سيناء</option>
-                <option value="جنوب سيناء">جنوب سيناء</option>
+                
+                <!-- القاهرة والجيزة (86 ج.م) -->
+                <optgroup label="القاهرة والجيزة (86 ج.م)">
+                  <option value="القاهرة">القاهرة (86 ج.م)</option>
+                  <option value="الجيزة">الجيزة (86 ج.م)</option>
+                </optgroup>
+
+                <!-- المدن الجديدة والأطراف (95 ج.م) -->
+                <optgroup label="المدن الجديدة والأطراف (95 ج.م)">
+                  <option value="المدن الجديدة والأطراف (أكتوبر، زايد، التجمع، الشروق، مدينتي...)">المدن الجديدة والأطراف (95 ج.م)</option>
+                </optgroup>
+
+                <!-- الإسكندرية (99 ج.م) -->
+                <optgroup label="الإسكندرية (99 ج.م)">
+                  <option value="الإسكندرية">الإسكندرية (99 ج.م)</option>
+                </optgroup>
+
+                <!-- مدن الدلتا والقناة (103 ج.م) -->
+                <optgroup label="مدن الدلتا والقناة (103 ج.م)">
+                  <option value="القليوبية">القليوبية (103 ج.م)</option>
+                  <option value="الدقهلية">الدقهلية (103 ج.م)</option>
+                  <option value="الشرقية">الشرقية (103 ج.م)</option>
+                  <option value="الغربية">الغربية (103 ج.م)</option>
+                  <option value="المنوفية">المنوفية (103 ج.م)</option>
+                  <option value="البحيرة">البحيرة (103 ج.م)</option>
+                  <option value="كفر الشيخ">كفر الشيخ (103 ج.م)</option>
+                  <option value="دمياط">دمياط (103 ج.م)</option>
+                  <option value="بورسعيد">بورسعيد (103 ج.م)</option>
+                  <option value="الإسماعيلية">الإسماعيلية (103 ج.م)</option>
+                  <option value="السويس">السويس (103 ج.م)</option>
+                </optgroup>
+
+                <!-- شمال الصعيد (113 ج.م) -->
+                <optgroup label="شمال الصعيد (113 ج.م)">
+                  <option value="الفيوم">الفيوم (113 ج.م)</option>
+                  <option value="بني سويف">بني سويف (113 ج.م)</option>
+                  <option value="المنيا">المنيا (113 ج.م)</option>
+                </optgroup>
+
+                <!-- جنوب الصعيد (123 ج.م) -->
+                <optgroup label="جنوب الصعيد (123 ج.م)">
+                  <option value="أسيوط">أسيوط (123 ج.م)</option>
+                  <option value="سوهاج">سوهاج (123 ج.م)</option>
+                  <option value="قنا">قنا (123 ج.م)</option>
+                  <option value="الأقصر">الأقصر (123 ج.م)</option>
+                  <option value="أسوان">أسوان (123 ج.م)</option>
+                </optgroup>
+
+                <!-- المناطق الخارجية والحدودية (155 ج.م) -->
+                <optgroup label="المناطق الخارجية والحدودية (155 ج.م)">
+                  <option value="البحر الأحمر">البحر الأحمر (155 ج.م)</option>
+                  <option value="الوادي الجديد">الوادي الجديد (155 ج.م)</option>
+                  <option value="مطروح">مطروح (155 ج.م)</option>
+                  <option value="شمال سيناء">شمال سيناء (155 ج.م)</option>
+                  <option value="جنوب سيناء">جنوب سيناء (155 ج.م)</option>
+                </optgroup>
               </select>
             </div>
             <div>
@@ -534,15 +562,15 @@
             <input type="text" id="drawerCustAddress" required placeholder="العنوان بالتفصيل لتسهيل وسرعة وصول المندوب" class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-xs focus:bg-white focus:border-brand-dark outline-hidden">
           </div>
 
-          <!-- الحسبة المالية لجميع المنتجات المجمعة -->
+          <!-- الحسبة المالية لجميع المنتجات المجمعة مع الشحن المتغير -->
           <div class="pt-2 border-t border-neutral-100 space-y-1.5 text-xs">
             <div class="flex justify-between text-neutral-600">
               <span>إجمالي قيمة المنتجات:</span>
               <span id="checkoutSubtotal">0 ج.م</span>
             </div>
-            <div class="flex justify-between text-neutral-600">
-              <span>مصاريف الشحن (لكامل الطلب):</span>
-              <span class="text-emerald-700 font-bold">40 ج.م</span>
+            <div class="flex justify-between text-neutral-600 items-center">
+              <span>مصاريف الشحن:</span>
+              <span id="checkoutShippingFee" class="text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded">حددي المحافظة أولاً</span>
             </div>
             <div class="flex justify-between text-brand-dark font-black text-sm pt-1 border-t border-dashed border-neutral-200">
               <span>المبلغ الإجمالي عند الاستلام:</span>
@@ -565,7 +593,52 @@
     // رقم واتساب إدارة متجر سنابل المعتمد
     const STORE_WHATSAPP_NUMBER = "201124574341";
 
-    // كتالوج المنتجات المدمج بجميع صور الألوان والزوايا المرفوعة على المتجر
+    // جدول تسعير الشحن التفصيلي المفكك لكل محافظة وفقاً لشركة الشحن
+    const shippingRates = {
+      // القاهرة والجيزة (86 ج.م)
+      "القاهرة": 86,
+      "الجيزة": 86,
+
+      // المدن الجديدة والأطراف (95 ج.م)
+      "المدن الجديدة والأطراف (أكتوبر، زايد، التجمع، الشروق، مدينتي...)": 95,
+
+      // الإسكندرية (99 ج.م)
+      "الإسكندرية": 99,
+
+      // مدن الدلتا والقناة (103 ج.م)
+      "القليوبية": 103,
+      "الدقهلية": 103,
+      "الشرقية": 103,
+      "الغربية": 103,
+      "المنوفية": 103,
+      "البحيرة": 103,
+      "كفر الشيخ": 103,
+      "دمياط": 103,
+      "بورسعيد": 103,
+      "الإسماعيلية": 103,
+      "السويس": 103,
+
+      // شمال الصعيد (113 ج.م)
+      "الفيوم": 113,
+      "بني سويف": 113,
+      "المنيا": 113,
+
+      // جنوب الصعيد (123 ج.م)
+      "أسيوط": 123,
+      "سوهاج": 123,
+      "قنا": 123,
+      "الأقصر": 123,
+      "أسوان": 123,
+
+      // المناطق الخارجية والحدودية (155 ج.م)
+      "البحر الأحمر": 155,
+      "الوادي الجديد": 155,
+      "مطروح": 155,
+      "شمال سيناء": 155,
+      "جنوب سيناء": 155
+    };
+
+    // كتالوج المنتجات
     const catalog = {
       'khimar-french': {
         id: 'khimar-french',
@@ -574,7 +647,6 @@
         oldPrice: 1100,
         mainImage: 'assets/images/products/french-set/french-set-main.png',
         desc: 'دريس بكشكشه علي الصدر وسويته سحريه وخمار مثلث — خامه رويال عاليه الجوده — المقاس موحد.',
-        // ربط كل لون بصورته الحقيقية المرفوعة
         colors: [
           { name: 'أسود', hex: '#111111', image: 'assets/images/products/french-set/french-set-black.png' },
           { name: 'درجات الرمادي', hex: '#777777', image: 'assets/images/products/french-set/french-set-grey.png' },
@@ -584,7 +656,6 @@
           { name: 'جنزاري', hex: '#24534D', image: 'assets/images/products/french-set/french-set-petrol.png' },
           { name: 'هافان', hex: '#8B6A4D', image: 'assets/images/products/french-set/french-set-havana.png' }
         ],
-        // معرض الصور والزوايا العامة للطقم الفرنسي
         gallery: [
           { label: 'الرئيسية', url: 'assets/images/products/french-set/french-set-main.png' },
           { label: 'الإطلالة كاملة', url: 'assets/images/products/french-set/french-set-full.png' },
@@ -646,7 +717,6 @@
       activeModalProduct = product;
       selectedColor = product.colors[0].name;
       selectedSize = product.sizes[0];
-      // تعيين الصورة الافتراضية بحسب أول لون مختار
       currentPreviewImage = product.colors[0].image || product.mainImage;
       modalQuantity = 1;
 
@@ -681,7 +751,6 @@
       }, 300);
     }
 
-    // بناء شريط الصور المصغرة
     function renderThumbnailsGallery(gallery) {
       const container = document.getElementById('modalThumbnailsGallery');
       if (!gallery || gallery.length === 0) {
@@ -697,7 +766,6 @@
       `).join('');
     }
 
-    // تبديل صورة المعاينة الحالية
     function setPreviewImage(imageUrl, label) {
       currentPreviewImage = imageUrl;
       document.getElementById('modalProductImg').src = imageUrl;
@@ -705,7 +773,6 @@
       renderThumbnailsGallery(activeModalProduct.gallery || []);
     }
 
-    // بناء قائمة الألوان مع التبديل المباشر للصورة
     function renderModalColors(colors) {
       const container = document.getElementById('modalColorsContainer');
       document.getElementById('modalSelectedColorLabel').innerText = selectedColor;
@@ -726,7 +793,6 @@
       renderModalColors(activeModalProduct.colors);
     }
 
-    // بناء قائمة المقاسات
     function renderModalSizes(sizes) {
       const container = document.getElementById('modalSizesContainer');
       document.getElementById('modalSelectedSizeLabel').innerText = selectedSize;
@@ -749,7 +815,6 @@
       document.getElementById('modalSubmitTotal').innerText = `${activeModalProduct.price * modalQuantity} ج.م`;
     }
 
-    // تأكيد إضافة المنتج باللون المختار وصورته الخاصة للسلة
     function confirmAddModalToCart() {
       if (!activeModalProduct) return;
 
@@ -803,7 +868,12 @@
       updateCartUI();
     }
 
-    // تحديث واجهات السلة مع عرض صورة كل لون بدقة
+    // تفاعل واحتساب سعر الشحن عند اختيار المحافظة
+    function handleGovernorateChange() {
+      updateCartUI();
+    }
+
+    // تحديث واجهات السلة والحسبة المالية الدقيقة
     function updateCartUI() {
       const badge = document.getElementById('cartBadge');
       const emptyState = document.getElementById('emptyCartState');
@@ -811,10 +881,17 @@
       const itemsListContainer = document.getElementById('cartItemsList');
       const stickyTotal = document.getElementById('stickyBarTotal');
       const stickyBtnText = document.getElementById('stickyBtnText');
+      const shippingElement = document.getElementById('checkoutShippingFee');
+      const grandTotalElement = document.getElementById('checkoutGrandTotal');
+      const govSelect = document.getElementById('drawerCustGov');
 
       const totalItemsCount = cart.reduce((sum, item) => sum + item.quantity, 0);
       const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-      const grandTotal = subtotal > 0 ? subtotal + 40 : 0;
+
+      // احتساب الشحن من جدول المحافظات
+      const selectedGov = govSelect ? govSelect.value : '';
+      const shippingCost = shippingRates[selectedGov] || 0;
+      const grandTotal = subtotal > 0 ? (subtotal + shippingCost) : 0;
 
       if (totalItemsCount === 0) {
         badge.innerText = "0";
@@ -859,7 +936,17 @@
         `).join('');
 
         document.getElementById('checkoutSubtotal').innerText = `${subtotal} ج.م`;
-        document.getElementById('checkoutGrandTotal').innerText = `${grandTotal} ج.م`;
+        
+        // عرض تكلفة الشحن والإجمالي تلقائياً
+        if (shippingCost > 0) {
+          shippingElement.innerText = `${shippingCost} ج.م`;
+          shippingElement.className = "text-emerald-700 font-bold bg-emerald-50 px-2.5 py-0.5 rounded";
+          grandTotalElement.innerText = `${grandTotal} ج.م`;
+        } else {
+          shippingElement.innerText = `حددي المحافظة أولاً`;
+          shippingElement.className = "text-amber-700 font-bold bg-amber-50 px-2 py-0.5 rounded text-[11px]";
+          grandTotalElement.innerText = `${subtotal} ج.م (+ الشحن)`;
+        }
 
         stickyTotal.innerText = `${subtotal} ج.م`;
         stickyBtnText.innerText = `تأكيد الطلب (${totalItemsCount} قطع)`;
@@ -902,7 +989,7 @@
       dispatchTrackingEvent('Contact', { channel: 'WhatsApp' });
     }
 
-    // إرسال الطلب المجمع بجميع الألوان والمقاسات لواتساب
+    // إرسال الطلب المجمع مع حساب الشحن الحقيقي والمحافظة لواتساب
     function handleOrderSubmit(e) {
       e.preventDefault();
       if (cart.length === 0) return;
@@ -913,8 +1000,9 @@
       const city = document.getElementById('drawerCustCity').value.trim();
       const address = document.getElementById('drawerCustAddress').value.trim();
 
+      const shippingCost = shippingRates[gov] || 0;
       const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-      const grandTotal = subtotal + 40;
+      const grandTotal = subtotal + shippingCost;
 
       const productsListText = cart.map((item, idx) => 
         `${idx + 1}) *${item.title}*\n   - اللون: ${item.color} | المقاس: ${item.size}\n   - الكمية: ${item.quantity} × ${item.price} ج.م = ${item.quantity * item.price} ج.م`
@@ -939,9 +1027,9 @@
 🛍️ *المنتجات المطلوبة (اللون والمقاس):*
 ${productsListText}
 -----------------------------------
-💰 *الحساب الإجمالي:*
+💰 *الحساب الإجمالي عند الاستلام:*
 • قيمة المنتجات: ${subtotal} ج.م
-• مصاريف الشحن: 40 ج.م
+• مصاريف الشحن (${gov}): ${shippingCost} ج.م
 • المطلوب دفعه عند الاستلام: *${grandTotal} ج.م*
 -----------------------------------
 يرجى تأكيد موعد الشحن والتوصيل.`;
