@@ -112,26 +112,58 @@
       </div>
     </section>
 
-    <!-- 4. قسم الإطلالة الكاملة -->
-    <section id="bundle-section" class="w-full">
-      <div class="bg-gradient-to-br from-brand-medium to-brand-dark text-white p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-md relative overflow-hidden border border-brand-accent/25">
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <div class="space-y-1 sm:space-y-2">
+    <!-- 4. قسم الإطلالات المتكاملة (يضم طقمين بأفضل قيمة وعروض حصرية) -->
+    <section id="bundle-section" class="w-full space-y-3 sm:space-y-4">
+      <div class="text-center">
+        <h2 class="text-base sm:text-xl font-black text-brand-dark flex items-center justify-center gap-1.5">
+          <span>قسم الإطلالات المتكاملة</span>
+          <span class="text-brand-accent text-sm">✨</span>
+        </h2>
+        <p class="text-xs sm:text-sm text-neutral-500">أطقم متناسقة صُممت خصيصاً لتمنحك الوقار والأناقة الفائقة</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- كارت 1: طقم فرنسي قطعتين -->
+        <div class="bg-gradient-to-br from-brand-medium to-brand-dark text-white p-4 sm:p-5 rounded-2xl sm:rounded-3xl shadow-md relative overflow-hidden border border-brand-accent/25 flex flex-col justify-between">
+          <div class="space-y-1 sm:space-y-2 mb-4">
             <div class="flex items-center gap-2">
-              <span class="bg-brand-accent text-neutral-950 text-[10px] sm:text-xs font-black px-2.5 py-0.5 rounded-full">وفرّي 101 ج.م لفترة محدودة</span>
-              <span class="text-xs text-amber-200/90 font-bold">عرض الإطلالة المتناسقة</span>
+              <span class="bg-brand-accent text-neutral-950 text-[10px] sm:text-xs font-black px-2.5 py-0.5 rounded-full">وفرّي 101 ج.م</span>
+              <span class="text-xs text-amber-200/90 font-bold">طقم قطعتين</span>
             </div>
-            <h2 class="text-base sm:text-xl font-black">طقم فرنسي قطعتين</h2>
-            <p class="text-xs sm:text-sm text-neutral-300">خامة رويال عالية الجودة</p>
+            <h3 class="text-base sm:text-lg font-black">طقم فرنسي قطعتين (دريس + خمار)</h3>
+            <p class="text-xs text-neutral-300">خامة رويال عالية الجودة • دريس بكشكشة وسوستة سحرية وخمار مثلث ناعم ساتر.</p>
           </div>
 
-          <div class="bg-white/10 p-3 sm:p-4 rounded-xl sm:rounded-2xl backdrop-blur-sm flex items-center justify-between md:justify-end gap-4 sm:gap-6 border border-white/15 min-w-[280px]">
+          <div class="bg-white/10 p-3 sm:p-3.5 rounded-xl sm:rounded-2xl backdrop-blur-sm flex items-center justify-between border border-white/15">
             <div>
               <div class="text-[11px] sm:text-xs text-neutral-400 line-through">بدلاً من 1,100 ج.م</div>
-              <div class="text-lg sm:text-2xl font-black text-brand-accent">999 ج.م فقط</div>
+              <div class="text-lg sm:text-xl font-black text-brand-accent">999 ج.م فقط</div>
             </div>
-            <button onclick="openProductModal('khimar-french')" class="bg-brand-accent hover:bg-amber-400 text-neutral-950 text-xs sm:text-sm font-black px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl shadow-md transition active:scale-95 whitespace-nowrap flex items-center gap-1.5">
-              <span>تسوقي الآن</span>
+            <button onclick="openProductModal('khimar-french')" class="bg-brand-accent hover:bg-amber-400 text-neutral-950 text-xs sm:text-sm font-black px-4 sm:px-5 py-2.5 rounded-xl shadow-md transition active:scale-95 whitespace-nowrap flex items-center gap-1.5">
+              <span>تسوقي الطقم</span>
+              <span class="rtl:rotate-180">←</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- كارت 2: طقم كاب واسع وجيبة كلوش (المنتج الجديد) -->
+        <div class="bg-gradient-to-br from-[#1E2024] to-[#121315] text-white p-4 sm:p-5 rounded-2xl sm:rounded-3xl shadow-md relative overflow-hidden border border-brand-accent/35 flex flex-col justify-between">
+          <div class="space-y-1 sm:space-y-2 mb-4">
+            <div class="flex items-center gap-2">
+              <span class="bg-brand-accent text-neutral-950 text-[10px] sm:text-xs font-black px-2.5 py-0.5 rounded-full">وفرّي 100 ج.م</span>
+              <span class="text-xs text-amber-200/90 font-bold">جديد الموسم</span>
+            </div>
+            <h3 class="text-base sm:text-lg font-black">طقم كاب واسع فضفاض وجيبة كلوش</h3>
+            <p class="text-xs text-neutral-300">كريب تركي عالي الجودة • كاب فضفاض محتشم وجيبة كلوش منسابة لا تشف.</p>
+          </div>
+
+          <div class="bg-white/10 p-3 sm:p-3.5 rounded-xl sm:rounded-2xl backdrop-blur-sm flex items-center justify-between border border-white/15">
+            <div>
+              <div class="text-[11px] sm:text-xs text-neutral-400 line-through">بدلاً من 1,350 ج.م</div>
+              <div class="text-lg sm:text-xl font-black text-brand-accent">1,250 ج.م فقط</div>
+            </div>
+            <button onclick="openProductModal('cape-set')" class="bg-brand-accent hover:bg-amber-400 text-neutral-950 text-xs sm:text-sm font-black px-4 sm:px-5 py-2.5 rounded-xl shadow-md transition active:scale-95 whitespace-nowrap flex items-center gap-1.5">
+              <span>تسوقي الطقم</span>
               <span class="rtl:rotate-180">←</span>
             </button>
           </div>
@@ -161,18 +193,18 @@
           </button>
         </div>
 
-        <!-- المسار 2 -->
+        <!-- المسار 2: الإطلالات المتكاملة -->
         <div class="bg-white p-3 sm:p-5 rounded-2xl border-2 border-brand-accent/40 bg-gradient-to-b from-[#FBF8F1] to-white shadow-sm flex flex-col justify-between relative overflow-hidden">
           <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-brand-dark text-brand-accent text-[9px] sm:text-xs px-2 py-0.5 rounded-md font-bold">الأوفر ٪</span>
           <div>
             <div class="aspect-[4/5] rounded-xl bg-neutral-100 overflow-hidden mb-3">
-              <img src="assets/images/products/french-set/french-set-main.png" alt="الإطلالات المتكاملة" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
+              <img src="assets/images/products/cape-set/cape-set-main.jpg" alt="الإطلالات المتكاملة" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
             </div>
             <h3 class="font-bold text-xs sm:text-base text-brand-dark">الإطلالات المتكاملة</h3>
-            <p class="text-[11px] sm:text-xs text-neutral-500 mt-1">طقم فرنسي قطعتين بتنسيق متناغم</p>
+            <p class="text-[11px] sm:text-xs text-neutral-500 mt-1">أطقم فرنسية وأطقم كاب بتنسيق متناغم</p>
           </div>
-          <button onclick="openProductModal('khimar-french')" class="mt-3 w-full py-2 bg-brand-dark text-white text-xs sm:text-sm font-bold rounded-xl active:scale-95 hover:bg-neutral-900 transition">
-            اختاري إطلالتك
+          <button onclick="document.getElementById('bundle-section').scrollIntoView({ behavior: 'smooth' })" class="mt-3 w-full py-2 bg-brand-dark text-white text-xs sm:text-sm font-bold rounded-xl active:scale-95 hover:bg-neutral-900 transition">
+            تصفحي الأطقم
           </button>
         </div>
       </div>
@@ -191,10 +223,10 @@
         <span class="text-xs font-bold text-brand-accent md:hidden">سحب أفقي ←</span>
       </div>
 
-      <div class="flex gap-3 overflow-x-auto no-scrollbar pb-3 snap-x snap-mandatory md:grid md:grid-cols-3 md:gap-6 md:overflow-visible">
+      <div class="flex gap-3 overflow-x-auto no-scrollbar pb-3 snap-x snap-mandatory md:grid md:grid-cols-4 md:gap-4 lg:gap-6 md:overflow-visible">
         
-        <!-- كارت منتج 1 -->
-        <div class="min-w-[210px] max-w-[220px] md:min-w-0 md:max-w-none snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
+        <!-- كارت منتج 1: طقم فرنسي قطعتين -->
+        <div class="min-w-[200px] max-w-[220px] md:min-w-0 md:max-w-none snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
           <div onclick="openProductModal('khimar-french')" class="cursor-pointer">
             <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
               <span class="absolute top-2 right-2 bg-neutral-900/85 text-brand-accent text-[10px] px-2 py-0.5 rounded-md font-semibold backdrop-blur-sm">خامة رويال</span>
@@ -212,8 +244,27 @@
           </button>
         </div>
 
-        <!-- كارت منتج 2 -->
-        <div class="min-w-[210px] max-w-[220px] md:min-w-0 md:max-w-none snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
+        <!-- كارت منتج 2: طقم كاب واسع وجيبة كلوش -->
+        <div class="min-w-[200px] max-w-[220px] md:min-w-0 md:max-w-none snap-start bg-white rounded-2xl border-2 border-brand-accent/30 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition bg-gradient-to-b from-[#FAF8F3] to-white">
+          <div onclick="openProductModal('cape-set')" class="cursor-pointer">
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
+              <span class="absolute top-2 right-2 bg-brand-dark text-brand-accent text-[10px] px-2 py-0.5 rounded-md font-bold shadow-xs">كريب تركي</span>
+              <img src="assets/images/products/cape-set/cape-set-main.jpg" alt="طقم كاب واسع وجيبة كلوش" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
+            </div>
+            <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">طقم كاب واسع وجيبة كلوش</h3>
+            <p class="text-[11px] text-neutral-500 mt-0.5">كريب تركي مميز • ألوان متعددة</p>
+            <div class="flex items-baseline gap-2 mt-2">
+              <span class="text-sm sm:text-base font-black text-brand-dark">1,250 ج.م</span>
+              <span class="text-xs text-neutral-400 line-through">1,350 ج.م</span>
+            </div>
+          </div>
+          <button onclick="openProductModal('cape-set')" class="mt-3 w-full py-2.5 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 shadow-sm transition">
+            <span>اختاري المقاس واللون</span>
+          </button>
+        </div>
+
+        <!-- كارت منتج 3: نقاب طبي مقوى -->
+        <div class="min-w-[200px] max-w-[220px] md:min-w-0 md:max-w-none snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
           <div onclick="openProductModal('niqab-medical')" class="cursor-pointer">
             <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
               <span class="absolute top-2 right-2 bg-brand-medium text-amber-300 text-[10px] px-2 py-0.5 rounded-md font-semibold">طبي مريح</span>
@@ -231,8 +282,8 @@
           </button>
         </div>
 
-        <!-- كارت منتج 3 -->
-        <div class="min-w-[210px] max-w-[220px] md:min-w-0 md:max-w-none snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
+        <!-- كارت منتج 4: خمار إندونيسي 3 قطع -->
+        <div class="min-w-[200px] max-w-[220px] md:min-w-0 md:max-w-none snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
           <div onclick="openProductModal('khimar-indonesian')" class="cursor-pointer">
             <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
               <span class="absolute top-2 right-2 bg-neutral-900/85 text-brand-accent text-[10px] px-2 py-0.5 rounded-md font-semibold">طقم 3 قطع</span>
@@ -398,7 +449,7 @@
         </div>
       </div>
 
-      <!-- اختيار الألوان الواقعية (تغير الصورة فوراً عند النقر) -->
+      <!-- اختيار الألوان الواقعية (تغير الصورة والمقاسات فوراً عند النقر) -->
       <div class="space-y-2 mb-4">
         <label class="block text-xs font-black text-neutral-800">
           اختاري اللون: <span id="modalSelectedColorLabel" class="text-brand-accent mr-1"></span>
@@ -408,13 +459,13 @@
         </div>
       </div>
 
-      <!-- اختيار المقاسات -->
+      <!-- اختيار المقاسات (مربوطة تلقائياً بمخزون كل لون) -->
       <div class="space-y-2 mb-5">
         <label class="block text-xs font-black text-neutral-800">
-          اختاري المقاس: <span id="modalSelectedSizeLabel" class="text-brand-accent mr-1"></span>
+          المقاس المتوفر لهذا اللون: <span id="modalSelectedSizeLabel" class="text-brand-accent mr-1"></span>
         </label>
         <div id="modalSizesContainer" class="flex flex-wrap gap-2 pt-1">
-          <!-- تضاف المقاسات ديناميكياً -->
+          <!-- تضاف المقاسات المتاحة لهذا اللون فقط -->
         </div>
       </div>
 
@@ -516,7 +567,7 @@
                   <option value="الدقهلية">الدقهلية (103 ج.م)</option>
                   <option value="الشرقية">الشرقية (103 ج.م)</option>
                   <option value="الغربية">الغربية (103 ج.م)</option>
-                  <option value="المنوفية">المنوفية (103 ج.م)</option>
+                  <option value="المنوفية">المنوفية</option>
                   <option value="البحيرة">البحيرة (103 ج.م)</option>
                   <option value="كفر الشيخ">كفر الشيخ (103 ج.م)</option>
                   <option value="دمياط">دمياط (103 ج.م)</option>
@@ -638,8 +689,9 @@
       "جنوب سيناء": 155
     };
 
-    // كتالوج المنتجات
+    // كتالوج المنتجات المحدث بمنتج طقم الكاب ونظام ربط المقاس باللون
     const catalog = {
+      // 1. طقم فرنسي قطعتين
       'khimar-french': {
         id: 'khimar-french',
         title: 'طقم فرنسي قطعتين',
@@ -664,6 +716,35 @@
         ],
         sizes: ['مقاس موحد']
       },
+
+      // 2. طقم كاب واسع وجيبة كلوش (جديد مع توزيع المقاسات حسب اللون)
+      'cape-set': {
+        id: 'cape-set',
+        title: 'طقم كاب واسع فضفاض وجيبة كلوش',
+        price: 1250,
+        oldPrice: 1350,
+        mainImage: 'assets/images/products/cape-set/cape-set-main.jpg',
+        desc: 'طقم مكون من قطعتين.. كاب واسع فضفاض وجيبة كلوش منسابة — خامة كريب تركي عالي الجودة.',
+        colors: [
+          { name: 'أسود', hex: '#111111', image: 'assets/images/products/cape-set/cape-set-black.jpg', sizes: ['2XL'] },
+          { name: 'زهري', hex: '#185ADB', image: 'assets/images/products/cape-set/cape-set-blue.jpg', sizes: ['2XL'] },
+          { name: 'زيتي', hex: '#2A3C2D', image: 'assets/images/products/cape-set/cape-set-olive.jpg', sizes: ['3XL'] },
+          { name: 'كافية', hex: '#8C7462', image: 'assets/images/products/cape-set/cape-set-cafe.jpg', sizes: ['XL'] },
+          { name: 'بتنجاني', hex: '#4A154B', image: 'assets/images/products/cape-set/cape-set-eggplant.jpg', sizes: ['L'] },
+          { name: 'بترولي', hex: '#174857', image: 'assets/images/products/cape-set/cape-set-petrol.jpg', sizes: ['L'] }
+        ],
+        gallery: [
+          { label: 'الرئيسية', url: 'assets/images/products/cape-set/cape-set-main.jpg' },
+          { label: 'أسود', url: 'assets/images/products/cape-set/cape-set-black.jpg' },
+          { label: 'زهري', url: 'assets/images/products/cape-set/cape-set-blue.jpg' },
+          { label: 'زيتي', url: 'assets/images/products/cape-set/cape-set-olive.jpg' },
+          { label: 'كافية', url: 'assets/images/products/cape-set/cape-set-cafe.jpg' },
+          { label: 'بتنجاني', url: 'assets/images/products/cape-set/cape-set-eggplant.jpg' },
+          { label: 'بترولي', url: 'assets/images/products/cape-set/cape-set-petrol.jpg' }
+        ]
+      },
+
+      // 3. نقاب طبي مقوى
       'niqab-medical': {
         id: 'niqab-medical',
         title: 'نقاب طبي مقوى خليجي',
@@ -679,6 +760,8 @@
         ],
         sizes: ['تندة وسط (عادي)', 'تندة طويلة ساترة']
       },
+
+      // 4. خمار إندونيسي 3 قطع
       'khimar-indonesian': {
         id: 'khimar-indonesian',
         title: 'خمار إندونيسي 3 قطع مع غشوة',
@@ -709,16 +792,29 @@
     let selectedSize = '';
     let modalQuantity = 1;
 
-    // فتح نافذة اختيار اللون والمقاس واستعراض الصور
+    // استخراج المقاسات المتاحة بناءً على اللون المختار
+    function getAvailableSizesForSelectedColor() {
+      if (!activeModalProduct) return [];
+      const colorObj = activeModalProduct.colors.find(c => c.name === selectedColor);
+      if (colorObj && colorObj.sizes && colorObj.sizes.length > 0) {
+        return colorObj.sizes;
+      }
+      return activeModalProduct.sizes || [];
+    }
+
+    // فتح نافذة تفاصيل واختيار المنتج
     function openProductModal(productId) {
       const product = catalog[productId];
       if (!product) return;
 
       activeModalProduct = product;
       selectedColor = product.colors[0].name;
-      selectedSize = product.sizes[0];
       currentPreviewImage = product.colors[0].image || product.mainImage;
       modalQuantity = 1;
+
+      // المقاس المتوفر لأول لون تلقائياً
+      const availableSizes = getAvailableSizesForSelectedColor();
+      selectedSize = availableSizes[0] || 'مقاس موحد';
 
       document.getElementById('modalProductImg').src = currentPreviewImage;
       document.getElementById('modalProductTitle').innerText = product.title;
@@ -730,7 +826,7 @@
 
       renderThumbnailsGallery(product.gallery || []);
       renderModalColors(product.colors);
-      renderModalSizes(product.sizes);
+      renderModalSizes(availableSizes);
 
       const modal = document.getElementById('productOptionsModal');
       const content = document.getElementById('productModalContent');
@@ -751,6 +847,7 @@
       }, 300);
     }
 
+    // بناء شريط الصور المصغرة
     function renderThumbnailsGallery(gallery) {
       const container = document.getElementById('modalThumbnailsGallery');
       if (!gallery || gallery.length === 0) {
@@ -766,6 +863,7 @@
       `).join('');
     }
 
+    // تبديل صورة المعاينة الحالية
     function setPreviewImage(imageUrl, label) {
       currentPreviewImage = imageUrl;
       document.getElementById('modalProductImg').src = imageUrl;
@@ -773,6 +871,7 @@
       renderThumbnailsGallery(activeModalProduct.gallery || []);
     }
 
+    // بناء أزرار الألوان مع تبديل الصورة والمقاس تلقائياً
     function renderModalColors(colors) {
       const container = document.getElementById('modalColorsContainer');
       document.getElementById('modalSelectedColorLabel').innerText = selectedColor;
@@ -785,17 +884,31 @@
       `).join('');
     }
 
+    // عند تغيير اللون، يتم تحديث المقاسات المتاحة لهذا اللون فوراً
     function selectColor(colorName, colorImageUrl) {
       selectedColor = colorName;
       if (colorImageUrl) {
         setPreviewImage(colorImageUrl, `لون ${colorName}`);
       }
+
+      const availableSizes = getAvailableSizesForSelectedColor();
+      if (!availableSizes.includes(selectedSize)) {
+        selectedSize = availableSizes[0] || '';
+      }
+
       renderModalColors(activeModalProduct.colors);
+      renderModalSizes(availableSizes);
     }
 
+    // بناء أزرار المقاسات
     function renderModalSizes(sizes) {
       const container = document.getElementById('modalSizesContainer');
       document.getElementById('modalSelectedSizeLabel').innerText = selectedSize;
+
+      if (!sizes || sizes.length === 0) {
+        container.innerHTML = '<span class="text-xs text-neutral-400">غير متوفر</span>';
+        return;
+      }
 
       container.innerHTML = sizes.map(s => `
         <button type="button" onclick="selectSize('${s}')" class="px-3.5 py-1.5 rounded-xl border text-xs font-bold transition ${selectedSize === s ? 'border-brand-dark bg-brand-dark text-white ring-2 ring-brand-accent/50' : 'border-neutral-200 bg-white text-neutral-700 hover:border-neutral-400'}">
@@ -806,7 +919,7 @@
 
     function selectSize(sizeName) {
       selectedSize = sizeName;
-      renderModalSizes(activeModalProduct.sizes);
+      renderModalSizes(getAvailableSizesForSelectedColor());
     }
 
     function changeModalQty(delta) {
@@ -815,6 +928,7 @@
       document.getElementById('modalSubmitTotal').innerText = `${activeModalProduct.price * modalQuantity} ج.م`;
     }
 
+    // تأكيد إضافة القطعة باللون والمقاس المتاحين
     function confirmAddModalToCart() {
       if (!activeModalProduct) return;
 
@@ -868,12 +982,11 @@
       updateCartUI();
     }
 
-    // تفاعل واحتساب سعر الشحن عند اختيار المحافظة
     function handleGovernorateChange() {
       updateCartUI();
     }
 
-    // تحديث واجهات السلة والحسبة المالية الدقيقة
+    // تحديث السلة والحسابات
     function updateCartUI() {
       const badge = document.getElementById('cartBadge');
       const emptyState = document.getElementById('emptyCartState');
@@ -888,7 +1001,6 @@
       const totalItemsCount = cart.reduce((sum, item) => sum + item.quantity, 0);
       const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
-      // احتساب الشحن من جدول المحافظات
       const selectedGov = govSelect ? govSelect.value : '';
       const shippingCost = shippingRates[selectedGov] || 0;
       const grandTotal = subtotal > 0 ? (subtotal + shippingCost) : 0;
@@ -937,7 +1049,6 @@
 
         document.getElementById('checkoutSubtotal').innerText = `${subtotal} ج.م`;
         
-        // عرض تكلفة الشحن والإجمالي تلقائياً
         if (shippingCost > 0) {
           shippingElement.innerText = `${shippingCost} ج.م`;
           shippingElement.className = "text-emerald-700 font-bold bg-emerald-50 px-2.5 py-0.5 rounded";
@@ -989,7 +1100,7 @@
       dispatchTrackingEvent('Contact', { channel: 'WhatsApp' });
     }
 
-    // إرسال الطلب المجمع مع حساب الشحن الحقيقي والمحافظة لواتساب
+    // إرسال الطلب المجمع عبر واتساب
     function handleOrderSubmit(e) {
       e.preventDefault();
       if (cart.length === 0) return;
