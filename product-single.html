@@ -46,9 +46,9 @@
       <p class="text-xs text-neutral-500 mt-1">قصة مثلثة انسيابية تمنحك ستراً تاماً دون ثقل مع نعومة فائقة لا تشف.</p>
 
       <div class="flex items-baseline gap-3 mt-3 bg-white p-3 rounded-xl border border-neutral-200/60">
-        <span class="text-xl font-black text-brand-dark">500 ج.م</span>
-        <span class="text-xs text-neutral-400 line-through">650 ج.م</span>
-        <span class="bg-emerald-50 text-emerald-700 text-xs font-bold px-2 py-0.5 rounded mr-auto">وفّرتِ 150 ج.م</span>
+        <span class="text-xl font-black text-brand-dark">999 ج.م</span>
+        <span class="text-xs text-neutral-400 line-through">1,100 ج.م</span>
+        <span class="bg-emerald-50 text-emerald-700 text-xs font-bold px-2 py-0.5 rounded mr-auto">وفّرتِ 101 ج.م</span>
       </div>
     </div>
 
@@ -100,7 +100,7 @@
     </a>
     <button onclick="handleAddToCart()" class="flex-1 py-3 bg-brand-dark text-white rounded-xl text-xs font-black shadow-md flex items-center justify-center gap-2 active:scale-95 transition">
       <span>أضيفي للسلة واطلبي الآن</span>
-      <span class="text-amber-300">• 500 ج.م</span>
+      <span class="text-amber-300">• 999 ج.م</span>
     </button>
   </div>
 
@@ -116,7 +116,7 @@
       btn.classList.add('ring-2', 'ring-brand-dark', 'ring-offset-2');
 
       // تحديث رابط الواتساب الديناميكي
-      const waMsg = encodeURIComponent(`مرحباً سنابل، أريد طلب خمار فرنسي 3 طبقات لون (${color}) بسعر 500 ج.م`);
+      const waMsg = encodeURIComponent(`مرحباً سنابل، أريد طلب خمار فرنسي 3 طبقات لون (${color}) بسعر 999 ج.م`);
       document.getElementById('waDirectBtn').href = `https://wa.me/201124574341?text=${waMsg}`;
     }
 
@@ -124,7 +124,7 @@
       SanabelStore.addItem({
         id: 'khimar-french-3',
         title: 'خمار فرنسي 3 طبقات مثلث كريب',
-        price: 500,
+        price: 999,
         color: selectedColor,
         size: 'موحد',
         image: document.getElementById('mainProductImg').src
