@@ -47,6 +47,7 @@
   <style>
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    /* مساحة أمان سفلية للموبايل لضمان عدم حجب أي عنصر خلف شريط الشراء */
     .thumb-safe-area { padding-bottom: calc(90px + env(safe-area-inset-bottom)); }
     @media (min-width: 768px) {
       .thumb-safe-area { padding-bottom: 0; }
@@ -119,7 +120,7 @@
       </div>
     </section>
 
-    <!-- 4. كروت المسارات الرئيسية (الخمار والنقاب بالصورة المعتمدة + الإطلالات المتكاملة) -->
+    <!-- 4. كروت المسارات الرئيسية للأقسام -->
     <section id="choice-paths" class="w-full">
       <div class="text-center mb-4 sm:mb-6">
         <h2 class="text-base sm:text-xl font-black text-brand-dark">أقسام المتجر الرئيسية</h2>
@@ -134,7 +135,7 @@
               <img src="assets/images/categories/khimar-niqab.jpg" alt="الخمار والطرح والنقاب" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
             </div>
             <h3 class="font-bold text-xs sm:text-base text-brand-dark">الخمار والطرح والنقاب</h3>
-            <p class="text-[11px] sm:text-xs text-neutral-500 mt-1">كابات شيفون ليزر سعودي فخمة وخامات باردة</p>
+            <p class="text-[11px] sm:text-xs text-neutral-500 mt-1">كابات شيفون ليزر، طرح شيفون كريب، خمارات ونقابات</p>
           </div>
           <button onclick="document.getElementById('khimar-section').scrollIntoView({ behavior: 'smooth' })" class="mt-3 w-full py-2 bg-brand-light text-brand-dark text-xs sm:text-sm font-bold rounded-xl hover:bg-neutral-200 transition">
             عرض قطع القسم ↓
@@ -149,7 +150,7 @@
               <img src="assets/images/products/cape-set/cape-set-main.jpg" alt="الإطلالات المتكاملة" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
             </div>
             <h3 class="font-bold text-xs sm:text-base text-brand-dark">الإطلالات المتكاملة</h3>
-            <p class="text-[11px] sm:text-xs text-neutral-500 mt-1">أطقم فرنسية وأطقم كاب بتنسيق متناغم</p>
+            <p class="text-[11px] sm:text-xs text-neutral-500 mt-1">أطقم فرنسية وأطقم كاب واسع وجيبة كلوش</p>
           </div>
           <button onclick="document.getElementById('bundle-section').scrollIntoView({ behavior: 'smooth' })" class="mt-3 w-full py-2 bg-brand-dark text-white text-xs sm:text-sm font-bold rounded-xl active:scale-95 hover:bg-neutral-900 transition">
             عرض الأطقم ↓
@@ -158,7 +159,7 @@
       </div>
     </section>
 
-    <!-- 5. قسم الإطلالات المتكاملة (يضم المنتجين 1 و 2 فقط) -->
+    <!-- 5. قسم الإطلالات المتكاملة (المنتجين 1 و 2) -->
     <section id="bundle-section" class="w-full pt-4 border-t border-neutral-200/60">
       <div class="flex items-center justify-between mb-4 sm:mb-6">
         <div>
@@ -191,7 +192,7 @@
           </button>
         </div>
 
-        <!-- منتج 2: طقم كاب واسع فضفاض وجيبة كلوش -->
+        <!-- منتج 2: طقم كاب واسع وجيبة كلوش -->
         <div class="bg-white rounded-2xl border-2 border-brand-accent/30 shadow-xs p-3.5 sm:p-4 flex flex-col justify-between hover:shadow-md transition bg-gradient-to-b from-[#FAF8F3] to-white">
           <div onclick="openProductModal('cape-set')" class="cursor-pointer">
             <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-3">
@@ -213,7 +214,7 @@
       </div>
     </section>
 
-    <!-- 6. قسم الخمار والطرح والنقاب (يضم المنتجين 3 و 4 فقط) -->
+    <!-- 6. قسم الخمار والطرح والنقاب (الـ 6 منتجات كاملة) -->
     <section id="khimar-section" class="w-full pt-6 border-t border-neutral-200/60">
       <div class="flex items-center justify-between mb-4 sm:mb-6">
         <div>
@@ -224,47 +225,121 @@
               <span>🧕</span>
             </h2>
           </div>
-          <p class="text-xs sm:text-sm text-neutral-500 mt-1">كابات شيفون ليزر سعودي أصلية باردة وانسيابية ومحتشمة</p>
+          <p class="text-xs sm:text-sm text-neutral-500 mt-1">كابات شيفون ليزر، طرح شيفون كريب ناعمة، خمارات إندونيسية وفرنسية، ونقابات طبية</p>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+      <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 sm:gap-5">
         
-        <!-- منتج 3: كاب شيفون سعودي ليزر مفتوح ومقفول -->
-        <div class="bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3.5 sm:p-4 flex flex-col justify-between hover:shadow-md transition">
+        <!-- منتج 1: كاب شيفون سعودي ليزر مفتوح ومقفول -->
+        <div class="bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
           <div onclick="openProductModal('laser-cape')" class="cursor-pointer">
-            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-3">
-              <span class="absolute top-2.5 right-2.5 bg-neutral-900/90 text-brand-accent text-[10px] px-2.5 py-0.5 rounded-md font-semibold">شيفون ليزر</span>
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
+              <span class="absolute top-2 right-2 bg-neutral-900/90 text-brand-accent text-[10px] px-2 py-0.5 rounded-md font-semibold">شيفون ليزر</span>
               <img src="assets/images/products/laser-cape/laser-cape-main.jpg" alt="كاب شيفون سعودي ليزر مفتوح ومقفول" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
             </div>
-            <h3 class="font-bold text-sm sm:text-base text-brand-dark">كاب شيفون سعودي ليزر مفتوح ومقفول</h3>
-            <p class="text-xs text-neutral-500 mt-1 line-clamp-2">تصميم سعودي عملي وفخم، يمكن ارتداؤه مفتوح أو مقفول بخامة ليزر انسيابية غير شفافة ومقاس موحد.</p>
-            <div class="flex items-baseline gap-2 mt-2.5">
-              <span class="text-base sm:text-lg font-black text-brand-dark">600 ج.م</span>
+            <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">كاب شيفون سعودي ليزر مفتوح ومقفول</h3>
+            <p class="text-[11px] text-neutral-500 mt-0.5">مفتوح ومقفول • تصميم سعودي فاخر</p>
+            <div class="flex items-baseline gap-2 mt-2">
+              <span class="text-sm sm:text-base font-black text-brand-dark">600 ج.م</span>
               <span class="text-xs text-neutral-400 line-through">650 ج.م</span>
             </div>
           </div>
-          <button onclick="openProductModal('laser-cape')" class="mt-3 w-full py-2.5 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs sm:text-sm font-bold rounded-xl transition">
-            <span>تأكيد واختيار القطعة</span>
+          <button onclick="openProductModal('laser-cape')" class="mt-3 w-full py-2 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl transition">
+            <span>اختاري القطعة</span>
           </button>
         </div>
 
-        <!-- منتج 4: كاب غشوة شيفون سعودي ليزر -->
-        <div class="bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3.5 sm:p-4 flex flex-col justify-between hover:shadow-md transition">
+        <!-- منتج 2: كاب غشوة شيفون سعودي ليزر -->
+        <div class="bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
           <div onclick="openProductModal('ghishwa-cape')" class="cursor-pointer">
-            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-3">
-              <span class="absolute top-2.5 right-2.5 bg-brand-dark text-brand-accent text-[10px] px-2.5 py-0.5 rounded-md font-bold">مع غشوة</span>
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
+              <span class="absolute top-2 right-2 bg-brand-dark text-brand-accent text-[10px] px-2 py-0.5 rounded-md font-bold">مع غشوة</span>
               <img src="assets/images/products/ghishwa-cape/ghishwa-cape-main.jpg" alt="كاب غشوة شيفون سعودي ليزر" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
             </div>
-            <h3 class="font-bold text-sm sm:text-base text-brand-dark">كاب غشوة شيفون سعودي ليزر</h3>
-            <p class="text-xs text-neutral-500 mt-1 line-clamp-2">شيفون ليزر بطبقات ناعمة انسيابية وغشوة متناسقة، خفيف وبارد وساتر للخرجات والدوام.</p>
-            <div class="flex items-baseline gap-2 mt-2.5">
-              <span class="text-base sm:text-lg font-black text-brand-dark">700 ج.م</span>
+            <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">كاب غشوة شيفون سعودي ليزر</h3>
+            <p class="text-[11px] text-neutral-500 mt-0.5">شيفون ليزر بطبقات ناعمة وغشوة ساترة</p>
+            <div class="flex items-baseline gap-2 mt-2">
+              <span class="text-sm sm:text-base font-black text-brand-dark">700 ج.م</span>
               <span class="text-xs text-neutral-400 line-through">750 ج.م</span>
             </div>
           </div>
-          <button onclick="openProductModal('ghishwa-cape')" class="mt-3 w-full py-2.5 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs sm:text-sm font-bold rounded-xl transition">
-            <span>تأكيد واختيار القطعة</span>
+          <button onclick="openProductModal('ghishwa-cape')" class="mt-3 w-full py-2 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl transition">
+            <span>اختاري القطعة</span>
+          </button>
+        </div>
+
+        <!-- منتج 3: طرحة شيفون كريب -->
+        <div class="bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
+          <div onclick="openProductModal('chiffon-scarf')" class="cursor-pointer">
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
+              <span class="absolute top-2 right-2 bg-amber-500 text-neutral-950 text-[10px] px-2 py-0.5 rounded-md font-black shadow-xs">3 بـ 300 ج.م</span>
+              <img src="assets/images/products/chiffon-scarf/chiffon-scarf-main.jpg" alt="طرحة شيفون كريب" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
+            </div>
+            <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">طرحة شيفون كريب</h3>
+            <p class="text-[11px] text-neutral-500 mt-0.5">مقاس 75 × 185 سم • خامة ناعمة وألوان متعددة</p>
+            <div class="flex items-baseline gap-2 mt-2">
+              <span class="text-sm sm:text-base font-black text-brand-dark">130 ج.م</span>
+              <span class="text-[10px] text-emerald-700 font-bold bg-emerald-50 px-1.5 py-0.5 rounded">وفرّي مع العرض</span>
+            </div>
+          </div>
+          <button onclick="openProductModal('chiffon-scarf')" class="mt-3 w-full py-2 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl transition">
+            <span>اختاري اللون</span>
+          </button>
+        </div>
+
+        <!-- منتج 4: خمار إندونيسي 3 قطع مع غشوة -->
+        <div class="bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
+          <div onclick="openProductModal('indonesian-khimar')" class="cursor-pointer">
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
+              <span class="absolute top-2 right-2 bg-brand-dark text-brand-accent text-[10px] px-2 py-0.5 rounded-md font-bold">طقم 3 قطع</span>
+              <img src="assets/images/products/indonesian-khimar/indonesian-khimar-main.jpg" alt="خمار إندونيسي 3 قطع مع غشوة" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
+            </div>
+            <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">خمار إندونيسي 3 قطع مع غشوة</h3>
+            <p class="text-[11px] text-neutral-500 mt-0.5">شيفون كريب مستورد • طبقتين وغشوة</p>
+            <div class="flex items-baseline gap-2 mt-2">
+              <span class="text-sm sm:text-base font-black text-brand-dark">550 ج.م</span>
+              <span class="text-xs text-neutral-400 line-through">620 ج.م</span>
+            </div>
+          </div>
+          <button onclick="openProductModal('indonesian-khimar')" class="mt-3 w-full py-2 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl transition">
+            <span>اختاري اللون</span>
+          </button>
+        </div>
+
+        <!-- منتج 5: نقاب طبي مقوى شيفون خليجي -->
+        <div class="bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
+          <div onclick="openProductModal('medical-niqab')" class="cursor-pointer">
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
+              <span class="absolute top-2 right-2 bg-brand-medium text-amber-300 text-[10px] px-2 py-0.5 rounded-md font-semibold">طبي مريح</span>
+              <img src="assets/images/products/medical-niqab/medical-niqab-main.jpg" alt="نقاب طبي مقوى شيفون خليجي" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
+            </div>
+            <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">نقاب طبي مقوى شيفون خليجي</h3>
+            <p class="text-[11px] text-neutral-500 mt-0.5">حماية من الغبار • خفيف ومريح للحساسية</p>
+            <div class="flex items-baseline gap-2 mt-2">
+              <span class="text-sm sm:text-base font-black text-brand-dark">160 ج.م</span>
+            </div>
+          </div>
+          <button onclick="openProductModal('medical-niqab')" class="mt-3 w-full py-2 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl transition">
+            <span>اختاري القطعة</span>
+          </button>
+        </div>
+
+        <!-- منتج 6: خمار فرنسي 3 طبقات مثلث -->
+        <div class="bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
+          <div onclick="openProductModal('french-triangle-khimar')" class="cursor-pointer">
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
+              <span class="absolute top-2 right-2 bg-neutral-900/90 text-brand-accent text-[10px] px-2 py-0.5 rounded-md font-semibold">قصة ملكية</span>
+              <img src="assets/images/products/french-triangle-khimar/french-triangle-khimar-main.jpg" alt="خمار فرنسي 3 طبقات مثلث" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
+            </div>
+            <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">خمار فرنسي 3 طبقات مثلث</h3>
+            <p class="text-[11px] text-neutral-500 mt-0.5">شيفون كريب مستورد • 3 طبقات متدرجة</p>
+            <div class="flex items-baseline gap-2 mt-2">
+              <span class="text-sm sm:text-base font-black text-brand-dark">500 ج.م</span>
+            </div>
+          </div>
+          <button onclick="openProductModal('french-triangle-khimar')" class="mt-3 w-full py-2 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl transition">
+            <span>اختاري اللون</span>
           </button>
         </div>
 
@@ -345,10 +420,27 @@
               <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             </a>
             <a href="https://www.tiktok.com/@sanabelhigap?_r=1&_t=ZS-99m3MHD6Z09" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-neutral-800 hover:bg-black hover:text-white flex items-center justify-center text-neutral-300 transition duration-300" aria-label="TikTok">
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-1.01-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 2.89 3.5 2.77 1.81-.07 3.25-1.52 3.3-3.32.05-3.89.02-7.78.02-11.66z"/></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-1.01-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.82 2.89 3.5 2.77 1.81-.07 3.25-1.52 3.3-3.32.05-3.89.02-7.78.02-11.66z"/></svg>
             </a>
             <a href="https://wa.me/201124574341" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-neutral-800 hover:bg-[#25D366] hover:text-white flex items-center justify-center text-neutral-300 transition duration-300" aria-label="WhatsApp">
               <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- الحقوق -->
+      <div class="pt-6 text-center text-xs text-neutral-500">
+        <p>جميع الحقوق محفوظة © 2026 متجر سنابل للمحجبات. صُمم بأعلى معايير تجربة المستخدم لسرعة وسهولة الطلب.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 10. زر الواتساب العائم -->
+  <aside aria-label="مساعدة واستفسار سريع عبر واتساب" class="fixed z-40 bottom-24 left-4 md:bottom-6 md:left-6">
+    <a href="https://wa.me/201124574341?text=مرحباً%20سنابل،%20عندي%20استفسار%20عن%20المنتجات" target="_blank" onclick="trackWhatsAppClick()" class="relative group flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white p-3.5 sm:px-4 sm:py-3 rounded-full shadow-2xl transition transform hover:scale-105 active:scale-95" aria-label="تواصل معنا عبر واتساب">
+      <span class="animate-ping absolute -top-1 -right-1 inline-flex h-3.5 w-3.5 rounded-full bg-emerald-400 opacity-75"></span>
+      <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
             </a>
           </div>
         </div>
@@ -413,6 +505,7 @@
         <div class="flex items-baseline gap-2 mt-2">
           <span id="modalProductPrice" class="text-base sm:text-lg font-black text-brand-dark"></span>
           <span id="modalProductOldPrice" class="text-xs text-neutral-400 line-through"></span>
+          <span id="modalSpecialOfferBadge" class="hidden text-xs font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-md"></span>
         </div>
       </div>
 
@@ -421,14 +514,14 @@
         <label class="block text-xs font-black text-neutral-800">
           اختاري اللون: <span id="modalSelectedColorLabel" class="text-brand-accent mr-1"></span>
         </label>
-        <div id="modalColorsContainer" class="flex flex-wrap gap-2 pt-1">
+        <div id="modalColorsContainer" class="flex flex-wrap gap-2 pt-1 max-h-36 overflow-y-auto">
         </div>
       </div>
 
       <!-- اختيار المقاسات -->
       <div class="space-y-2 mb-5">
         <label class="block text-xs font-black text-neutral-800">
-          المقاس المتوفر لهذا اللون: <span id="modalSelectedSizeLabel" class="text-brand-accent mr-1"></span>
+          المقاس: <span id="modalSelectedSizeLabel" class="text-brand-accent mr-1"></span>
         </label>
         <div id="modalSizesContainer" class="flex flex-wrap gap-2 pt-1">
         </div>
@@ -629,9 +722,9 @@
       "جنوب سيناء": 155
     };
 
-    // كتالوج المنتجات الـ 4 الحقيقية فقط (تم استبعاد أي منتج عشوائي)
+    // كتالوج المنتجات الـ 8 الرسمية كاملة
     const catalog = {
-      // 1. طقم فرنسي قطعتين
+      // 1. قسم الإطلالات: طقم فرنسي قطعتين
       'khimar-french': {
         id: 'khimar-french',
         title: 'طقم فرنسي قطعتين',
@@ -657,7 +750,7 @@
         sizes: ['مقاس موحد']
       },
 
-      // 2. طقم كاب واسع وجيبة كلوش
+      // 2. قسم الإطلالات: طقم كاب واسع وجيبة كلوش
       'cape-set': {
         id: 'cape-set',
         title: 'طقم كاب واسع فضفاض وجيبة كلوش',
@@ -684,14 +777,14 @@
         ]
       },
 
-      // 3. كاب شيفون سعودي ليزر مفتوح ومقفول
+      // 3. قسم الخمار والطرح والنقاب: كاب شيفون سعودي ليزر مفتوح ومقفول
       'laser-cape': {
         id: 'laser-cape',
         title: 'كاب شيفون سعودي ليزر مفتوح ومقفول',
         price: 600,
         oldPrice: 650,
         mainImage: 'assets/images/products/laser-cape/laser-cape-main.jpg',
-        desc: 'كاب شيفون ليزر سعودي بتصميم عملي ومحتشم يمكن ارتداؤه مفتوح أو مقفول بأناقة تامة وبقصة انسيابية سابغة.',
+        desc: 'تصميم سعودي عملي وفخم، يمكن ارتداؤه مفتوح أو مقفول بخامة ليزر انسيابية غير شفافة ومقاس موحد.',
         colors: [
           { name: 'أسود فاحم', hex: '#111111', image: 'assets/images/products/laser-cape/laser-cape-main.jpg' }
         ],
@@ -701,19 +794,124 @@
         sizes: ['مقاس موحد']
       },
 
-      // 4. كاب غشوة شيفون سعودي ليزر
+      // 4. قسم الخمار والطرح والنقاب: كاب غشوة شيفون سعودي ليزر
       'ghishwa-cape': {
         id: 'ghishwa-cape',
         title: 'كاب غشوة شيفون سعودي ليزر',
         price: 700,
         oldPrice: 750,
         mainImage: 'assets/images/products/ghishwa-cape/ghishwa-cape-main.jpg',
-        desc: 'كاب راقي مع غشوة شيفون ليزر سعودي فخمة، انسيابية وخفيفة ومريحة لا تشف وساترة للخرجات والدوام.',
+        desc: 'شيفون ليزر بطبقات ناعمة انسيابية وغشوة متناسقة، خفيف وبارد وساتر للخرجات والدوام ومقاس موحد.',
         colors: [
           { name: 'أسود ملكي', hex: '#111111', image: 'assets/images/products/ghishwa-cape/ghishwa-cape-main.jpg' }
         ],
         gallery: [
           { label: 'الرئيسية', url: 'assets/images/products/ghishwa-cape/ghishwa-cape-main.jpg' }
+        ],
+        sizes: ['مقاس موحد']
+      },
+
+      // 5. قسم الخمار والطرح والنقاب: طرحة شيفون كريب
+      'chiffon-scarf': {
+        id: 'chiffon-scarf',
+        title: 'طرحة شيفون كريب',
+        price: 130,
+        oldPrice: null,
+        mainImage: 'assets/images/products/chiffon-scarf/chiffon-scarf-main.jpg',
+        desc: 'طرحة شيفون كريب بخامة ناعمة ولمسة أنيقة، مقاس 75 × 185 سم، مناسبة لتنسيقات الحجاب اليومية والمناسبات. عرض خاص: 3 قطع بسعر 300 ج.م بدلاً من 390 ج.م!',
+        colors: [
+          { name: 'أسود', hex: '#111111' },
+          { name: 'عنابي', hex: '#6B1D2F' },
+          { name: 'أحمر توتي', hex: '#9E1B32' },
+          { name: 'سلموني', hex: '#FA8072' },
+          { name: 'تركوازي', hex: '#20B2AA' },
+          { name: 'أخضر غابي', hex: '#1E4D2B' },
+          { name: 'زيتي', hex: '#556B2F' },
+          { name: 'أخضر ساج', hex: '#9CAF88' },
+          { name: 'عسلي', hex: '#C68B59' },
+          { name: 'خردلي', hex: '#D4AF37' },
+          { name: 'نود غامق', hex: '#B8977E' },
+          { name: 'روماج', hex: '#8A7968' },
+          { name: 'ياقوتي', hex: '#8B0000' },
+          { name: 'أكوا', hex: '#7FFFD4' },
+          { name: 'نعناعي', hex: '#98FF98' },
+          { name: 'أخضر ساج غامق', hex: '#5F7558' },
+          { name: 'أزرق', hex: '#1E3F66' },
+          { name: 'وردي غامق', hex: '#C71585' },
+          { name: 'وردي', hex: '#FFB6C1' },
+          { name: 'بيج', hex: '#D2B48C' },
+          { name: 'موكا', hex: '#967969' },
+          { name: 'كستنائي', hex: '#800000' },
+          { name: 'بني فاتح', hex: '#A52A2A' }
+        ],
+        gallery: [
+          { label: 'الرئيسية', url: 'assets/images/products/chiffon-scarf/chiffon-scarf-main.jpg' }
+        ],
+        sizes: ['75 × 185 سم']
+      },
+
+      // 6. قسم الخمار والطرح والنقاب: خمار إندونيسي 3 قطع مع غشوة
+      'indonesian-khimar': {
+        id: 'indonesian-khimar',
+        title: 'خمار إندونيسي 3 قطع – شيفون كريب مستورد مع غشوة',
+        price: 550,
+        oldPrice: 620,
+        mainImage: 'assets/images/products/indonesian-khimar/indonesian-khimar-main.jpg',
+        desc: 'طقم متكامل مكون من 3 قطع (خمار بطبقتين أمامية 80 سم وخلفية 120 سم + شريطة عريضة لإحكام الربط + غشوة متناسقة)، مصنوع من شيفون كريب مستورد عالي الجودة.',
+        colors: [
+          { name: 'أسود', hex: '#111111' },
+          { name: 'أوف وايت', hex: '#FDFBF7' },
+          { name: 'أبيض', hex: '#FFFFFF' },
+          { name: 'رمادي', hex: '#808080' },
+          { name: 'بني', hex: '#5C4033' },
+          { name: 'نبيتي', hex: '#800020' },
+          { name: 'موف', hex: '#7A4988' },
+          { name: 'أزرق', hex: '#185ADB' },
+          { name: 'بترولي', hex: '#174857' },
+          { name: 'أخضر', hex: '#2A7B4C' }
+        ],
+        gallery: [
+          { label: 'الرئيسية', url: 'assets/images/products/indonesian-khimar/indonesian-khimar-main.jpg' }
+        ],
+        sizes: ['مقاس موحد']
+      },
+
+      // 7. قسم الخمار والطرح والنقاب: نقاب طبي مقوى شيفون خليجي
+      'medical-niqab': {
+        id: 'medical-niqab',
+        title: 'نقاب طبي مقوى شيفون خليجي',
+        price: 160,
+        oldPrice: null,
+        mainImage: 'assets/images/products/medical-niqab/medical-niqab-main.jpg',
+        desc: 'نقاب طبي مقوى من الشيفون الخليجي عالي الجودة، يوفر تغطية مريحة وثباتاً ممتازاً ومناسب لمن تعاني من الحساسية ومشاكل الجيوب الأنفية ويحمي من الغبار والأتربة.',
+        colors: [
+          { name: 'أسود', hex: '#111111' }
+        ],
+        gallery: [
+          { label: 'الرئيسية', url: 'assets/images/products/medical-niqab/medical-niqab-main.jpg' }
+        ],
+        sizes: ['قابل للتعديل']
+      },
+
+      // 8. قسم الخمار والطرح والنقاب: خمار فرنسي 3 طبقات مثلث
+      'french-triangle-khimar': {
+        id: 'french-triangle-khimar',
+        title: 'خمار فرنسي 3 طبقات مثلث – شيفون كريب مستورد',
+        price: 500,
+        oldPrice: null,
+        mainImage: 'assets/images/products/french-triangle-khimar/french-triangle-khimar-main.jpg',
+        desc: 'خمار فرنسي مثلث فاخر مكون من 3 طبقات متدرجة من الخلف وطبقتين من الأمام، مصنوع من شيفون كريب مستورد ناعم وانسيابي ساتر للإطلالات اليومية والمناسبات.',
+        colors: [
+          { name: 'أسود', hex: '#111111' },
+          { name: 'أوف وايت', hex: '#FDFBF7' },
+          { name: 'أبيض', hex: '#FFFFFF' },
+          { name: 'موف', hex: '#7A4988' },
+          { name: 'أخضر', hex: '#2A7B4C' },
+          { name: 'بني', hex: '#5C4033' },
+          { name: 'بينك / وردي', hex: '#E8A598' }
+        ],
+        gallery: [
+          { label: 'الرئيسية', url: 'assets/images/products/french-triangle-khimar/french-triangle-khimar-main.jpg' }
         ],
         sizes: ['مقاس موحد']
       }
@@ -725,6 +923,16 @@
     let selectedColor = '';
     let selectedSize = '';
     let modalQuantity = 1;
+
+    // دالة احتساب السعر الذكي (تطبيق عرض 3 بـ 300 ج.م على طرح الشيفون)
+    function calculateItemPrice(productId, unitPrice, qty) {
+      if (productId === 'chiffon-scarf') {
+        const bundlesOfThree = Math.floor(qty / 3);
+        const remainder = qty % 3;
+        return (bundlesOfThree * 300) + (remainder * unitPrice);
+      }
+      return unitPrice * qty;
+    }
 
     function getAvailableSizesForSelectedColor() {
       if (!activeModalProduct) return [];
@@ -751,9 +959,26 @@
       document.getElementById('modalProductTitle').innerText = product.title;
       document.getElementById('modalProductDesc').innerText = product.desc;
       document.getElementById('modalProductPrice').innerText = `${product.price} ج.م`;
-      document.getElementById('modalProductOldPrice').innerText = `${product.oldPrice} ج.م`;
+
+      const oldPriceEl = document.getElementById('modalProductOldPrice');
+      if (product.oldPrice) {
+        oldPriceEl.innerText = `${product.oldPrice} ج.م`;
+        oldPriceEl.classList.remove('hidden');
+      } else {
+        oldPriceEl.innerText = '';
+        oldPriceEl.classList.add('hidden');
+      }
+
+      const offerBadge = document.getElementById('modalSpecialOfferBadge');
+      if (product.id === 'chiffon-scarf') {
+        offerBadge.innerText = 'عرض خاص: 3 بـ 300 ج.م';
+        offerBadge.classList.remove('hidden');
+      } else {
+        offerBadge.classList.add('hidden');
+      }
+
       document.getElementById('modalQtyDisplay').innerText = modalQuantity;
-      document.getElementById('modalSubmitTotal').innerText = `${product.price} ج.م`;
+      updateModalTotal();
 
       renderThumbnailsGallery(product.gallery || []);
       renderModalColors(product.colors);
@@ -805,7 +1030,7 @@
       document.getElementById('modalSelectedColorLabel').innerText = selectedColor;
 
       container.innerHTML = colors.map(c => `
-        <button type="button" onclick="selectColor('${c.name}', '${c.image}')" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-bold transition ${selectedColor === c.name ? 'border-brand-dark bg-brand-dark text-white ring-2 ring-brand-accent/50' : 'border-neutral-200 bg-white text-neutral-700 hover:border-neutral-400'}">
+        <button type="button" onclick="selectColor('${c.name}', '${c.image || ''}')" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-bold transition ${selectedColor === c.name ? 'border-brand-dark bg-brand-dark text-white ring-2 ring-brand-accent/50' : 'border-neutral-200 bg-white text-neutral-700 hover:border-neutral-400'}">
           <span class="w-3.5 h-3.5 rounded-full border border-white/40 shadow-xs" style="background-color: ${c.hex}"></span>
           <span>${c.name}</span>
         </button>
@@ -816,6 +1041,8 @@
       selectedColor = colorName;
       if (colorImageUrl) {
         setPreviewImage(colorImageUrl, `لون ${colorName}`);
+      } else if (activeModalProduct) {
+        setPreviewImage(activeModalProduct.mainImage, `لون ${colorName}`);
       }
 
       const availableSizes = getAvailableSizesForSelectedColor();
@@ -848,10 +1075,16 @@
       renderModalSizes(getAvailableSizesForSelectedColor());
     }
 
+    function updateModalTotal() {
+      if (!activeModalProduct) return;
+      const total = calculateItemPrice(activeModalProduct.id, activeModalProduct.price, modalQuantity);
+      document.getElementById('modalSubmitTotal').innerText = `${total} ج.م`;
+    }
+
     function changeModalQty(delta) {
       modalQuantity = Math.max(1, modalQuantity + delta);
       document.getElementById('modalQtyDisplay').innerText = modalQuantity;
-      document.getElementById('modalSubmitTotal').innerText = `${activeModalProduct.price * modalQuantity} ج.م`;
+      updateModalTotal();
     }
 
     function confirmAddModalToCart() {
@@ -869,7 +1102,7 @@
         cart.push({
           id: activeModalProduct.id,
           title: activeModalProduct.title,
-          price: activeModalProduct.price,
+          unitPrice: activeModalProduct.price,
           image: currentPreviewImage || activeModalProduct.mainImage,
           color: selectedColor,
           size: selectedSize,
@@ -883,8 +1116,7 @@
         content_name: activeModalProduct.title,
         color: selectedColor,
         size: selectedSize,
-        value: activeModalProduct.price * modalQuantity,
-        currency: 'EGP'
+        quantity: modalQuantity
       });
 
       toggleCheckoutDrawer();
@@ -923,7 +1155,10 @@
       const govSelect = document.getElementById('drawerCustGov');
 
       const totalItemsCount = cart.reduce((sum, item) => sum + item.quantity, 0);
-      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      
+      const subtotal = cart.reduce((sum, item) => {
+        return sum + calculateItemPrice(item.id, item.unitPrice, item.quantity);
+      }, 0);
 
       const selectedGov = govSelect ? govSelect.value : '';
       const shippingCost = shippingRates[selectedGov] || 0;
@@ -947,14 +1182,16 @@
         emptyState.classList.add('hidden');
         activeState.classList.remove('hidden');
 
-        itemsListContainer.innerHTML = cart.map((item, index) => `
+        itemsListContainer.innerHTML = cart.map((item, index) => {
+          const itemPriceTotal = calculateItemPrice(item.id, item.unitPrice, item.quantity);
+          return `
           <div class="bg-brand-light/60 p-3 rounded-xl flex items-center justify-between gap-2 border border-neutral-200/60">
             <div class="flex items-center gap-2.5 overflow-hidden">
               <img src="${item.image}" alt="${item.title}" class="w-12 h-14 rounded-lg object-cover object-top bg-neutral-200 flex-shrink-0">
               <div class="overflow-hidden">
                 <h4 class="text-xs font-bold text-brand-dark truncate">${item.title}</h4>
                 <span class="text-[10px] text-neutral-500 block truncate">اللون: ${item.color} | المقاس: ${item.size}</span>
-                <span class="text-xs font-black text-brand-accent mt-0.5 block">${item.price * item.quantity} ج.م</span>
+                <span class="text-xs font-black text-brand-accent mt-0.5 block">${itemPriceTotal} ج.م ${item.id === 'chiffon-scarf' && item.quantity >= 3 ? '<span class="text-[9px] text-emerald-600 font-bold">(تم تطبيق العرض)</span>' : ''}</span>
               </div>
             </div>
 
@@ -969,7 +1206,8 @@
               </button>
             </div>
           </div>
-        `).join('');
+          `;
+        }).join('');
 
         document.getElementById('checkoutSubtotal').innerText = `${subtotal} ج.م`;
         
@@ -1008,7 +1246,7 @@
         }, 10);
         
         if (cart.length > 0) {
-          const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+          const subtotal = cart.reduce((sum, item) => sum + calculateItemPrice(item.id, item.unitPrice, item.quantity), 0);
           dispatchTrackingEvent('InitiateCheckout', { value: subtotal, currency: 'EGP' });
         }
       } else {
@@ -1035,12 +1273,13 @@
       const address = document.getElementById('drawerCustAddress').value.trim();
 
       const shippingCost = shippingRates[gov] || 0;
-      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      const subtotal = cart.reduce((sum, item) => sum + calculateItemPrice(item.id, item.unitPrice, item.quantity), 0);
       const grandTotal = subtotal + shippingCost;
 
-      const productsListText = cart.map((item, idx) => 
-        `${idx + 1}) *${item.title}*\n   - اللون: ${item.color} | المقاس: ${item.size}\n   - الكمية: ${item.quantity} × ${item.price} ج.م = ${item.quantity * item.price} ج.م`
-      ).join('\n');
+      const productsListText = cart.map((item, idx) => {
+        const itemTotal = calculateItemPrice(item.id, item.unitPrice, item.quantity);
+        return `${idx + 1}) *${item.title}*\n   - اللون: ${item.color} | المقاس: ${item.size}\n   - الكمية: ${item.quantity} = ${itemTotal} ج.م ${item.id === 'chiffon-scarf' && item.quantity >= 3 ? '(سعر العرض)' : ''}`;
+      }).join('\n');
 
       dispatchTrackingEvent('Purchase', {
         value: grandTotal,
