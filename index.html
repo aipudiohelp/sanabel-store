@@ -30,11 +30,11 @@
           fontFamily: { sans: ['Cairo', 'sans-serif'] },
           colors: {
             brand: {
-              dark: '#17181A',     // أسود ملكي فخم
-              medium: '#232528',   // فحم داكن فاخر
-              light: '#F5F3ED',    // سكري دافئ مريح
-              cream: '#FAF8F5',    // عاجي ناعم للخلفية
-              accent: '#D4AF37',   // ذهبي ملكي
+              dark: '#17181A',
+              medium: '#232528',
+              light: '#F5F3ED',
+              cream: '#FAF8F5',
+              accent: '#D4AF37',
               gold: '#C5A059',
               btn: '#17181A',
               highlight: '#EFE9DD'
@@ -47,14 +47,9 @@
   <style>
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-    /* مساحة أمان سفلية للموبايل لضمان عدم حجب أي عنصر خلف شريط الشراء */
-    .thumb-safe-area { padding-bottom: calc(90px + env(safe-area-inset-bottom)); }
-    @media (min-width: 768px) {
-      .thumb-safe-area { padding-bottom: 0; }
-    }
   </style>
 </head>
-<body class="bg-brand-cream text-neutral-800 font-sans antialiased selection:bg-brand-accent selection:text-neutral-900 thumb-safe-area">
+<body class="bg-brand-cream text-neutral-800 font-sans antialiased selection:bg-brand-accent selection:text-neutral-900 pb-12">
 
   <!-- 1. شريط الثقة والشحن العلوي -->
   <div class="bg-brand-dark text-white text-xs py-2.5 px-4 text-center tracking-wide font-medium flex justify-center items-center gap-2 sm:gap-4 border-b border-neutral-800">
@@ -65,15 +60,11 @@
     <span>✨ معاينة وفحص قبل الاستلام</span>
   </div>
 
-  <!-- 2. الهيدر المتجاوب -->
+  <!-- 2. الهيدر المتجاوب النظيف بدون عناصر عائمة مشوشة -->
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-neutral-200/80 px-4 lg:px-8 py-3.5 shadow-xs">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       
-      <!-- اللوجو واسم المتجر -->
       <div class="flex items-center gap-4">
-        <button aria-label="القائمة" class="p-1 text-brand-dark md:hidden">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
         <a href="index.html" class="text-xl sm:text-2xl font-black text-brand-dark tracking-tight flex items-center gap-2.5">
           <img src="assets/images/logo.jpg" alt="شعار سنابل للمحجبات" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover border border-brand-accent/40 shadow-xs">
           <span>سنابل</span>
@@ -81,16 +72,14 @@
         </a>
       </div>
 
-      <!-- روابط التصفح المباشرة للقسمين -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-bold text-neutral-700">
         <a href="#bundle-section" class="hover:text-brand-accent transition">الإطلالات المتكاملة</a>
         <a href="#khimar-section" class="hover:text-brand-accent transition">الخمار والطرح والنقاب</a>
         <a href="#guarantees" class="hover:text-brand-accent transition">الضمان والمعاينة</a>
       </nav>
 
-      <!-- الأيقونات والسلة التراكمية -->
-      <div class="flex items-center gap-3 sm:gap-4">
-        <a href="https://wa.me/201124574341" target="_blank" class="hidden sm:flex items-center gap-1.5 text-xs font-bold bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-full border border-emerald-200 hover:bg-emerald-100 transition">
+      <div class="flex items-center gap-2.5 sm:gap-4">
+        <a href="https://wa.me/201124574341" target="_blank" class="flex items-center gap-1.5 text-xs font-bold bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-full border border-emerald-200 hover:bg-emerald-100 transition">
           <span>واتساب المتجر</span>
         </a>
         <button onclick="toggleCheckoutDrawer()" aria-label="السلة" class="relative p-2 bg-brand-light text-brand-dark rounded-xl hover:bg-neutral-200 transition flex items-center gap-2">
@@ -102,14 +91,14 @@
     </div>
   </header>
 
-  <!-- المحتوى الرئيسي للمتجر -->
-  <main class="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 space-y-6 sm:space-y-12 pt-3 sm:pt-6">
+  <!-- المحتوى الرئيسي -->
+  <main class="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 space-y-6 sm:space-y-10 pt-3 sm:pt-6">
     
-    <!-- 3. الهيرو: بانر الفيديو الترويجي الرئيسي -->
+    <!-- 3. الهيرو: بانر الفيديو الترويجي -->
     <section class="w-full">
       <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-neutral-300/60 bg-[#161713] transition hover:shadow-xl">
         <div class="relative w-full overflow-hidden bg-black">
-          <video src="assets/images/banners/hero-video.mp4" autoplay loop muted playsinline class="w-full h-auto object-cover block max-h-[480px]"></video>
+          <video src="assets/images/banners/hero-video.mp4" autoplay loop muted playsinline class="w-full h-auto object-cover block max-h-[440px]"></video>
         </div>
         <div class="absolute bottom-3 sm:bottom-6 left-3 sm:left-6 z-10">
           <a href="#bundle-section" class="inline-flex items-center gap-2 bg-brand-accent hover:bg-amber-400 text-neutral-950 text-xs sm:text-sm font-black px-4 sm:px-6 py-2 sm:py-3 rounded-xl shadow-xl active:scale-95 transition">
@@ -122,27 +111,25 @@
 
     <!-- 4. كروت المسارات الرئيسية للأقسام -->
     <section id="choice-paths" class="w-full">
-      <div class="text-center mb-4 sm:mb-6">
+      <div class="text-center mb-3 sm:mb-5">
         <h2 class="text-base sm:text-xl font-black text-brand-dark">أقسام المتجر الرئيسية</h2>
         <p class="text-xs sm:text-sm text-neutral-500 mt-0.5">تصفحي الأقسام واختاري ما يناسب إطلالتك</p>
       </div>
 
       <div class="grid grid-cols-2 gap-3 sm:gap-6">
-        <!-- كارت 1: قسم الخمار والطرح والنقاب (بالبانر المعتمد) -->
         <div class="bg-white p-3 sm:p-5 rounded-2xl border border-neutral-200/90 shadow-sm flex flex-col justify-between hover:border-brand-dark transition">
           <div>
             <div class="aspect-[4/5] rounded-xl bg-neutral-100 overflow-hidden mb-3">
               <img src="assets/images/categories/khimar-niqab.jpg" alt="الخمار والطرح والنقاب" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
             </div>
             <h3 class="font-bold text-xs sm:text-base text-brand-dark">الخمار والطرح والنقاب</h3>
-            <p class="text-[11px] sm:text-xs text-neutral-500 mt-1">كابات شيفون ليزر، طرح شيفون كريب، خمارات ونقابات</p>
+            <p class="text-[11px] sm:text-xs text-neutral-500 mt-1">كابات شيفون، طرح شيفون كريب، خمارات ونقابات</p>
           </div>
           <button onclick="document.getElementById('khimar-section').scrollIntoView({ behavior: 'smooth' })" class="mt-3 w-full py-2 bg-brand-light text-brand-dark text-xs sm:text-sm font-bold rounded-xl hover:bg-neutral-200 transition">
             عرض قطع القسم ↓
           </button>
         </div>
 
-        <!-- كارت 2: قسم الإطلالات المتكاملة -->
         <div class="bg-white p-3 sm:p-5 rounded-2xl border-2 border-brand-accent/40 bg-gradient-to-b from-[#FBF8F1] to-white shadow-sm flex flex-col justify-between relative overflow-hidden">
           <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-brand-dark text-brand-accent text-[9px] sm:text-xs px-2 py-0.5 rounded-md font-bold">الأوفر ٪</span>
           <div>
@@ -150,7 +137,7 @@
               <img src="assets/images/products/cape-set/cape-set-main.jpg" alt="الإطلالات المتكاملة" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
             </div>
             <h3 class="font-bold text-xs sm:text-base text-brand-dark">الإطلالات المتكاملة</h3>
-            <p class="text-[11px] sm:text-xs text-neutral-500 mt-1">أطقم فرنسية وأطقم كاب واسع وجيبة كلوش</p>
+            <p class="text-[11px] sm:text-xs text-neutral-500 mt-1">طقم فرنسي وطقم كاب واسع وجيبة كلوش</p>
           </div>
           <button onclick="document.getElementById('bundle-section').scrollIntoView({ behavior: 'smooth' })" class="mt-3 w-full py-2 bg-brand-dark text-white text-xs sm:text-sm font-bold rounded-xl active:scale-95 hover:bg-neutral-900 transition">
             عرض الأطقم ↓
@@ -159,54 +146,55 @@
       </div>
     </section>
 
-    <!-- 5. قسم الإطلالات المتكاملة (المنتجين 1 و 2) -->
+    <!-- 5. قسم الإطلالات المتكاملة (كروت متجاورة أفقياً تسحب يميناً ويساراً) -->
     <section id="bundle-section" class="w-full pt-4 border-t border-neutral-200/60">
-      <div class="flex items-center justify-between mb-4 sm:mb-6">
+      <div class="flex items-center justify-between mb-3 sm:mb-4">
         <div>
           <div class="flex items-center gap-2">
             <span class="bg-brand-dark text-brand-accent text-[10px] sm:text-xs font-black px-2.5 py-0.5 rounded-md">القسم الأول</span>
             <h2 class="text-base sm:text-xl font-black text-brand-dark">الإطلالات المتكاملة</h2>
           </div>
-          <p class="text-xs sm:text-sm text-neutral-500 mt-1">أطقم جاهزة ومنسقة بالكامل تمنحك الوقار والأناقة الفائقة</p>
+          <p class="text-xs sm:text-sm text-neutral-500 mt-0.5">أطقم جاهزة ومنسقة بالكامل تمنحك الوقار والراحة</p>
         </div>
+        <span class="text-xs font-bold text-brand-accent bg-brand-light px-2.5 py-1 rounded-lg">سحب أفقي ←</span>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+      <div class="flex gap-3 sm:gap-4 overflow-x-auto no-scrollbar pb-3 pt-1 snap-x snap-mandatory">
         
         <!-- منتج 1: طقم فرنسي قطعتين -->
-        <div class="bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3.5 sm:p-4 flex flex-col justify-between hover:shadow-md transition">
+        <div class="w-[220px] sm:w-[260px] flex-shrink-0 snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3.5 flex flex-col justify-between hover:shadow-md transition">
           <div onclick="openProductModal('khimar-french')" class="cursor-pointer">
-            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-3">
-              <span class="absolute top-2.5 right-2.5 bg-neutral-900/85 text-brand-accent text-[10px] px-2.5 py-0.5 rounded-md font-semibold">خامة رويال</span>
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
+              <span class="absolute top-2 right-2 bg-neutral-900/85 text-brand-accent text-[10px] px-2 py-0.5 rounded-md font-semibold">خامة رويال</span>
               <img src="assets/images/products/french-set/french-set-main.png" alt="طقم فرنسي قطعتين" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
             </div>
-            <h3 class="font-bold text-sm sm:text-base text-brand-dark">طقم فرنسي قطعتين (دريس + خمار)</h3>
-            <p class="text-xs text-neutral-500 mt-1 line-clamp-2">خامة رويال عالية الجودة • دريس بكشكشة وسوستة سحرية وخمار مثلث ساتر ومقاس موحد.</p>
-            <div class="flex items-baseline gap-2 mt-2.5">
-              <span class="text-base sm:text-lg font-black text-brand-dark">999 ج.م</span>
+            <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">طقم فرنسي قطعتين (دريس + خمار)</h3>
+            <p class="text-[11px] text-neutral-500 mt-0.5 line-clamp-2">خامة رويال عالية الجودة • دريس بكشكشة وسوستة سحرية وخمار مثلث ومقاس موحد.</p>
+            <div class="flex items-baseline gap-2 mt-2">
+              <span class="text-sm sm:text-base font-black text-brand-dark">999 ج.م</span>
               <span class="text-xs text-neutral-400 line-through">1,100 ج.م</span>
             </div>
           </div>
-          <button onclick="openProductModal('khimar-french')" class="mt-3 w-full py-2.5 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs sm:text-sm font-bold rounded-xl flex items-center justify-center gap-1.5 transition">
+          <button onclick="openProductModal('khimar-french')" class="mt-3 w-full py-2 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 transition">
             <span>اختاري اللون والمقاس</span>
           </button>
         </div>
 
         <!-- منتج 2: طقم كاب واسع وجيبة كلوش -->
-        <div class="bg-white rounded-2xl border-2 border-brand-accent/30 shadow-xs p-3.5 sm:p-4 flex flex-col justify-between hover:shadow-md transition bg-gradient-to-b from-[#FAF8F3] to-white">
+        <div class="w-[220px] sm:w-[260px] flex-shrink-0 snap-start bg-white rounded-2xl border-2 border-brand-accent/30 shadow-xs p-3.5 flex flex-col justify-between hover:shadow-md transition bg-gradient-to-b from-[#FAF8F3] to-white">
           <div onclick="openProductModal('cape-set')" class="cursor-pointer">
-            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-3">
-              <span class="absolute top-2.5 right-2.5 bg-brand-dark text-brand-accent text-[10px] px-2.5 py-0.5 rounded-md font-bold shadow-xs">كريب تركي</span>
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
+              <span class="absolute top-2 right-2 bg-brand-dark text-brand-accent text-[10px] px-2 py-0.5 rounded-md font-bold shadow-xs">كريب تركي</span>
               <img src="assets/images/products/cape-set/cape-set-main.jpg" alt="طقم كاب واسع وجيبة كلوش" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
             </div>
-            <h3 class="font-bold text-sm sm:text-base text-brand-dark">طقم كاب واسع فضفاض وجيبة كلوش</h3>
-            <p class="text-xs text-neutral-500 mt-1 line-clamp-2">كريب تركي فاخر • كاب فضفاض محتشم وجيبة كلوش منسابة لا تشف ومقاسات دقيقة لكل لون.</p>
-            <div class="flex items-baseline gap-2 mt-2.5">
-              <span class="text-base sm:text-lg font-black text-brand-dark">1,250 ج.م</span>
+            <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">طقم كاب واسع فضفاض وجيبة كلوش</h3>
+            <p class="text-[11px] text-neutral-500 mt-0.5 line-clamp-2">كريب تركي فاخر • كاب فضفاض محتشم وجيبة كلوش منسابة لا تشف ومقاسات دقيقة لكل لون.</p>
+            <div class="flex items-baseline gap-2 mt-2">
+              <span class="text-sm sm:text-base font-black text-brand-dark">1,250 ج.م</span>
               <span class="text-xs text-neutral-400 line-through">1,350 ج.م</span>
             </div>
           </div>
-          <button onclick="openProductModal('cape-set')" class="mt-3 w-full py-2.5 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs sm:text-sm font-bold rounded-xl flex items-center justify-center gap-1.5 transition">
+          <button onclick="openProductModal('cape-set')" class="mt-3 w-full py-2 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 transition">
             <span>اختاري اللون والمقاس</span>
           </button>
         </div>
@@ -214,9 +202,9 @@
       </div>
     </section>
 
-    <!-- 6. قسم الخمار والطرح والنقاب (الـ 6 منتجات كاملة) -->
+    <!-- 6. قسم الخمار والطرح والنقاب (الـ 6 منتجات كاملة متجاورة أفقياً تسحب يميناً ويساراً) -->
     <section id="khimar-section" class="w-full pt-6 border-t border-neutral-200/60">
-      <div class="flex items-center justify-between mb-4 sm:mb-6">
+      <div class="flex items-center justify-between mb-3 sm:mb-4">
         <div>
           <div class="flex items-center gap-2">
             <span class="bg-brand-dark text-brand-accent text-[10px] sm:text-xs font-black px-2.5 py-0.5 rounded-md">القسم الثاني</span>
@@ -225,120 +213,121 @@
               <span>🧕</span>
             </h2>
           </div>
-          <p class="text-xs sm:text-sm text-neutral-500 mt-1">كابات شيفون ليزر، طرح شيفون كريب ناعمة، خمارات إندونيسية وفرنسية، ونقابات طبية</p>
+          <p class="text-xs sm:text-sm text-neutral-500 mt-0.5">اسحبي لمشاهدة جميع الكابات والطرح والخمارات المتاحة</p>
         </div>
+        <span class="text-xs font-bold text-brand-accent bg-brand-light px-2.5 py-1 rounded-lg">سحب أفقي ←</span>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 sm:gap-5">
+      <div class="flex gap-3 sm:gap-4 overflow-x-auto no-scrollbar pb-3 pt-1 snap-x snap-mandatory">
         
         <!-- منتج 1: كاب شيفون سعودي ليزر مفتوح ومقفول -->
-        <div class="bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
+        <div class="w-[200px] sm:w-[220px] flex-shrink-0 snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
           <div onclick="openProductModal('laser-cape')" class="cursor-pointer">
-            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2">
               <span class="absolute top-2 right-2 bg-neutral-900/90 text-brand-accent text-[10px] px-2 py-0.5 rounded-md font-semibold">شيفون ليزر</span>
               <img src="assets/images/products/laser-cape/laser-cape-main.jpg" alt="كاب شيفون سعودي ليزر مفتوح ومقفول" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
             </div>
-            <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">كاب شيفون سعودي ليزر مفتوح ومقفول</h3>
-            <p class="text-[11px] text-neutral-500 mt-0.5">مفتوح ومقفول • تصميم سعودي فاخر</p>
-            <div class="flex items-baseline gap-2 mt-2">
+            <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">كاب شيفون ليزر مفتوح ومقفول</h3>
+            <p class="text-[11px] text-neutral-500 mt-0.5 line-clamp-1">مفتوح ومقفول • تصميم سعودي فاخر</p>
+            <div class="flex items-baseline gap-2 mt-1.5">
               <span class="text-sm sm:text-base font-black text-brand-dark">600 ج.م</span>
               <span class="text-xs text-neutral-400 line-through">650 ج.م</span>
             </div>
           </div>
-          <button onclick="openProductModal('laser-cape')" class="mt-3 w-full py-2 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl transition">
+          <button onclick="openProductModal('laser-cape')" class="mt-2.5 w-full py-2 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl transition">
             <span>اختاري القطعة</span>
           </button>
         </div>
 
         <!-- منتج 2: كاب غشوة شيفون سعودي ليزر -->
-        <div class="bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
+        <div class="w-[200px] sm:w-[220px] flex-shrink-0 snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
           <div onclick="openProductModal('ghishwa-cape')" class="cursor-pointer">
-            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2">
               <span class="absolute top-2 right-2 bg-brand-dark text-brand-accent text-[10px] px-2 py-0.5 rounded-md font-bold">مع غشوة</span>
               <img src="assets/images/products/ghishwa-cape/ghishwa-cape-main.jpg" alt="كاب غشوة شيفون سعودي ليزر" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
             </div>
             <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">كاب غشوة شيفون سعودي ليزر</h3>
-            <p class="text-[11px] text-neutral-500 mt-0.5">شيفون ليزر بطبقات ناعمة وغشوة ساترة</p>
-            <div class="flex items-baseline gap-2 mt-2">
+            <p class="text-[11px] text-neutral-500 mt-0.5 line-clamp-1">شيفون ليزر بطبقات ناعمة وغشوة</p>
+            <div class="flex items-baseline gap-2 mt-1.5">
               <span class="text-sm sm:text-base font-black text-brand-dark">700 ج.م</span>
               <span class="text-xs text-neutral-400 line-through">750 ج.م</span>
             </div>
           </div>
-          <button onclick="openProductModal('ghishwa-cape')" class="mt-3 w-full py-2 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl transition">
+          <button onclick="openProductModal('ghishwa-cape')" class="mt-2.5 w-full py-2 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl transition">
             <span>اختاري القطعة</span>
           </button>
         </div>
 
         <!-- منتج 3: طرحة شيفون كريب -->
-        <div class="bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
+        <div class="w-[200px] sm:w-[220px] flex-shrink-0 snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
           <div onclick="openProductModal('chiffon-scarf')" class="cursor-pointer">
-            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2">
               <span class="absolute top-2 right-2 bg-amber-500 text-neutral-950 text-[10px] px-2 py-0.5 rounded-md font-black shadow-xs">3 بـ 300 ج.م</span>
               <img src="assets/images/products/chiffon-scarf/chiffon-scarf-main.jpg" alt="طرحة شيفون كريب" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
             </div>
             <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">طرحة شيفون كريب</h3>
-            <p class="text-[11px] text-neutral-500 mt-0.5">مقاس 75 × 185 سم • خامة ناعمة وألوان متعددة</p>
-            <div class="flex items-baseline gap-2 mt-2">
+            <p class="text-[11px] text-neutral-500 mt-0.5 line-clamp-1">مقاس 75 × 185 سم • خامة ناعمة و23 لوناً</p>
+            <div class="flex items-baseline gap-2 mt-1.5">
               <span class="text-sm sm:text-base font-black text-brand-dark">130 ج.م</span>
               <span class="text-[10px] text-emerald-700 font-bold bg-emerald-50 px-1.5 py-0.5 rounded">وفرّي مع العرض</span>
             </div>
           </div>
-          <button onclick="openProductModal('chiffon-scarf')" class="mt-3 w-full py-2 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl transition">
+          <button onclick="openProductModal('chiffon-scarf')" class="mt-2.5 w-full py-2 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl transition">
             <span>اختاري اللون</span>
           </button>
         </div>
 
         <!-- منتج 4: خمار إندونيسي 3 قطع مع غشوة -->
-        <div class="bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
+        <div class="w-[200px] sm:w-[220px] flex-shrink-0 snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
           <div onclick="openProductModal('indonesian-khimar')" class="cursor-pointer">
-            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2">
               <span class="absolute top-2 right-2 bg-brand-dark text-brand-accent text-[10px] px-2 py-0.5 rounded-md font-bold">طقم 3 قطع</span>
               <img src="assets/images/products/indonesian-khimar/indonesian-khimar-main.jpg" alt="خمار إندونيسي 3 قطع مع غشوة" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
             </div>
             <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">خمار إندونيسي 3 قطع مع غشوة</h3>
-            <p class="text-[11px] text-neutral-500 mt-0.5">شيفون كريب مستورد • طبقتين وغشوة</p>
-            <div class="flex items-baseline gap-2 mt-2">
+            <p class="text-[11px] text-neutral-500 mt-0.5 line-clamp-1">شيفون كريب مستورد • طبقتين وغشوة</p>
+            <div class="flex items-baseline gap-2 mt-1.5">
               <span class="text-sm sm:text-base font-black text-brand-dark">550 ج.م</span>
               <span class="text-xs text-neutral-400 line-through">620 ج.م</span>
             </div>
           </div>
-          <button onclick="openProductModal('indonesian-khimar')" class="mt-3 w-full py-2 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl transition">
+          <button onclick="openProductModal('indonesian-khimar')" class="mt-2.5 w-full py-2 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl transition">
             <span>اختاري اللون</span>
           </button>
         </div>
 
         <!-- منتج 5: نقاب طبي مقوى شيفون خليجي -->
-        <div class="bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
+        <div class="w-[200px] sm:w-[220px] flex-shrink-0 snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
           <div onclick="openProductModal('medical-niqab')" class="cursor-pointer">
-            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2">
               <span class="absolute top-2 right-2 bg-brand-medium text-amber-300 text-[10px] px-2 py-0.5 rounded-md font-semibold">طبي مريح</span>
               <img src="assets/images/products/medical-niqab/medical-niqab-main.jpg" alt="نقاب طبي مقوى شيفون خليجي" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
             </div>
             <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">نقاب طبي مقوى شيفون خليجي</h3>
-            <p class="text-[11px] text-neutral-500 mt-0.5">حماية من الغبار • خفيف ومريح للحساسية</p>
-            <div class="flex items-baseline gap-2 mt-2">
+            <p class="text-[11px] text-neutral-500 mt-0.5 line-clamp-1">حماية من الغبار • خفيف ومريح للحساسية</p>
+            <div class="flex items-baseline gap-2 mt-1.5">
               <span class="text-sm sm:text-base font-black text-brand-dark">160 ج.م</span>
             </div>
           </div>
-          <button onclick="openProductModal('medical-niqab')" class="mt-3 w-full py-2 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl transition">
+          <button onclick="openProductModal('medical-niqab')" class="mt-2.5 w-full py-2 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl transition">
             <span>اختاري القطعة</span>
           </button>
         </div>
 
         <!-- منتج 6: خمار فرنسي 3 طبقات مثلث -->
-        <div class="bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
+        <div class="w-[200px] sm:w-[220px] flex-shrink-0 snap-start bg-white rounded-2xl border border-neutral-200/80 shadow-xs p-3 flex flex-col justify-between hover:shadow-md transition">
           <div onclick="openProductModal('french-triangle-khimar')" class="cursor-pointer">
-            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2.5">
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-100 mb-2">
               <span class="absolute top-2 right-2 bg-neutral-900/90 text-brand-accent text-[10px] px-2 py-0.5 rounded-md font-semibold">قصة ملكية</span>
               <img src="assets/images/products/french-triangle-khimar/french-triangle-khimar-main.jpg" alt="خمار فرنسي 3 طبقات مثلث" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
             </div>
             <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">خمار فرنسي 3 طبقات مثلث</h3>
-            <p class="text-[11px] text-neutral-500 mt-0.5">شيفون كريب مستورد • 3 طبقات متدرجة</p>
-            <div class="flex items-baseline gap-2 mt-2">
+            <p class="text-[11px] text-neutral-500 mt-0.5 line-clamp-1">شيفون كريب مستورد • 3 طبقات متدرجة</p>
+            <div class="flex items-baseline gap-2 mt-1.5">
               <span class="text-sm sm:text-base font-black text-brand-dark">500 ج.م</span>
             </div>
           </div>
-          <button onclick="openProductModal('french-triangle-khimar')" class="mt-3 w-full py-2 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl transition">
+          <button onclick="openProductModal('french-triangle-khimar')" class="mt-2.5 w-full py-2 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl transition">
             <span>اختاري اللون</span>
           </button>
         </div>
@@ -386,11 +375,10 @@
   </main>
 
   <!-- 9. فوتر المتجر -->
-  <footer class="mt-12 bg-brand-dark text-white border-t border-neutral-800 pt-10 pb-24 md:pb-12">
+  <footer class="mt-12 bg-brand-dark text-white border-t border-neutral-800 pt-10 pb-12">
     <div class="max-w-7xl mx-auto px-4 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-neutral-800 text-center md:text-right">
         
-        <!-- هوية البراند بالشعار الدائري -->
         <div class="space-y-2">
           <div class="text-2xl font-black tracking-tight flex items-center justify-center md:justify-start gap-2.5">
             <img src="assets/images/logo.jpg" alt="شعار سنابل للمحجبات" class="w-9 h-9 rounded-full object-cover border border-brand-accent/40 shadow-xs">
@@ -401,7 +389,6 @@
           </p>
         </div>
 
-        <!-- مميزات الشراء والتطمين -->
         <div class="space-y-2 text-xs sm:text-sm text-neutral-300">
           <div class="font-bold text-brand-accent text-sm sm:text-base">خدمة عملاء ممتازة:</div>
           <div>✓ الدفع عند الاستلام مع حق فحص ومعاينة المنتج</div>
@@ -409,7 +396,6 @@
           <div>✓ شحن سريع يغطي كافة محافظات الجمهورية الـ 27</div>
         </div>
 
-        <!-- حسابات السوشيال ميديا الرسمية -->
         <div class="space-y-3">
           <div class="font-bold text-brand-accent text-sm sm:text-base">تابعي إطلالاتنا الجديدة:</div>
           <div class="flex items-center justify-center md:justify-start gap-3">
@@ -429,76 +415,31 @@
         </div>
       </div>
 
-      <!-- الحقوق -->
       <div class="pt-6 text-center text-xs text-neutral-500">
         <p>جميع الحقوق محفوظة © 2026 متجر سنابل للمحجبات. صُمم بأعلى معايير تجربة المستخدم لسرعة وسهولة الطلب.</p>
       </div>
     </div>
   </footer>
 
-  <!-- 10. زر الواتساب العائم -->
-  <aside aria-label="مساعدة واستفسار سريع عبر واتساب" class="fixed z-40 bottom-24 left-4 md:bottom-6 md:left-6">
-    <a href="https://wa.me/201124574341?text=مرحباً%20سنابل،%20عندي%20استفسار%20عن%20المنتجات" target="_blank" onclick="trackWhatsAppClick()" class="relative group flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white p-3.5 sm:px-4 sm:py-3 rounded-full shadow-2xl transition transform hover:scale-105 active:scale-95" aria-label="تواصل معنا عبر واتساب">
-      <span class="animate-ping absolute -top-1 -right-1 inline-flex h-3.5 w-3.5 rounded-full bg-emerald-400 opacity-75"></span>
-      <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- الحقوق -->
-      <div class="pt-6 text-center text-xs text-neutral-500">
-        <p>جميع الحقوق محفوظة © 2026 متجر سنابل للمحجبات. صُمم بأعلى معايير تجربة المستخدم لسرعة وسهولة الطلب.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- 10. زر الواتساب العائم -->
-  <aside aria-label="مساعدة واستفسار سريع عبر واتساب" class="fixed z-40 bottom-24 left-4 md:bottom-6 md:left-6">
-    <a href="https://wa.me/201124574341?text=مرحباً%20سنابل،%20عندي%20استفسار%20عن%20المنتجات" target="_blank" onclick="trackWhatsAppClick()" class="relative group flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white p-3.5 sm:px-4 sm:py-3 rounded-full shadow-2xl transition transform hover:scale-105 active:scale-95" aria-label="تواصل معنا عبر واتساب">
-      <span class="animate-ping absolute -top-1 -right-1 inline-flex h-3.5 w-3.5 rounded-full bg-emerald-400 opacity-75"></span>
-      <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-      <span class="hidden sm:inline text-xs font-bold">استفسار سريع</span>
-    </a>
-  </aside>
-
-  <!-- 11. الشريط السفلي الثابت -->
-  <div class="fixed bottom-0 left-0 right-0 z-30 bg-white/95 backdrop-blur-md border-t border-neutral-200 px-4 py-2.5 flex items-center justify-between gap-3 shadow-xl md:hidden">
-    <div>
-      <span class="text-[11px] text-neutral-500 block">الإجمالي المبدئي</span>
-      <span id="stickyBarTotal" class="text-base font-extrabold text-brand-dark">0 ج.م</span>
-    </div>
-    <div class="flex items-center gap-2 flex-1 justify-end">
-      <button id="stickyActionBtn" onclick="handleStickyButtonClick()" class="flex-1 py-3 bg-brand-dark text-white rounded-xl text-xs font-black flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition">
-        <span id="stickyBtnText">اختاري إطلالتك الآن</span>
-        <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- 12. نافذة اختيار اللون والمقاس ومعرض صور القطعة (بدون قص) -->
+  <!-- 10. نافذة اختيار اللون والمقاس ومعرض صور القطعة (بدون قص) -->
   <div id="productOptionsModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs transition-opacity duration-300 hidden opacity-0 flex items-end md:items-center justify-center">
     <div class="bg-white w-full max-w-lg rounded-t-3xl md:rounded-3xl max-h-[94vh] overflow-y-auto p-5 sm:p-7 shadow-2xl transform transition-transform duration-300 translate-y-full md:translate-y-0" id="productModalContent">
       
-      <!-- هيدر النافذة وزر الإغلاق -->
       <div class="flex items-center justify-between border-b border-neutral-100 pb-3 mb-3">
         <span class="text-xs font-bold text-brand-accent">سنابل للمحجبات • استعراض القطعة وتفاصيلها</span>
         <button onclick="closeProductModal()" class="p-1 text-neutral-400 hover:text-neutral-700 text-lg">✕</button>
       </div>
 
-      <!-- المعرض البصري: إطار طولي كامل بدون أي قص نهائياً -->
       <div class="mb-4">
         <div class="relative w-full rounded-2xl overflow-hidden bg-[#FAF8F5] border border-neutral-200/80 shadow-xs mb-2.5 flex items-center justify-center min-h-[340px] max-h-[500px]">
           <img id="modalProductImg" src="" alt="معاينة المنتج" class="w-full h-auto max-h-[500px] object-contain block mx-auto transition duration-300">
           <span id="modalActivePhotoBadge" class="absolute bottom-2.5 right-2.5 bg-neutral-900/80 backdrop-blur-xs text-white text-[10px] px-2.5 py-1 rounded-md font-bold">معاينة كاملة</span>
         </div>
 
-        <!-- شريط مصغر للصور العامة وزوايا الخامة -->
         <div id="modalThumbnailsGallery" class="flex gap-2 overflow-x-auto no-scrollbar pb-1">
         </div>
       </div>
 
-      <!-- معلومات المنتج والسعر -->
       <div class="mb-4">
         <h3 id="modalProductTitle" class="text-sm sm:text-base font-black text-brand-dark leading-snug"></h3>
         <p id="modalProductDesc" class="text-xs text-neutral-500 mt-1 leading-relaxed"></p>
@@ -509,7 +450,6 @@
         </div>
       </div>
 
-      <!-- اختيار الألوان -->
       <div class="space-y-2 mb-4">
         <label class="block text-xs font-black text-neutral-800">
           اختاري اللون: <span id="modalSelectedColorLabel" class="text-brand-accent mr-1"></span>
@@ -518,7 +458,6 @@
         </div>
       </div>
 
-      <!-- اختيار المقاسات -->
       <div class="space-y-2 mb-5">
         <label class="block text-xs font-black text-neutral-800">
           المقاس: <span id="modalSelectedSizeLabel" class="text-brand-accent mr-1"></span>
@@ -527,7 +466,6 @@
         </div>
       </div>
 
-      <!-- اختيار الكمية وزر التأكيد -->
       <div class="pt-3 border-t border-neutral-100 space-y-3">
         <div class="flex items-center justify-between">
           <span class="text-xs font-bold text-neutral-700">الكمية المطلوبة:</span>
@@ -548,7 +486,7 @@
     </div>
   </div>
 
-  <!-- 13. درج إتمام الطلب السريع مع أسعار الشحن المتغيرة حسب المحافظة -->
+  <!-- 11. درج إتمام الطلب السريع مع أسعار الشحن المتغيرة -->
   <div id="checkoutDrawer" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs transition-opacity duration-300 hidden opacity-0 flex items-end md:items-center justify-center">
     <div class="bg-white w-full max-w-lg rounded-t-3xl md:rounded-3xl max-h-[92vh] overflow-y-auto p-5 sm:p-7 shadow-2xl transform transition-transform duration-300 translate-y-full md:translate-y-0" id="drawerContent">
       
@@ -560,7 +498,6 @@
         <button onclick="toggleCheckoutDrawer()" class="p-1 text-neutral-400 hover:text-neutral-700 text-lg">✕</button>
       </div>
 
-      <!-- حالة السلة الفارغة -->
       <div id="emptyCartState" class="text-center py-8">
         <span class="text-4xl block mb-2">🛍️</span>
         <h4 class="text-sm font-bold text-neutral-700">سلتك فارغة حالياً</h4>
@@ -570,7 +507,6 @@
         </button>
       </div>
 
-      <!-- محتوى السلة المجمعة والطلب -->
       <div id="activeCartState" class="hidden space-y-4">
         
         <div id="cartItemsList" class="space-y-2.5 max-h-56 overflow-y-auto pr-1">
@@ -582,7 +518,6 @@
           </button>
         </div>
 
-        <!-- استمارة الطلب مع أسعار الشحن الدقيقة لكل محافظة -->
         <form id="orderForm" onsubmit="handleOrderSubmit(event)" class="space-y-3 pt-2 border-t border-neutral-100">
           <div>
             <label class="block text-[11px] font-bold text-neutral-700 mb-1">الاسم بالكامل *</label>
@@ -599,20 +534,16 @@
               <label class="block text-[11px] font-bold text-neutral-700 mb-1">المحافظة (حسب تسعيرة الشحن) *</label>
               <select id="drawerCustGov" required onchange="handleGovernorateChange()" class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-xs focus:bg-white focus:border-brand-dark outline-hidden font-medium">
                 <option value="">اختاري المحافظة</option>
-                
                 <optgroup label="القاهرة والجيزة (86 ج.م)">
                   <option value="القاهرة">القاهرة (86 ج.م)</option>
                   <option value="الجيزة">الجيزة (86 ج.م)</option>
                 </optgroup>
-
                 <optgroup label="المدن الجديدة والأطراف (95 ج.م)">
                   <option value="المدن الجديدة والأطراف (أكتوبر، زايد، التجمع، الشروق، مدينتي...)">المدن الجديدة والأطراف (95 ج.م)</option>
                 </optgroup>
-
                 <optgroup label="الإسكندرية (99 ج.م)">
                   <option value="الإسكندرية">الإسكندرية (99 ج.م)</option>
                 </optgroup>
-
                 <optgroup label="مدن الدلتا والقناة (103 ج.م)">
                   <option value="القليوبية">القليوبية (103 ج.م)</option>
                   <option value="الدقهلية">الدقهلية (103 ج.م)</option>
@@ -626,13 +557,11 @@
                   <option value="الإسماعيلية">الإسماعيلية (103 ج.م)</option>
                   <option value="السويس">السويس (103 ج.م)</option>
                 </optgroup>
-
                 <optgroup label="شمال الصعيد (113 ج.م)">
                   <option value="الفيوم">الفيوم (113 ج.م)</option>
                   <option value="بني سويف">بني سويف (113 ج.م)</option>
                   <option value="المنيا">المنيا (113 ج.م)</option>
                 </optgroup>
-
                 <optgroup label="جنوب الصعيد (123 ج.م)">
                   <option value="أسيوط">أسيوط (123 ج.م)</option>
                   <option value="سوهاج">سوهاج (123 ج.م)</option>
@@ -640,7 +569,6 @@
                   <option value="الأقصر">الأقصر (123 ج.م)</option>
                   <option value="أسوان">أسوان (123 ج.م)</option>
                 </optgroup>
-
                 <optgroup label="المناطق الخارجية والحدودية (155 ج.م)">
                   <option value="البحر الأحمر">البحر الأحمر (155 ج.م)</option>
                   <option value="الوادي الجديد">الوادي الجديد (155 ج.م)</option>
@@ -661,7 +589,6 @@
             <input type="text" id="drawerCustAddress" required placeholder="العنوان بالتفصيل لتسهيل وسرعة وصول المندوب" class="w-full px-3 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-xs focus:bg-white focus:border-brand-dark outline-hidden">
           </div>
 
-          <!-- الحسبة المالية -->
           <div class="pt-2 border-t border-neutral-100 space-y-1.5 text-xs">
             <div class="flex justify-between text-neutral-600">
               <span>إجمالي قيمة المنتجات:</span>
@@ -924,7 +851,6 @@
     let selectedSize = '';
     let modalQuantity = 1;
 
-    // دالة احتساب السعر الذكي (تطبيق عرض 3 بـ 300 ج.م على طرح الشيفون)
     function calculateItemPrice(productId, unitPrice, qty) {
       if (productId === 'chiffon-scarf') {
         const bundlesOfThree = Math.floor(qty / 3);
@@ -1148,8 +1074,6 @@
       const emptyState = document.getElementById('emptyCartState');
       const activeState = document.getElementById('activeCartState');
       const itemsListContainer = document.getElementById('cartItemsList');
-      const stickyTotal = document.getElementById('stickyBarTotal');
-      const stickyBtnText = document.getElementById('stickyBtnText');
       const shippingElement = document.getElementById('checkoutShippingFee');
       const grandTotalElement = document.getElementById('checkoutGrandTotal');
       const govSelect = document.getElementById('drawerCustGov');
@@ -1171,9 +1095,6 @@
         
         emptyState.classList.remove('hidden');
         activeState.classList.add('hidden');
-
-        stickyTotal.innerText = "0 ج.م";
-        stickyBtnText.innerText = "اختاري إطلالتك الآن";
       } else {
         badge.innerText = totalItemsCount;
         badge.classList.remove('hidden');
@@ -1220,17 +1141,6 @@
           shippingElement.className = "text-amber-700 font-bold bg-amber-50 px-2 py-0.5 rounded text-[11px]";
           grandTotalElement.innerText = `${subtotal} ج.م (+ الشحن)`;
         }
-
-        stickyTotal.innerText = `${subtotal} ج.م`;
-        stickyBtnText.innerText = `تأكيد الطلب (${totalItemsCount} قطع)`;
-      }
-    }
-
-    function handleStickyButtonClick() {
-      if (cart.length === 0) {
-        document.getElementById('bundle-section').scrollIntoView({ behavior: 'smooth' });
-      } else {
-        toggleCheckoutDrawer();
       }
     }
 
@@ -1256,10 +1166,6 @@
           drawer.classList.add('hidden');
         }, 300);
       }
-    }
-
-    function trackWhatsAppClick() {
-      dispatchTrackingEvent('Contact', { channel: 'WhatsApp' });
     }
 
     function handleOrderSubmit(e) {
