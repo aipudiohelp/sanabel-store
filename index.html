@@ -14,6 +14,24 @@
     })(window, document, "clarity", "script", "yksesmdzcn");
   </script>
 
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1438184378222107');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1438184378222107&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
   <!-- الشعار كأيقونة مفضلة للمتصفح (Favicon) -->
   <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
   <link rel="apple-touch-icon" href="assets/images/logo.jpg">
@@ -60,7 +78,7 @@
     <span>✨ معاينة وفحص قبل الاستلام</span>
   </div>
 
-  <!-- 2. الهيدر المتجاوب النظيف بدون عناصر عائمة مشوشة -->
+  <!-- 2. الهيدر المتجاوب -->
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-neutral-200/80 px-4 lg:px-8 py-3.5 shadow-xs">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       
@@ -83,7 +101,7 @@
           <span>واتساب المتجر</span>
         </a>
         <button onclick="toggleCheckoutDrawer()" aria-label="السلة" class="relative p-2 bg-brand-light text-brand-dark rounded-xl hover:bg-neutral-200 transition flex items-center gap-2">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          <svg class="w-5 h-5 fill-none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
           <span class="hidden md:inline text-xs font-bold">السلة</span>
           <span id="cartBadge" class="hidden bg-brand-accent text-neutral-900 text-[10px] w-4 h-4 rounded-full items-center justify-center font-black shadow-xs">0</span>
         </button>
@@ -175,7 +193,7 @@
               <span class="text-xs text-neutral-400 line-through">1,100 ج.م</span>
             </div>
           </div>
-          <button onclick="openProductModal('khimar-french')" class="mt-3 w-full py-2 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 transition">
+          <button onclick="openProductModal('khimar-french')" class="mt-3 w-full py-2.5 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 transition">
             <span>اختاري اللون والمقاس</span>
           </button>
         </div>
@@ -194,7 +212,7 @@
               <span class="text-xs text-neutral-400 line-through">1,350 ج.م</span>
             </div>
           </div>
-          <button onclick="openProductModal('cape-set')" class="mt-3 w-full py-2 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 transition">
+          <button onclick="openProductModal('cape-set')" class="mt-3 w-full py-2.5 bg-brand-dark active:bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 transition">
             <span>اختاري اللون والمقاس</span>
           </button>
         </div>
@@ -285,7 +303,7 @@
               <img src="assets/images/products/indonesian-khimar/indonesian-khimar-main.jpg" alt="خمار إندونيسي 3 قطع مع غشوة" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
             </div>
             <h3 class="font-bold text-xs sm:text-sm text-brand-dark line-clamp-1">خمار إندونيسي 3 قطع مع غشوة</h3>
-            <p class="text-[11px] text-neutral-500 mt-0.5 line-clamp-1">شيفون كريب مستورد • طبقتين وغشوة</p>
+            <p class="text-[11px] text-neutral-500 mt-0.5 line-clamp-1">شيفون كريب مستورد • طبقتين وغشوة ونقاب أستك</p>
             <div class="flex items-baseline gap-2 mt-1.5">
               <span class="text-sm sm:text-base font-black text-brand-dark">550 ج.م</span>
               <span class="text-xs text-neutral-400 line-through">620 ج.م</span>
@@ -392,7 +410,6 @@
         <div class="space-y-2 text-xs sm:text-sm text-neutral-300">
           <div class="font-bold text-brand-accent text-sm sm:text-base">خدمة عملاء ممتازة:</div>
           <div>✓ الدفع عند الاستلام مع حق فحص ومعاينة المنتج</div>
-          
           <div>✓ شحن سريع يغطي كافة محافظات الجمهورية الـ 27</div>
         </div>
 
@@ -614,7 +631,8 @@
       </div>
     </div>
   </div>
-<!-- زر الواتساب العائم الاحترافي -->
+
+  <!-- زر الواتساب العائم الاحترافي -->
   <a href="https://wa.me/201124574341?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%B3%D9%86%D8%A7%D8%A8%D9%84%D8%8C%20%D8%B9%D9%86%D8%AF%D9%8A%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA" 
      target="_blank" 
      rel="noopener noreferrer"
@@ -626,6 +644,7 @@
     </svg>
     <span class="hidden sm:inline text-xs font-bold">استفسار سريع</span>
   </a>
+
   <script>
     const STORE_WHATSAPP_NUMBER = "201124574341";
 
@@ -788,25 +807,31 @@
         sizes: ['75 × 185 سم']
       },
 
-      // 6. قسم الخمار والطرح والنقاب: خمار إندونيسي 3 قطع مع غشوة
+      // 6. قسم الخمار والطرح والنقاب: خمار إندونيسي 3 قطع مع غشوة (محدث بنقاب أستك والألوان الكاملة)
       'indonesian-khimar': {
         id: 'indonesian-khimar',
         title: 'خمار إندونيسي 3 قطع – شيفون كريب مستورد مع غشوة',
         price: 550,
         oldPrice: 620,
         mainImage: 'assets/images/products/indonesian-khimar/indonesian-khimar-main.jpg',
-        desc: 'طقم متكامل مكون من 3 قطع (خمار بطبقتين أمامية 80 سم وخلفية 120 سم + شريطة عريضة لإحكام الربط + غشوة متناسقة)، مصنوع من شيفون كريب مستورد عالي الجودة.',
+        desc: 'طقم متكامل مكون من 3 قطع (خمار بطبقتين أمامية وخلفية + شريطة عريضة لإحكام الربط وغشوة متناسقة + نقاب أستك مريح)، مصنوع من شيفون كريب مستورد عالي الجودة.',
         colors: [
           { name: 'أسود', hex: '#111111' },
           { name: 'أوف وايت', hex: '#FDFBF7' },
           { name: 'أبيض', hex: '#FFFFFF' },
-          { name: 'رمادي', hex: '#808080' },
-          { name: 'بني', hex: '#5C4033' },
+          { name: 'بيج', hex: '#D2B48C' },
+          { name: 'كافيه', hex: '#8C7462' },
+          { name: 'رصاصي', hex: '#9E9E9E' },
+          { name: 'رمادي', hex: '#757575' },
+          { name: 'جنزاري', hex: '#24534D' },
           { name: 'نبيتي', hex: '#800020' },
+          { name: 'برجاندي', hex: '#58111A' },
+          { name: 'أخضر', hex: '#2A7B4C' },
+          { name: 'زيتي', hex: '#556B2F' },
+          { name: 'بني', hex: '#5C4033' },
           { name: 'موف', hex: '#7A4988' },
           { name: 'أزرق', hex: '#185ADB' },
-          { name: 'بترولي', hex: '#174857' },
-          { name: 'أخضر', hex: '#2A7B4C' }
+          { name: 'بترولي', hex: '#174857' }
         ],
         gallery: [
           { label: 'الرئيسية', url: 'assets/images/products/indonesian-khimar/indonesian-khimar-main.jpg' }
@@ -814,7 +839,7 @@
         sizes: ['مقاس موحد']
       },
 
-      // 7. قسم الخمار والطرح والنقاب: نقاب طبي مقوى شيفون خليجي
+      // 7. قسم الخمار والطرح والنقاب: نقاب طبي مقوى شيفون خليجي (محدث بصياغة المقاس الاحترافية)
       'medical-niqab': {
         id: 'medical-niqab',
         title: 'نقاب طبي مقوى شيفون خليجي',
@@ -828,10 +853,10 @@
         gallery: [
           { label: 'الرئيسية', url: 'assets/images/products/medical-niqab/medical-niqab-main.jpg' }
         ],
-        sizes: ['قابل للتعديل']
+        sizes: ['المقاس حسب المتوفر (تأكيد عبر واتساب)']
       },
 
-      // 8. قسم الخمار والطرح والنقاب: خمار فرنسي 3 طبقات مثلث
+      // 8. قسم الخمار والطرح والنقاب: خمار فرنسي 3 طبقات مثلث (محدث بالسعر 500 والألوان الكاملة)
       'french-triangle-khimar': {
         id: 'french-triangle-khimar',
         title: 'خمار فرنسي 3 طبقات مثلث – شيفون كريب مستورد',
@@ -843,6 +868,14 @@
           { name: 'أسود', hex: '#111111' },
           { name: 'أوف وايت', hex: '#FDFBF7' },
           { name: 'أبيض', hex: '#FFFFFF' },
+          { name: 'بيج', hex: '#D2B48C' },
+          { name: 'كافيه', hex: '#8C7462' },
+          { name: 'جنزاري', hex: '#24534D' },
+          { name: 'بترولي', hex: '#174857' },
+          { name: 'نبيتي', hex: '#800020' },
+          { name: 'بورجاندي', hex: '#58111A' },
+          { name: 'رصاصي', hex: '#9E9E9E' },
+          { name: 'رمادي', hex: '#757575' },
           { name: 'موف', hex: '#7A4988' },
           { name: 'أخضر', hex: '#2A7B4C' },
           { name: 'بني', hex: '#5C4033' },
@@ -1134,7 +1167,7 @@
                 <button type="button" onclick="updateItemQuantity(${index}, 1)" class="px-2 py-0.5 text-xs font-black text-neutral-600 hover:bg-neutral-100">+</button>
               </div>
               <button type="button" onclick="removeCartItem(${index})" class="text-neutral-400 hover:text-red-600 p-1 transition" title="حذف القطعة">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                <svg class="w-4 h-4 fill-none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
               </button>
             </div>
           </div>
